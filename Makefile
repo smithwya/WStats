@@ -4,7 +4,7 @@ CXX = $(shell root-config --cxx)
 LD = $(shell root-config --ld)
 
 #compiling flags
-CPPFLAGS := $(shell root-config --cflags) $(STDINCDIR) -I/home/wyatt/eigen
+CPPFLAGS := $(shell root-config --cflags) $(STDINCDIR) -I/home/smithwya/eigen
 CPPFLAGS += -O3
 
 #linking flags
@@ -33,6 +33,5 @@ $(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.cpp
 	@echo "Compiled "$<" successfully"
 clean:
 	$(rm) $(OBJECTS)
-	$(rm) libGWA.so  GWADict.cxx GWADict_rdict.pcm
 	@echo "Cleanup complete"
 
