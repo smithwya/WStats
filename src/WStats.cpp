@@ -1,27 +1,31 @@
-// Lattice QCD.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
-#include<complex>
-#include<algorithm>
-#include<math.h>
-#include<chrono>
-#include<random>
-#include<fstream>
-#include<string>
-#include<Eigen/Dense>
-#include"wmath.h"
-
+#include <complex>
+#include <algorithm>
+#include <math.h>
+#include <chrono>
+#include <random>
+#include <fstream>
+#include <string>
+#include <Eigen/Dense>
+#include "WMath.h"
+#include "WFrame.h"
+#include "Coulomb_corr.h"
+#include "WFit.h"
 
 using namespace std;
-using namespace wmath;
+using namespace WMath;
+using namespace Eigen;
+using namespace WFit;
 
-
-int main(int argc, char ** argv)
+int main(int argc, char **argv)
 {
-	int nPoints = atoi(argv[1]);
-	/*string foldername = argv[2];
-	string betaxi = argv[3];*/
-	cout<<"Hello World"<<endl;
+	int R = atoi(argv[1]);
+	int T = atoi(argv[2]);
+	Coulomb_corr G251 = Coulomb_corr(R, T);
+	G251.load({"/home/smithwya/WStats/2.5-1_GRT.txt"});
+	G251.truncate(0, 2, 0, 2);
+	G251.trim();
+	Eigen::MatrixXd fulldat = G251.oneMat();
+	cout<<fulldat<<endl;
 	return 0;
 }
