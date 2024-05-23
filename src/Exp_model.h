@@ -7,22 +7,39 @@ using namespace std;
 
 class Exp_model : public WModel
 {
+public:
+    int exp_degree;
+    int pole_degree;
+
+    Exp_model() : WModel()
+    {
+        exp_degree = 0;
+        pole_degree = 0;
+    };
+
+    Exp_model(int e, int p, int n, Eigen::VectorXd s, string d) : WModel(n, s, d)
+    {
+        exp_degree = e;
+        pole_degree = p;
+        if (e + p + 1 != n)
+        {
+            cout << "Warning: invalid model" << endl;
+            exp_degree = 0;
+            pole_degree = 0;
+        }
+    };
 
     Eigen::VectorXd evaluate(const double *xx)
     {
-        int poly_degree = hyperparams[0];
-        int pole_degree = hyperparams[1];
-        int t_start = hyperparams[2];
-        int t_end = hyperparams[3];
-        int t_length = hyperparams[4];
-        int num_params = poly_degree + pole_degree;
-        Eigen::VectorXd result = Eigen::VectorXd::Zero(t_length);
+        int T_max = shape.size();
 
-        for (int T = t_start; T <= t_end; T++)
+        Eigen::VectorXd result = Eigen::VectorXd::Zero(T_max);
+
+        for (int T = 0; T < T_max; T++)
         {
 
             double exponent = 0;
-            for (int i = 0; i <= poly_degree; i++)
+            for (int i = 0; i <= exp_degree; i++)
             {
 
                 exponent += xx[i] * pow(T + 1, i);
@@ -32,38 +49,31 @@ class Exp_model : public WModel
 
             for (int j = 0; j < pole_degree; j++)
             {
-                pole_term += xx[poly_degree + j] * pow(T + 1, -j - 1);
+                pole_term += xx[exp_degree + j] * pow(T + 1, -j - 1);
             }
 
-            result(T) = (TMath::Exp(-exponent)) * pole_term;
+            result(T) = (TMath::Exp(-exponent)) * pole_term * shape(T);
         }
-
         return result;
     };
 
     friend ostream &operator<<(std::ostream &os, Exp_model const &m)
     {
-        int poly_degree = m.hyperparams[0];
-        int pole_degree = m.hyperparams[1];
-        int t_start = m.hyperparams[2];
-        int t_end = m.hyperparams[3];
-        int t_length = m.hyperparams[4];
-        int num_params = poly_degree + pole_degree;
 
-        os<<"(* Fitting from t_start = "<<t_start+1<<" to t_end = "<<t_end+1<<" *)"<<endl;
-        os<<"G[T_,xx_]:=Exp[0";
-        for (int i = 1; i <= poly_degree+1; i++)
+        os << "(* Fitting with shape " << m.shape.transpose() << " *)" << endl;
+        os << "G[T_,xx_]:=Exp[0";
+        for (int i = 1; i <= m.exp_degree + 1; i++)
         {
 
-            os<<"+xx[["<<i<<"]]*T^"<<i;
+            os << "+xx[[" << i << "]]*T^" << i;
         }
-        os<<"]*(1";
+        os << "]*(1";
 
-        for (int j = 1; j < pole_degree+1; j++)
+        for (int j = 1; j < m.pole_degree + 1; j++)
         {
-            os<<"+xx[["<<poly_degree + j+1<<"]]/(T^"<<j<<")";
+            os << "+xx[[" << m.exp_degree + j + 1 << "]]/(T^" << j << ")";
         }
-        os<<")";
+        os << ")";
         return os;
     }
 };

@@ -14,14 +14,18 @@
 #include "T_slice.h"
 #include "Exp_model.h"
 #include "Cornell_model.h"
+#include "WPseudo.h"
+#include <TF1.h>
 
 using namespace std;
 using namespace WMath;
 using namespace Eigen;
 using namespace WFit;
+using namespace WPseudo;
 
 int main(int argc, char **argv)
 {
+	
 	/*
 	STRATEGY:
 	Given N samples of a correlator G(R,T) at fixed beta, xi
@@ -35,6 +39,7 @@ int main(int argc, char **argv)
 
 	Need to separately calculate the wilson string tension in the same units to divide
 	*/
+/*
 	string fname = argv[1];
 	double beta = stod(argv[2]);
 	int xi = atoi(argv[3]);
@@ -56,30 +61,33 @@ int main(int argc, char **argv)
 		G_R[i].jackknife_self();
 	}
 
-	int T_max = 12;
 	//Generate the set of models to test
 	//vector<WModel*> models = {};
 	vector<Exp_model> models = {};
 
-	vector<double> py_degree_set = {1,2,3};
-	vector<double> pl_degree_set = {0,1};
-	vector<double> t_start_set = {0,1,2};
-	vector<double> t_end_set = {7,8,9};
+	vector<int> exp_degree_set = {1,2,3};
+	vector<int> pl_degree_set = {0,1};
+	vector<int> t_start_set = {0,1,2};
+	vector<int> t_end_set = {7,8,9};
+	Eigen::seq(1,10);
+	Exp_model(1,4,10,Eigen::VectorXd::Zero(1),"");
 
-	for(double py: py_degree_set){
-		for(double pl: pl_degree_set){
-			for(double t_s: t_start_set){
-				for(double t_e:t_end_set){
-					Exp_model exp = Exp_model();
-					exp.init({py,pl,t_s,t_e,(double)T_max},py+pl+1,"");
-					models.push_back(exp);
+	
+	for(int exp_d : exp_degree_set){
+		for(int pl_d : pl_degree_set){
+			for(int t_s : t_start_set){
+				for(int t_e : t_end_set){
+					VectorXd shape = gen_shape(T_max,t_s,t_e);
+					models.push_back(Exp_model(exp_d,pl_d,T_max,shape,""));
 				}
 			}
 		}
 	}
-	for(Exp_model e : models){
-	set_model(&e);
-	load_data(&test_dat);
+	int R=0;
+
+	set_model(&models[0]);
+	cout<<models[0]<<endl;
+	load_data(&(G_R[R]));
 	// initial guess for parameters
 	set_params({1, 1, 1, 1});
 	// initial step sizes
@@ -87,6 +95,13 @@ int main(int argc, char **argv)
 	// Max func calls, max iter, tolerance, printlevel
 	set_options({100000, 10000, .001, 1});
 	minimize();
-	}
+	*/
+	Exp_model e= Exp_model(1,0,2,Eigen::VectorXd::Ones(3),"");
+
+
+	double a[2] = {0,1};
+	VectorXd v = VectorXd(2);
+	v<<0,1;
+	cout<<e.evaluate(v.data())<<endl;
 	return 0;
 }

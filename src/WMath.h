@@ -15,4 +15,5 @@ namespace WMath
     Eigen::MatrixXd sample_covariance(const Eigen::MatrixXd &data);
 
     std::vector<Eigen::MatrixXd> jackknife_sample(const std::vector<Eigen::MatrixXd>);
+    Eigen::VectorXd gen_shape(int length, int start_index, int stop_index);
 }

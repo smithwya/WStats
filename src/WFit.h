@@ -13,6 +13,10 @@
 #include <Math/Factory.h>
 #include <Math/Functor.h>
 #include <Math/WrappedFunction.h>
+#include <TRandom1.h>
+#include <TRandom2.h>
+#include <TRandom3.h>
+#include <TRandomGen.h>
 
 namespace WFit
 {
@@ -22,7 +26,7 @@ namespace WFit
     int num_params = 0;
     ROOT::Math::Minimizer *minimizer = ROOT::Math::Factory::CreateMinimizer("Minuit2", "Simplex");
     WModel *model;
-    Eigen::MatrixXd *data_frame;
+    WFrame *data_frame;
 
     void set_params(std::vector<double> pars)
     {
@@ -50,7 +54,7 @@ namespace WFit
         model = m;
     }
 
-    void load_data(Eigen::MatrixXd *d){
+    void load_data(WFrame *d){
         data_frame = d;
     }
 
@@ -58,11 +62,16 @@ namespace WFit
     {
         double sum = 0;
         Eigen::VectorXd model_result = model->evaluate(xx);
-        for(int i = 0; i < data_frame->cols(); i++){
-            sum+=(data_frame->col(i)-model_result).squaredNorm();
+        Eigen::VectorXd model_shape = model->shape;
+
+        for(int i = 0; i < data_frame->data.cols(); i++){
+            Eigen::VectorXd residual = data_frame->data.col(i).array()*model_shape.array()-model_result.array();
+            sum+=residual.squaredNorm();
         }
         return sum;
     };
+
+
 
     void minimize()
     {
@@ -73,4 +82,5 @@ namespace WFit
 		}
         minimizer->Minimize();
     };
+
 }

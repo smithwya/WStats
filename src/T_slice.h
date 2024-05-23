@@ -8,7 +8,7 @@
 #include"WMath.h"
 #include"Coulomb_corr.h"
 
-class T_slice : WFrame{
+class T_slice : public WFrame{
     public:
     int R;
     int T_max;
