@@ -83,4 +83,25 @@ namespace WFit
         minimizer->Minimize();
     };
 
+
+    Eigen::VectorXd ak_criteria(vector<WModel*> ms){
+        int n_models = ms.size();
+        Eigen::VectorXd ak = Eigen::VectorXd::Zero(n_models);
+        int data_length = ms[0]->shape.size();
+
+        for(int i = 0; i < n_models; i++){
+            set_model(ms[i]);
+            int k = ms[i]->num_params;
+            // initial guess for parameters
+            set_params(vector<double>(k,1));
+            // initial step sizes
+            set_steps(vector<double>(k,0.5));
+
+            minimize();
+            int N_cut = data_length-ms[i]->shape.sum();
+            ak(i) = minimizer->MinValue()+2*k + 2*N_cut;
+        }
+        return ak;
+    };
+
 }

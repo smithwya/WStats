@@ -7,13 +7,14 @@
 #include"WFrame.h"
 #include"WMath.h"
 
-class V_R : WFrame{
+class V_R : public WFrame{
     public:
     int R_max;
-    Eigen::VectorXd data;
-    Eigen::VectorXd errors;
-    V_R(Eigen::VectorXd d, Eigen::VectorXd e, int r);
-    void jackknife_self();
-    friend ostream& operator<<(ostream& os, V_R const& m);
+    V_R() : WFrame(){};
+    V_R(Eigen::VectorXd dat){
+        data = dat;
+        n_samples = 1;
+        description="";
+    }
 
 };

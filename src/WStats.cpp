@@ -16,6 +16,7 @@
 #include "Cornell_model.h"
 #include "WPseudo.h"
 #include <TF1.h>
+#include"V_R.h"
 
 using namespace std;
 using namespace WMath;
@@ -39,7 +40,7 @@ int main(int argc, char **argv)
 
 	Need to separately calculate the wilson string tension in the same units to divide
 	*/
-/*
+	
 	string fname = argv[1];
 	double beta = stod(argv[2]);
 	int xi = atoi(argv[3]);
@@ -65,12 +66,10 @@ int main(int argc, char **argv)
 	//vector<WModel*> models = {};
 	vector<Exp_model> models = {};
 
-	vector<int> exp_degree_set = {1,2,3};
-	vector<int> pl_degree_set = {0,1};
+	vector<int> exp_degree_set = {2};
+	vector<int> pl_degree_set = {1};
 	vector<int> t_start_set = {0,1,2};
-	vector<int> t_end_set = {7,8,9};
-	Eigen::seq(1,10);
-	Exp_model(1,4,10,Eigen::VectorXd::Zero(1),"");
+	vector<int> t_end_set = {11};
 
 	
 	for(int exp_d : exp_degree_set){
@@ -78,30 +77,31 @@ int main(int argc, char **argv)
 			for(int t_s : t_start_set){
 				for(int t_e : t_end_set){
 					VectorXd shape = gen_shape(T_max,t_s,t_e);
-					models.push_back(Exp_model(exp_d,pl_d,T_max,shape,""));
+					Exp_model mod = Exp_model(exp_d,pl_d,exp_d+pl_d+1,shape,"");
+					models.push_back(mod);
 				}
 			}
 		}
 	}
-	int R=0;
+	int n_models = models.size();
+	MatrixXd Fs = MatrixXd::Zero(R_max,n_models);
 
-	set_model(&models[0]);
-	cout<<models[0]<<endl;
-	load_data(&(G_R[R]));
-	// initial guess for parameters
-	set_params({1, 1, 1, 1});
-	// initial step sizes
-	set_steps({0.5, 0.5, 0.5, 0.5});
-	// Max func calls, max iter, tolerance, printlevel
+	vector<WModel*> mod_ptrs = {};
+	for(int i = 0; i < n_models; i++){
+		mod_ptrs.push_back(&models[i]);
+	}
+
 	set_options({100000, 10000, .001, 1});
-	minimize();
-	*/
-	Exp_model e= Exp_model(1,0,2,Eigen::VectorXd::Ones(3),"");
+	VectorXd Vrs = VectorXd::Zero(R_max);
 
-
-	double a[2] = {0,1};
-	VectorXd v = VectorXd(2);
-	v<<0,1;
-	cout<<e.evaluate(v.data())<<endl;
+	for(int R = 0; R < R_max; R++){
+		load_data(&G_R[R]);
+		Fs.row(R)=ak_criteria(mod_ptrs);
+		Vrs[R]=(minimizer->X()[1]);
+	}
+	cout<<Fs<<endl;
+	for(Exp_model e: models){
+//		cout<<e<<endl;
+	}
 	return 0;
 }
