@@ -12,7 +12,6 @@ namespace WMath
     // Given a matrix of values, each col is a separate set of values, give a matrix with the jackknifed result in each column
     Eigen::MatrixXd jackknife_sample(const Eigen::MatrixXd &data);
     vector<Eigen::VectorXd> jackknife_average(const Eigen::MatrixXd &data);
-    Eigen::MatrixXd sample_covariance(const Eigen::MatrixXd &data);
 
     std::vector<Eigen::MatrixXd> jackknife_sample(const std::vector<Eigen::MatrixXd>);
     Eigen::VectorXd gen_shape(int length, int start_index, int stop_index);

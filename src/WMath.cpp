@@ -63,13 +63,7 @@ namespace WMath
         return {jack_average, jack_variance * (n_samples - 1) / n_samples};
     };
 
-    Eigen::MatrixXd sample_covariance(const Eigen::MatrixXd &data)
-    {
-        const int n_samples = data.cols();
-        Eigen::MatrixXd centered_dat = data.colwise() - data.rowwise().mean();
-        Eigen::MatrixXd cov = centered_dat * centered_dat.transpose() / (n_samples - 1);
-        return cov;
-    };
+
 
     Eigen::VectorXd gen_shape(int length, int start_index, int stop_index)
     {

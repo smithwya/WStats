@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 
 	Need to separately calculate the wilson string tension in the same units to divide
 	*/
-	
+
 	string fname = argv[1];
 	double beta = stod(argv[2]);
 	int xi = atoi(argv[3]);
@@ -59,7 +59,7 @@ int main(int argc, char **argv)
 	vector<T_slice> G_R = {};
 	for(int i = 0; i < R_max; i++){
 		G_R.push_back(T_slice(G,i,T_max));
-		G_R[i].jackknife_self();
+		//G_R[i].jackknife_self();
 	}
 
 	//Generate the set of models to test
@@ -67,8 +67,8 @@ int main(int argc, char **argv)
 	vector<Exp_model> models = {};
 
 	vector<int> exp_degree_set = {2};
-	vector<int> pl_degree_set = {1};
-	vector<int> t_start_set = {0,1,2};
+	vector<int> pl_degree_set = {0,1};
+	vector<int> t_start_set = {0};
 	vector<int> t_end_set = {11};
 
 	
@@ -91,17 +91,18 @@ int main(int argc, char **argv)
 		mod_ptrs.push_back(&models[i]);
 	}
 
-	set_options({100000, 10000, .001, 1});
+	set_options({100000, 10000, .001, });
 	VectorXd Vrs = VectorXd::Zero(R_max);
 
 	for(int R = 0; R < R_max; R++){
 		load_data(&G_R[R]);
-		Fs.row(R)=ak_criteria(mod_ptrs);
+		Fs.row(R)=chisq_per_dof(mod_ptrs);
 		Vrs[R]=(minimizer->X()[1]);
 	}
+	cout<<"Chisq/ndof for DIAGONAL cov matrix"<<endl;
 	cout<<Fs<<endl;
 	for(Exp_model e: models){
-//		cout<<e<<endl;
+		cout<<e<<endl;
 	}
 	return 0;
 }
