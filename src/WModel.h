@@ -31,6 +31,8 @@ public:
         shape = Eigen::VectorXd::Zero(1);
     };
 
+
+
     friend ostream &operator<<(std::ostream &os, WModel const &m)
     {
         os << m.description << endl;

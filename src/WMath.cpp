@@ -34,6 +34,7 @@ namespace WMath
     {
         const int n_vals = data.rows();
         const int n_samples = data.cols();
+        
         Eigen::MatrixXd jack_samples = Eigen::MatrixXd::Zero(n_vals, n_samples);
         Eigen::VectorXd avg = data.rowwise().mean();
 

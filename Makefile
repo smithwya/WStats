@@ -1,10 +1,11 @@
+
 TARGET = WStats
 # compilers
 CXX = $(shell root-config --cxx)
 LD = $(shell root-config --ld)
 
 #compiling flags
-CPPFLAGS := $(shell root-config --cflags) $(STDINCDIR) -I/home/smithwya/eigen
+CPPFLAGS := $(shell root-config --cflags) $(STDINCDIR) -I/home/wyatt/eigen
 CPPFLAGS += -O3
 
 #linking flags
