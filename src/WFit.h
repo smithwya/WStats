@@ -28,6 +28,7 @@ namespace WFit
     WModel *_model;
     WFrame *_data_frame;
     Eigen::MatrixXd _cov_inv;
+    Eigen::MatrixXd _trunc_data;
 
     void set_params(std::vector<double> pars)
     {
@@ -36,7 +37,8 @@ namespace WFit
         return;
     };
 
-    void set_steps(std::vector<double> s){
+    void set_steps(std::vector<double> s)
+    {
         _steps = s;
         return;
     }
@@ -51,10 +53,34 @@ namespace WFit
         return;
     };
 
-    void set_model(WModel *m){
-        _model = m;
+    void truncate_data(Eigen::VectorXd shape)
+    {
+
+        int length = shape.sum();
+        _trunc_data = Eigen::MatrixXd(length, _data_frame->n_samples);
+        int index = 0;
+
+        for (int i = 0; i < shape.size(); i++)
+        {
+
+            if (shape(i) == 1)
+            {
+                _trunc_data.row(index) = _data_frame->data.row(i);
+                index++;
+            }
+        }
     }
 
+    void set_model(WModel *m)
+    {
+        _model = m;
+        truncate_data(m->data_shape);
+    }
+
+    void load_data(WFrame *d)
+    {
+        _data_frame = d;
+    }
 
     Eigen::MatrixXd sample_covariance(const Eigen::MatrixXd &data)
     {
@@ -65,89 +91,98 @@ namespace WFit
         return cov;
     };
 
-    void load_data(WFrame *d){
-        _data_frame = d;
-        
-        /*
-        Eigen::MatrixXd cv = d->cov();
-        Eigen::VectorXd diag = cv.diagonal();
-        Eigen::MatrixXd diag_cov_inv = cv*0;
-        for(int i = 0; i < diag.rows(); i++){
-            diag_cov_inv(i,i) = 1/diag(i);
-        }
-        _cov_inv = diag_cov_inv;
-        */
-        _cov_inv = d->cov().inverse();
-    }
-
     double minfunc(const double *xx)
     {
         double sum = 0;
         Eigen::VectorXd model_result = _model->evaluate(xx);
-        Eigen::VectorXd model_shape = _model->shape;
         int n_samp = _data_frame->n_samples;
 
-        for(int i = 0; i < _data_frame->n_samples; i++){
-            Eigen::VectorXd residual = _data_frame->data.col(i).array()*model_shape.array()-model_result.array();
-            sum+=residual.transpose()*_cov_inv*residual;
+        for (int i = 0; i < n_samp; i++)
+        {
+            Eigen::VectorXd residual = _trunc_data.col(i).array() - model_result.array();
+            sum += residual.transpose() * _cov_inv * residual;
         }
 
-        return sum/((double)n_samp);
+        return sum;
     };
-
-
-
 
     void minimize()
     {
         ROOT::Math::Functor f(&minfunc, _num_params);
         minimizer->SetFunction(f);
-        for(int i = 0; i < _num_params; i++){
-			minimizer->SetVariable(i,to_string(i),_params[i],_steps[i]);
-		}
+        _cov_inv = sample_covariance(_trunc_data).inverse();
+
+        for (int i = 0; i < _num_params; i++)
+        {
+            minimizer->SetVariable(i, to_string(i), _params[i], _steps[i]);
+        }
         minimizer->Minimize();
     };
 
 
-    Eigen::VectorXd ak_criteria(vector<WModel*> ms){
+    Eigen::VectorXd ak_criteria(vector<WModel *> ms)
+    {
         int n_models = ms.size();
         Eigen::VectorXd ak = Eigen::VectorXd::Zero(n_models);
-        int data_length = ms[0]->shape.size();
+        int data_length = ms[0]->data_shape.size();
 
-        for(int i = 0; i < n_models; i++){
+        for (int i = 0; i < n_models; i++)
+        {
             set_model(ms[i]);
             int k = ms[i]->num_params;
             // initial guess for parameters
-            set_params(vector<double>(k,1));
+            set_params(vector<double>(k, 1));
             // initial step sizes
-            set_steps(vector<double>(k,0.5));
+            set_steps(vector<double>(k, 0.5));
 
             minimize();
-            int N_cut = data_length-ms[i]->shape.sum();
-            ak(i) = minimizer->MinValue()+2*k + 2*N_cut;
+            int N_cut = data_length - ms[i]->data_shape.sum();
+            ak(i) = minimizer->MinValue() + 2 * k + 2 * N_cut;
         }
         return ak;
     };
 
-    Eigen::VectorXd chisq_per_dof(vector<WModel*> ms){
+    Eigen::VectorXd chisq_per_dof(vector<WModel *> ms)
+    {
         int n_models = ms.size();
         Eigen::VectorXd chisq = Eigen::VectorXd::Zero(n_models);
-        int data_length = ms[0]->shape.sum();
-
-        for(int i = 0; i < n_models; i++){
+        
+        for (int i = 0; i < n_models; i++)
+        {
+            int data_length = ms[i]->data_shape.sum();
             set_model(ms[i]);
             int k = ms[i]->num_params;
             // initial guess for parameters
-            set_params(vector<double>(k,1));
+            set_params(vector<double>(k, 1));
             // initial step sizes
-            set_steps(vector<double>(k,0.5));
+            set_steps(vector<double>(k, 0.5));
             minimize();
-            
-            double ndof = (data_length-k);
 
-            chisq(i) = minimizer->MinValue()/ndof;
+            double ndof = (data_length - k) * (_data_frame->n_samples - 1);
+            cout<<ndof<<endl;
+            chisq(i) = minimizer->MinValue() / ndof;
         }
         return chisq;
     };
 
+    /*
+    Eigen::MatrixXd sample_covariance(const Eigen::MatrixXd &data)
+    {
+        const int n_samples = data.cols();
+        Eigen::MatrixXd centered_dat = data.colwise() - data.rowwise().mean();
+        Eigen::MatrixXd cov = centered_dat * centered_dat.transpose() / (n_samples - 1);
+
+        return cov;
+    };
+    */
+
+    /*
+    Eigen::MatrixXd cv = d->cov();
+    Eigen::VectorXd diag = cv.diagonal();
+    Eigen::MatrixXd diag_cov_inv = cv*0;
+    for(int i = 0; i < diag.rows(); i++){
+        diag_cov_inv(i,i) = 1/diag(i);
+    }
+    _cov_inv = diag_cov_inv;
+    */
 }

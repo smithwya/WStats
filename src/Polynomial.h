@@ -11,25 +11,16 @@ class Polynomial: public WModel
 
     Polynomial() : WModel(){};
 
-    Polynomial(int n, Eigen::VectorXd s, string d) : WModel(n, s, d){};
+    Polynomial(int n,Eigen::VectorXd ind, Eigen::VectorXd s, string d) : WModel(n, ind, s, d){};
 
-    Eigen::VectorXd evaluate(const double *xx)
+    double evaluate_pt(const double *pars, double x)
     {
-        int R_max = shape.size();
-        Eigen::VectorXd result = Eigen::VectorXd::Zero(R_max);
+        double result = 0;
 
-        for (int R = 0; R < R_max; R++)
-        {
-            double temp = 0;
+        for(int i = 0; i < num_params; i++){
+            result+=pars[i]*pow(x,i);
 
-            for(int i = 0; i < num_params; i++){
-                temp+=xx[i]*pow(R+1,i);
-
-            }
-
-            result(R) = temp*shape(R);
         }
-
         return result;
     };
 };

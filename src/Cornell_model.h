@@ -10,17 +10,9 @@ class Cornell_model: public WModel
     public:
 
 
-    Eigen::VectorXd evaluate(const double *xx)
+    double evaluate_pt(const double *pars, double x)
     {
-        int R_max = shape.size();
-
-        Eigen::VectorXd result = Eigen::VectorXd::Zero(R_max);
-
-        for (int R = 0; R < R_max; R++)
-        {
-            result(R) = (xx[0]+xx[1]/(R+1)+xx[2]*(R+1))*shape(R);
-        }
-
-        return result;
+       
+        return (pars[0]+pars[1]/(x)+pars[2]*x);
     };
 };

@@ -14,13 +14,36 @@ class WFrame {
         int n_samples;
         Eigen::MatrixXd data; 
         string description;
+        Eigen::VectorXd indep_vars;
+
         WFrame(){n_samples = 0;
         data = Eigen::MatrixXd::Zero(1,1);
+        indep_vars = Eigen::MatrixXd::Zero(1,1);
         description = "";};
+
         WFrame(Eigen::MatrixXd d){
             data = d;
             n_samples = d.cols();
+            indep_vars = Eigen::VectorXd::Ones(d.cols());
+            for(int i = 0; i < d.cols(); i++){
+                indep_vars(i) = i+1;
+            }
         }
+
+        WFrame(Eigen::MatrixXd d, Eigen::VectorXd v){
+            n_samples = d.cols();
+            data = d;
+            indep_vars = v;
+            description = "";
+        }
+
+        WFrame(Eigen::MatrixXd d, Eigen::VectorXd v, std::string s){
+            n_samples = d.cols();
+            data = d;
+            indep_vars = v;
+            description =s;
+        }
+
         virtual void load(vector<string> fnames){};
         virtual void trim(){};
 

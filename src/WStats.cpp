@@ -71,13 +71,18 @@ int main(int argc, char **argv)
 	vector<int> t_start_set = {0};
 	vector<int> t_end_set = {11};
 
-	
+	VectorXd ind_vars = VectorXd::Zero(T_max);
+	for(int i = 0; i < T_max; i++){
+		ind_vars(i)=i+1;
+	}
+
 	for(int exp_d : exp_degree_set){
 		for(int pl_d : pl_degree_set){
 			for(int t_s : t_start_set){
 				for(int t_e : t_end_set){
 					VectorXd shape = gen_shape(T_max,t_s,t_e);
-					Exp_model mod = Exp_model(exp_d,pl_d,exp_d+pl_d+1,shape,"");
+
+					Exp_model mod = Exp_model(exp_d, pl_d, exp_d+pl_d+1 ,ind_vars,shape, "");
 					models.push_back(mod);
 				}
 			}
@@ -107,23 +112,35 @@ int main(int argc, char **argv)
 	}
 	
 	/*
-	int N_vars= 15;
+	int N_vars= 10;
 	int N_samples=100;
 	int N_params = 3;
 
 	double params[3] = {2,3,1.5};
-	VectorXd sh = VectorXd::Ones(N_vars);
-	Polynomial poly = Polynomial(N_params,sh,"");
+	Eigen::VectorXd ind_vars=Eigen::VectorXd(N_vars);
+	ind_vars<<1,2,3,4,5,6,7,8,9,10;
+	VectorXd sh = VectorXd::Ones(ind_vars.size());
+	cout<<sh<<endl;
 
+	Polynomial poly_base = Polynomial(N_params,ind_vars,Eigen::VectorXd::Ones(N_vars),"");
 
-	Eigen::MatrixXd fakedat = gen_N_gauss_sample(N_samples,poly.evaluate(params),VectorXd::Ones(N_vars)*0.001);
-	cout<<fakedat<<endl;
+	Polynomial poly = Polynomial(N_params,ind_vars,sh,"");
+
+	Eigen::MatrixXd fakedat = gen_N_gauss_sample(N_samples,poly_base.evaluate(params),VectorXd::Ones(N_vars)*0.001);
 	WFrame test_frame(fakedat);
 
 	load_data(&test_frame);
 	set_model(&poly);
 	set_options({100000, 10000, .001, 1});
+
 	cout<<chisq_per_dof({&poly})<<endl;
+	*/
+
+
+	/*
+	set_params({1,1,1});
+	set_steps({0.1,0.1,0.1});
+	minimize();
 	*/
 	return 0;
 }
