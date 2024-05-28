@@ -146,7 +146,7 @@ namespace WFit
     {
         int n_models = ms.size();
         Eigen::VectorXd chisq = Eigen::VectorXd::Zero(n_models);
-        
+        int num_samples = _data_frame->n_samples;
         for (int i = 0; i < n_models; i++)
         {
             int data_length = ms[i]->data_shape.sum();
@@ -158,8 +158,7 @@ namespace WFit
             set_steps(vector<double>(k, 0.5));
             minimize();
 
-            double ndof = (data_length - k) * (_data_frame->n_samples - 1);
-            cout<<ndof<<endl;
+            double ndof = (data_length - k) * (num_samples - 1);
             chisq(i) = minimizer->MinValue() / ndof;
         }
         return chisq;

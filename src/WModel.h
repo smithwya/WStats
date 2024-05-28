@@ -20,12 +20,12 @@ public:
         Eigen::VectorXd result = Eigen::VectorXd::Zero(used_indices.size());
 
         for(int i = 0; i < used_indices.size(); i++){
-            result(i) = evaluate_pt(xx, ind_vars(used_indices[i]));
+            result(i) = evaluate_pt(&ind_vars(used_indices[i]), xx);
         }
         return result;
     };
 
-    virtual double evaluate_pt(const double *pars, double x){
+    virtual double evaluate_pt(double *x,const double *pars){
         return 0;
     }
 

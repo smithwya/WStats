@@ -31,7 +31,7 @@ public:
 
 
 
-    double evaluate_pt(const double *pars, double x)
+    double evaluate_pt( double *x, const double *pars)
     {
         double result = 0;
         double exponent = 0;
@@ -39,14 +39,14 @@ public:
         for (int i = 0; i <= exp_degree; i++)
         {
 
-            exponent += pars[i] * pow(x, i);
+            exponent += pars[i] * pow(x[0], i);
         }
 
         double pole_term = 1;
 
         for (int j = 1; j <= pole_degree; j++)
         {
-            pole_term += pars[exp_degree + j] * pow(x, -j);
+            pole_term += pars[exp_degree + j] * pow(x[0], -j);
         }
 
         return (TMath::Exp(-exponent)) * pole_term;
