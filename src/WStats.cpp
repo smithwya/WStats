@@ -143,9 +143,20 @@ int main(int argc, char **argv)
 	cout<<"Errors: "<<endl<<Vr_errs<<endl<<endl;
 	cout<<"Statuses: "<<endl<<statuses<<endl;
 
+	Eigen::VectorXd model_avg_Vr = Eigen::VectorXd::Zero(R_max);
+	Eigen::VectorXd model_avg_err=Eigen::VectorXd::Zero(R_max);
 
-
-
+	for(int i = 0; i < R_max; i++){
+		model_avg_Vr(i) = (Ak_prob.row(i).array()*Vr_val.row(i).array()).sum();
+		double err = (Vr_errs.row(i).cwiseAbs2().array()*Ak_prob.row(i).array()).sum();
+		err+= (Vr_val.row(i).cwiseAbs2().array()*Ak_prob.row(i).array()).sum();
+		err-=pow(model_avg_Vr(i),2);
+		model_avg_err(i) = sqrt(err);
+	}
+	Eigen::MatrixXd mdvr = Eigen::MatrixXd::Zero(R_max,2);
+	mdvr.col(0) = model_avg_Vr;
+	mdvr.col(1) = model_avg_err;
+	cout<<"Mode averaged potential and errors: "<<endl<<mdvr<<endl;
 	
 	/*
 	int N_vars= 10;
