@@ -96,20 +96,56 @@ int main(int argc, char **argv)
 		mod_ptrs.push_back(&models[i]);
 	}
 
-	set_options({100000, 10000, .001, 1});
+	set_options({1000, 1000, .01, 0});
 	VectorXd Vrs = VectorXd::Zero(R_max);
+	MatrixXd Ak_prob = MatrixXd::Zero(R_max,n_models);
+	MatrixXd Vr_val = MatrixXd::Zero(R_max,n_models);
+	MatrixXd Vr_errs = MatrixXd::Zero(R_max,n_models);
+	MatrixXd statuses = MatrixXd::Zero(R_max,n_models);
 
 	for(int R = 0; R < R_max; R++){
 		load_data(&G_R[R]);
-		Fs.row(R)=chisq_per_dof(mod_ptrs);
-		Vrs[R]=(minimizer->X()[1]);
+		VectorXd ak = VectorXd::Zero(n_models);
+		VectorXd vv = VectorXd::Zero(n_models);
+		VectorXd vv_err = VectorXd::Zero(n_models);
+		VectorXd stats = VectorXd::Zero(n_models);
+		for (int i = 0; i < n_models; i++)
+        {
+			WModel* ms = mod_ptrs[i];
+            set_model(ms);
+            int k = ms->num_params;
+            // initial guess for parameters
+            set_params(vector<double>(k, 1));
+            // initial step sizes
+            set_steps(vector<double>(k, 0.5));
+
+            minimize();
+            int N_cut = ms->data_shape.size() - ms->data_shape.sum();
+            ak(i) = minimizer->MinValue() + 2 * k + 2 * N_cut;
+			vv(i) = minimizer->X()[1];
+			vv_err(i) = minimizer->Errors()[1];
+			stats(i) = minimizer->Status();
+        }
+        ak = -0.5*(ak.array()-ak.minCoeff());
+        ak = ak.unaryExpr(&TMath::Exp);
+		Ak_prob.row(R) = ak/ak.sum();
+		Vr_val.row(R) = vv;
+		Vr_errs.row(R) = vv_err;
+		statuses.row(R) = stats;
 
 	}
-	cout<<"Chisq/ndof for full cov matrix"<<endl;
-	cout<<Fs<<endl;
+	cout<<"Models:"<<endl;
 	for(Exp_model e: models){
 		cout<<e<<endl;
 	}
+	cout<<"Probabilities: "<<endl<<Ak_prob<<endl<<endl;
+	cout<<"Values: "<<endl<<Vr_val<<endl<<endl;
+	cout<<"Errors: "<<endl<<Vr_errs<<endl<<endl;
+	cout<<"Statuses: "<<endl<<statuses<<endl;
+
+
+
+
 	
 	/*
 	int N_vars= 10;

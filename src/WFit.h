@@ -124,7 +124,6 @@ namespace WFit
     {
         int n_models = ms.size();
         Eigen::VectorXd ak = Eigen::VectorXd::Zero(n_models);
-        int data_length = ms[0]->data_shape.size();
 
         for (int i = 0; i < n_models; i++)
         {
@@ -136,10 +135,12 @@ namespace WFit
             set_steps(vector<double>(k, 0.5));
 
             minimize();
-            int N_cut = data_length - ms[i]->data_shape.sum();
+            int N_cut = ms[i]->data_shape.size() - ms[i]->data_shape.sum();
             ak(i) = minimizer->MinValue() + 2 * k + 2 * N_cut;
         }
-        return ak;
+        ak = -0.5*(ak.array()-ak.minCoeff());
+        ak = ak.unaryExpr(&TMath::Exp);
+        return ak/ak.sum();
     };
 
     Eigen::VectorXd chisq_per_dof(vector<WModel *> ms)
