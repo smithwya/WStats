@@ -49,6 +49,8 @@ int main(int argc, char **argv)
 	int T = atoi(argv[5]);
 	int R_max = atoi(argv[6]);
 	int T_max = atoi(argv[7]);
+	string save_file = argv[8];
+
 
 	//Read in the data
 	Coulomb_corr G = Coulomb_corr(R_max,T_max);
@@ -102,6 +104,7 @@ int main(int argc, char **argv)
 	MatrixXd Vr_val = MatrixXd::Zero(R_max,n_models);
 	MatrixXd Vr_errs = MatrixXd::Zero(R_max,n_models);
 	MatrixXd statuses = MatrixXd::Zero(R_max,n_models);
+	MatrixXd chisq_p_dof = MatrixXd::Zero(R_max,n_models);
 
 	for(int R = 0; R < R_max; R++){
 		load_data(&G_R[R]);
@@ -109,6 +112,7 @@ int main(int argc, char **argv)
 		VectorXd vv = VectorXd::Zero(n_models);
 		VectorXd vv_err = VectorXd::Zero(n_models);
 		VectorXd stats = VectorXd::Zero(n_models);
+		VectorXd chisq = VectorXd::Zero(n_models);
 		for (int i = 0; i < n_models; i++)
         {
 			WModel* ms = mod_ptrs[i];
@@ -125,6 +129,7 @@ int main(int argc, char **argv)
 			vv(i) = minimizer->X()[1];
 			vv_err(i) = minimizer->Errors()[1];
 			stats(i) = minimizer->Status();
+			chisq(i) = minimizer->MinValue()/((ms->data_shape.sum() - k) * (_data_frame->n_samples - 1));
         }
         ak = -0.5*(ak.array()-ak.minCoeff());
         ak = ak.unaryExpr(&TMath::Exp);
@@ -132,6 +137,7 @@ int main(int argc, char **argv)
 		Vr_val.row(R) = vv;
 		Vr_errs.row(R) = vv_err;
 		statuses.row(R) = stats;
+		chisq_p_dof.row(R) = chisq;
 
 	}
 	cout<<"Models:"<<endl;
@@ -142,6 +148,7 @@ int main(int argc, char **argv)
 	cout<<"Values: "<<endl<<Vr_val<<endl<<endl;
 	cout<<"Errors: "<<endl<<Vr_errs<<endl<<endl;
 	cout<<"Statuses: "<<endl<<statuses<<endl;
+	cout<<"chisq per dof: "<<endl<<chisq_p_dof<<endl;
 
 	Eigen::VectorXd model_avg_Vr = Eigen::VectorXd::Zero(R_max);
 	Eigen::VectorXd model_avg_err=Eigen::VectorXd::Zero(R_max);
@@ -157,6 +164,10 @@ int main(int argc, char **argv)
 	mdvr.col(0) = model_avg_Vr;
 	mdvr.col(1) = model_avg_err;
 	cout<<"Mode averaged potential and errors: "<<endl<<mdvr<<endl;
+
+	std::ofstream outfile(save_file);
+	outfile<<mdvr<<endl;
+	outfile.close();
 	
 	/*
 	int N_vars= 10;
