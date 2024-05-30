@@ -53,10 +53,10 @@ int main(int argc, char **argv)
 	//Generate the set of models to test
 	vector<Exp_model> models = {};
 
-	vector<int> exp_degree_set = {1};
-	vector<int> pl_degree_set = {0,1};
-	vector<int> t_start_set = {0};
-	vector<int> t_end_set = {11};
+	vector<int> exp_degree_set = {1,2};
+	vector<int> pl_degree_set = {0,1,2};
+	vector<int> t_start_set = {0,1,2};
+	vector<int> t_end_set = {9,10,11};
 
 	VectorXd ind_vars = VectorXd::Zero(T_max);
 	for(int i = 0; i < T_max; i++){
@@ -163,7 +163,7 @@ int main(int argc, char **argv)
 
 	vector<Cornell_model> Vr_models = {};
 
-	vector<int> r_start_set = {0,1,2};
+	vector<int> r_start_set = {0,1,2,3};
 	vector<int> r_end_set = {7,8,9,10,11};
 	VectorXd ind_vars_r = VectorXd::Zero(R_max);
 	for(int i = 0; i < R_max; i++){
