@@ -27,21 +27,6 @@ using namespace WPseudo;
 
 int main(int argc, char **argv)
 {
-	
-	/*
-	STRATEGY:
-	Given N samples of a correlator G(R,T) at fixed beta, xi
-	create N jackknife samples G_n(R,T)
-	Slice the data in R, so that we are fitting on G_n(T)|fixed R (Coulomb_T_slice)
-	Fit the collection of jackknkife samples, use akaike information criteria to select the best model
-	Use the best model to individually fit each jackknife sample, extract the part which is linear in T in the exponent and set it = V_n(R)
-	Use best model fit parameters to set initial guess, step size
-	Fit each jackknife sample to Cornell, weighting by the estimated error in V_n(R) from MINUIT
-	Use Jackknife stat stuff to estimate the string tension
-
-	Need to separately calculate the wilson string tension in the same units to divide
-	*/
-	
 	string fname = argv[1];
 	double beta = stod(argv[2]);
 	int xi = atoi(argv[3]);
@@ -68,10 +53,10 @@ int main(int argc, char **argv)
 	//Generate the set of models to test
 	vector<Exp_model> models = {};
 
-	vector<int> exp_degree_set = {1,2};
-	vector<int> pl_degree_set = {0,1,2};
-	vector<int> t_start_set = {0,1,2};
-	vector<int> t_end_set = {9,10,11};
+	vector<int> exp_degree_set = {1};
+	vector<int> pl_degree_set = {0,1};
+	vector<int> t_start_set = {0};
+	vector<int> t_end_set = {11};
 
 	VectorXd ind_vars = VectorXd::Zero(T_max);
 	for(int i = 0; i < T_max; i++){
@@ -91,15 +76,13 @@ int main(int argc, char **argv)
 		}
 	}
 	int n_models = models.size();
-	MatrixXd Fs = MatrixXd::Zero(R_max,n_models);
-
 	vector<WModel*> mod_ptrs = {};
 	for(int i = 0; i < n_models; i++){
 		mod_ptrs.push_back(&models[i]);
 	}
 	std::ofstream log(log_file);
 	
-set_options({100000, 10000, .01, 1});
+	set_options({100000, 10000, .01, 1});
 	VectorXd Vrs = VectorXd::Zero(R_max);
 	MatrixXd Ak_prob = MatrixXd::Zero(R_max,n_models);
 	MatrixXd Vr_val = MatrixXd::Zero(R_max,n_models);
@@ -178,23 +161,52 @@ set_options({100000, 10000, .01, 1});
 	outfile<<mdvr<<endl;
 	outfile.close();
 	log.close();
-	
 	/*
-	int N_vars= 10;
-	int N_samples=100;
+	vector<Cornell_model> Vr_models = {};
+
+	vector<int> r_start_set = {0,1,2};
+	vector<int> r_end_set = {7,8,9,10,11};
+	VectorXd ind_vars_r = VectorXd::Zero(R_max);
+	for(int i = 0; i < R_max; i++){
+		ind_vars_r(i)=i+1;
+	}
+
+	for(int r_s : r_start_set){
+		for(int r_e : r_end_set){
+			VectorXd shape = gen_shape(R_max,r_s,r_e);
+
+			Cornell_model mod = Cornell_model(ind_vars_r,shape,"");
+			Vr_models.push_back(mod);
+		}
+	}
+	int n_models_r = models.size();
+	vector<WModel*> mod_ptrs_vr = {};
+	for(int i = 0; i < n_models_r; i++){
+		mod_ptrs.push_back(&Vr_models[i]);
+	}
+	WFrame vr_frame = WFrame(model_avg_Vr);
+	set_options({100000, 10000, .01, 1});
+	load_data(&vr_frame);
+    set_params(vector<double>(3, 1));
+    set_steps(vector<double>(3, 0.5));
+	*/
+	/*
+	int N_vars= 15;
+	int N_samples=1000;
 	int N_params = 3;
 
-	double params[3] = {2,3,1.5};
+	double params[3] = {2,4,0.3};
 	Eigen::VectorXd ind_vars=Eigen::VectorXd(N_vars);
-	ind_vars<<1,2,3,4,5,6,7,8,9,10;
+	ind_vars<<1,2,3,4,5,6,7,8,9,10,11,12,13,14,15;
 	VectorXd sh = VectorXd::Ones(ind_vars.size());
+	sh(1) = 0;
 	cout<<sh<<endl;
 
 	Polynomial poly_base = Polynomial(N_params,ind_vars,Eigen::VectorXd::Ones(N_vars),"");
 
 	Polynomial poly = Polynomial(N_params,ind_vars,sh,"");
 
-	Eigen::MatrixXd fakedat = gen_N_gauss_sample(N_samples,poly_base.evaluate(params),VectorXd::Ones(N_vars)*0.001);
+	Eigen::MatrixXd fakedat = gen_N_gauss_sample(N_samples,poly_base.evaluate(params),VectorXd::Ones(N_vars)*0.1);
 	WFrame test_frame(fakedat);
 
 	load_data(&test_frame);
@@ -202,13 +214,14 @@ set_options({100000, 10000, .01, 1});
 	set_options({100000, 10000, .001, 1});
 
 	cout<<chisq_per_dof({&poly})<<endl;
+	
 	*/
-
 
 	/*
 	set_params({1,1,1});
 	set_steps({0.1,0.1,0.1});
 	minimize();
 	*/
+	
 	return 0;
 }

@@ -110,7 +110,8 @@ namespace WFit
     {
         ROOT::Math::Functor f(&minfunc, _num_params);
         minimizer->SetFunction(f);
-        _cov_inv = sample_covariance(_trunc_data).inverse();
+        
+        _cov_inv = _data_frame->get_cov_trunc(_model->data_shape).inverse();
 
         for (int i = 0; i < _num_params; i++)
         {

@@ -24,7 +24,7 @@ class T_slice : public WFrame{
         for(int i = 0; i < n_samples; i++){
             data.col(i) = c->data_list[i].row(r);
         }
-
+        cov_matrix = WFrame::cov(data);
     }
 
 };
