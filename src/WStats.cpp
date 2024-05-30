@@ -132,7 +132,7 @@ int main(int argc, char **argv)
 	}
 
 
-	log<<"Models:"<<endl;
+	log<<"T Models:"<<endl;
 	for(Exp_model e: models){
 		log<<e<<endl;
 	}
@@ -159,9 +159,8 @@ int main(int argc, char **argv)
 
 	std::ofstream outfile(save_file);
 	outfile<<mdvr<<endl;
-	outfile.close();
-	log.close();
-	/*
+
+
 	vector<Cornell_model> Vr_models = {};
 
 	vector<int> r_start_set = {0,1,2};
@@ -179,17 +178,73 @@ int main(int argc, char **argv)
 			Vr_models.push_back(mod);
 		}
 	}
+	log<<"R Models:"<<endl;
+	for(Cornell_model c: Vr_models){
+		log<<c<<endl;
+	}
+
+
 	int n_models_r = models.size();
 	vector<WModel*> mod_ptrs_vr = {};
 	for(int i = 0; i < n_models_r; i++){
 		mod_ptrs.push_back(&Vr_models[i]);
 	}
 	WFrame vr_frame = WFrame(model_avg_Vr);
+	
+	MatrixXd vr_cov = MatrixXd::Zero(R_max,R_max);
+	for(int i = 0; i < R_max; i++){
+		vr_cov(i,i)=pow(model_avg_err(i),2);
+	}
+	vr_frame.set_cov(vr_cov);
 	set_options({100000, 10000, .01, 1});
 	load_data(&vr_frame);
-    set_params(vector<double>(3, 1));
+    set_params(vector<double>(3,1));
     set_steps(vector<double>(3, 0.5));
-	*/
+
+	VectorXd ak_r = VectorXd::Zero(n_models_r);
+	VectorXd sigma = VectorXd::Zero(n_models_r);
+	VectorXd sigma_err = VectorXd::Zero(n_models_r);
+	VectorXd stats_r = VectorXd::Zero(n_models_r);
+	VectorXd chisq_r = VectorXd::Zero(n_models_r);
+	for (int i = 0; i < n_models_r; i++)
+    {
+		WModel* ms = mod_ptrs[i];
+        set_model(ms);
+        int k = 3;
+        minimize();
+        int N_cut = ms->data_shape.size() - ms->data_shape.sum();
+
+        ak_r(i) = minimizer->MinValue() + 2 * k + 2 * N_cut;
+		sigma(i) = minimizer->X()[2];
+		sigma_err(i) = minimizer->Errors()[2];
+		stats_r(i) = minimizer->Status();
+		if(stats_r(i)!=0) ak_r(i) = ak_r(i)*1000000;
+		chisq_r(i) = minimizer->MinValue()/(ms->data_shape.sum() - k);
+
+		for(int j = 0; j<k; j++) log <<minimizer->X()[i]<<" ";
+		log<<endl;
+    }
+
+	ak_r = -0.5*(ak_r.array()-ak_r.minCoeff());
+    ak_r = ak_r.unaryExpr(&TMath::Exp);
+	for(int j = 0; j < ak_r.size(); j++) if (ak_r(j)<0.01) ak_r(j) = 0;
+	ak_r=ak_r/ak_r.sum();
+
+	double model_avg_sigma= (ak_r.array()*sigma.array()).sum();
+	double model_avg_sigma_err = (sigma_err.cwiseAbs2().array()*ak_r.array()).sum();
+
+	model_avg_sigma_err+= (sigma.cwiseAbs2().array()*ak_r.array()).sum();
+	model_avg_sigma_err-=pow(model_avg_sigma,2);
+	model_avg_sigma_err = pow(model_avg_sigma_err,0.5);
+
+	log<<"Probabilities: "<<endl<<ak_r.transpose()<<endl<<endl;
+	log<<"String tensions: "<<endl<<sigma.transpose()<<endl<<endl;
+	log<<"Errors: "<<endl<<sigma_err.transpose()<<endl<<endl;
+	log<<"Statuses: "<<endl<<stats_r.transpose()<<endl;
+	log<<"chisq per dof: "<<endl<<chisq_r.transpose()<<endl;
+	log<<"Model string tension and errors: "<<endl<<"sigma = "<<model_avg_sigma<<" +/- "<<model_avg_sigma_err<<endl;
+	outfile.close();
+	log.close();
 	/*
 	int N_vars= 15;
 	int N_samples=1000;
