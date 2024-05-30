@@ -50,7 +50,7 @@ int main(int argc, char **argv)
 	int R_max = atoi(argv[6]);
 	int T_max = atoi(argv[7]);
 	string save_file = argv[8];
-
+	string log_file = argv[9];
 
 	//Read in the data
 	Coulomb_corr G = Coulomb_corr(R_max,T_max);
@@ -68,10 +68,10 @@ int main(int argc, char **argv)
 	//Generate the set of models to test
 	vector<Exp_model> models = {};
 
-	vector<int> exp_degree_set = {2};
+	vector<int> exp_degree_set = {1,2};
 	vector<int> pl_degree_set = {0,1,2};
-	vector<int> t_start_set = {0};
-	vector<int> t_end_set = {11};
+	vector<int> t_start_set = {0,1,2};
+	vector<int> t_end_set = {9,10,11};
 
 	VectorXd ind_vars = VectorXd::Zero(T_max);
 	for(int i = 0; i < T_max; i++){
@@ -97,8 +97,9 @@ int main(int argc, char **argv)
 	for(int i = 0; i < n_models; i++){
 		mod_ptrs.push_back(&models[i]);
 	}
-
-	set_options({1000, 1000, .01, 0});
+	std::ofstream log(log_file);
+	
+set_options({100000, 10000, .01, 1});
 	VectorXd Vrs = VectorXd::Zero(R_max);
 	MatrixXd Ak_prob = MatrixXd::Zero(R_max,n_models);
 	MatrixXd Vr_val = MatrixXd::Zero(R_max,n_models);
@@ -107,6 +108,7 @@ int main(int argc, char **argv)
 	MatrixXd chisq_p_dof = MatrixXd::Zero(R_max,n_models);
 
 	for(int R = 0; R < R_max; R++){
+		log<<"R="<<R<<"parameters: "<<endl;
 		load_data(&G_R[R]);
 		VectorXd ak = VectorXd::Zero(n_models);
 		VectorXd vv = VectorXd::Zero(n_models);
@@ -129,10 +131,15 @@ int main(int argc, char **argv)
 			vv(i) = minimizer->X()[1];
 			vv_err(i) = minimizer->Errors()[1];
 			stats(i) = minimizer->Status();
+			if(stats(i)!=0) ak(i) = ak(i)*1000000;
 			chisq(i) = minimizer->MinValue()/((ms->data_shape.sum() - k) * (_data_frame->n_samples - 1));
+
+			for(int j = 0; j<k; j++) log <<minimizer->X()[i]<<" ";
+			log<<endl;
         }
         ak = -0.5*(ak.array()-ak.minCoeff());
         ak = ak.unaryExpr(&TMath::Exp);
+		for(int j = 0; j < ak.size(); j++) if (ak(j)<0.01) ak(j) = 0;
 		Ak_prob.row(R) = ak/ak.sum();
 		Vr_val.row(R) = vv;
 		Vr_errs.row(R) = vv_err;
@@ -140,15 +147,17 @@ int main(int argc, char **argv)
 		chisq_p_dof.row(R) = chisq;
 
 	}
-	cout<<"Models:"<<endl;
+
+
+	log<<"Models:"<<endl;
 	for(Exp_model e: models){
-		cout<<e<<endl;
+		log<<e<<endl;
 	}
-	cout<<"Probabilities: "<<endl<<Ak_prob<<endl<<endl;
-	cout<<"Values: "<<endl<<Vr_val<<endl<<endl;
-	cout<<"Errors: "<<endl<<Vr_errs<<endl<<endl;
-	cout<<"Statuses: "<<endl<<statuses<<endl;
-	cout<<"chisq per dof: "<<endl<<chisq_p_dof<<endl;
+	log<<"Probabilities: "<<endl<<Ak_prob<<endl<<endl;
+	log<<"Values: "<<endl<<Vr_val<<endl<<endl;
+	log<<"Errors: "<<endl<<Vr_errs<<endl<<endl;
+	log<<"Statuses: "<<endl<<statuses<<endl;
+	log<<"chisq per dof: "<<endl<<chisq_p_dof<<endl;
 
 	Eigen::VectorXd model_avg_Vr = Eigen::VectorXd::Zero(R_max);
 	Eigen::VectorXd model_avg_err=Eigen::VectorXd::Zero(R_max);
@@ -163,11 +172,12 @@ int main(int argc, char **argv)
 	Eigen::MatrixXd mdvr = Eigen::MatrixXd::Zero(R_max,2);
 	mdvr.col(0) = model_avg_Vr;
 	mdvr.col(1) = model_avg_err;
-	cout<<"Mode averaged potential and errors: "<<endl<<mdvr<<endl;
+	log<<"Mode averaged potential and errors: "<<endl<<mdvr<<endl;
 
 	std::ofstream outfile(save_file);
 	outfile<<mdvr<<endl;
 	outfile.close();
+	log.close();
 	
 	/*
 	int N_vars= 10;

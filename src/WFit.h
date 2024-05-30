@@ -24,7 +24,7 @@ namespace WFit
     std::vector<double> _params = {};
     std::vector<double> _steps = {};
     int _num_params = 0;
-    ROOT::Math::Minimizer *minimizer = ROOT::Math::Factory::CreateMinimizer("Minuit2", "Simplex");
+    ROOT::Math::Minimizer *minimizer = ROOT::Math::Factory::CreateMinimizer("Minuit2", "");
     WModel *_model;
     WFrame *_data_frame;
     Eigen::MatrixXd _cov_inv;

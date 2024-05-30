@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#SBATCH -J "lattice_stats"
+#SBATCH -p general
+#SBATCH -o output.txt
+#SBATCH -e error.err
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=smithwya@iu.edu
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+
+#SBATCH -A r00215
+
+srun ./bin/WStats $1 $2 $3 $4 $5 $6 $7 $8 $9
+
