@@ -28,7 +28,7 @@ using namespace WPseudo;
 
 int main(int argc, char **argv)
 {
-	/*
+	
 	string fname = argv[1];
 	double beta = stod(argv[2]);
 	int xi = atoi(argv[3]);
@@ -55,7 +55,7 @@ int main(int argc, char **argv)
 
 	// Generate the set of models to test
 	vector<nExp_model> models = {};
-	vector<int> n_exps = {2};
+	vector<int> n_exps = {1,2,3};
 	vector<int> pl_degree_set = {1};
 	vector<int> t_start_set = {0};
 	vector<int> t_end_set = {11};
@@ -82,6 +82,7 @@ int main(int argc, char **argv)
 			}
 		}
 	}
+
 	int n_models = models.size();
 	vector<WModel *> mod_ptrs = {};
 	for (int i = 0; i < n_models; i++)
@@ -89,16 +90,19 @@ int main(int argc, char **argv)
 		mod_ptrs.push_back(&models[i]);
 	}
 
-	WFit::set_options({100000, 10000, .01, 1});
-	WFit::load_data(&G_R[0]);
-	VectorXd chis = WFit::chisq_per_dof(mod_ptrs).transpose();
-	cout << endl
-		 << "Chi squareds/ndof for one models (MIGRAD):" << endl
-		 << chis << endl;
-	cout<<G_R[0].cov_matrix<<endl;
+	WFit::set_options({100000, 10000, .01, 0});
+	WFit::load_data(&G_R[4]);
+	vector<VectorXd> ak_results = WFit::ak_criteria(mod_ptrs);
+	for(int i = 0; i < n_models; i++){
+		cout<<"Used model: "<< models[i]<<endl;
+	}
 
-	*/
-	
+	cout<<"Results: "<< ak_results[0].transpose()<<endl<<endl;
+	cout<<"Errors: "<<ak_results[1].transpose()<<endl<<endl;
+	cout<<"Probabilities: "<<ak_results[2].transpose()<<endl<<endl;
+	cout<<"Chisq/dof: "<<ak_results[3].transpose()<<endl<<endl;
+	cout<<"Fit statuses: "<<ak_results[4].transpose()<<endl<<endl;
+	/*
 	int N_vars= 10;
 	int N_samples=100;
 	int N_params = 3;
@@ -124,10 +128,7 @@ int main(int argc, char **argv)
 
 	
 
-	/*
-	set_params({1,1,1});
-	set_steps({0.1,0.1,0.1});
-	minimize();
+
 	*/
 	return 0;
 }

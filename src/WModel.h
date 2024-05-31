@@ -25,6 +25,14 @@ public:
         return result;
     };
 
+    virtual double extract_observable(const double *xx){
+        return 0;
+    };
+
+    virtual double extract_error(const double *xx){
+        return 0;
+    };
+    
     virtual double evaluate_pt(double *x,const double *pars){
         return 0;
     }

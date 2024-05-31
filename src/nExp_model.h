@@ -4,6 +4,7 @@
 #include <Eigen/Dense>
 #include "TMath.h"
 #include "WModel.h"
+#include "TROOT.h"
 using namespace std;
 
 class nExp_model : public WModel
@@ -31,6 +32,21 @@ public:
     };
 
 
+    double extract_observable(const double* pars){
+
+        double num = 0;
+        double denom = 0;
+        for(int i = 0; i <2*n_exponentials; i+=2){
+        num+= pow(pars[i],2)*pow(pars[i+1],2);
+        denom+=pow(pars[i],2);
+        }
+
+        return num/denom;
+    }
+
+    double extract_err(const double* errs){
+        return 0;
+    }
 
     double evaluate_pt( double *x, const double *pars)
     {
@@ -38,7 +54,7 @@ public:
         int param_index = 0;
 
         for(int i = 0; i <2*n_exponentials; i+=2){
-            exp+= pars[i]*TMath::Exp(-pow(pars[i+1],2)*x[0]);
+            exp+= pow(pars[i],2)*TMath::Exp(-pow(pars[i+1],2)*x[0]);
         }
 
         double pole = 1;
@@ -53,7 +69,7 @@ public:
 
     friend ostream &operator<<(std::ostream &os, nExp_model const &m)
     {
-        os <<"Fitting "<< m.n_exponentials<<" exponentials with a pole of degree " << m.pole_degree<<endl;
+        os <<m.n_exponentials<<" exponentials with a pole of degree " << m.pole_degree<<endl;
         os << "shape: " << m.data_shape.transpose();
         return os;
     }

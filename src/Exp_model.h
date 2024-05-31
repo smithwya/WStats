@@ -30,7 +30,6 @@ public:
     };
 
 
-
     double evaluate_pt( double *x, const double *pars)
     {
         double result = 0;
