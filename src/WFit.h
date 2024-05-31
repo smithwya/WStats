@@ -240,7 +240,7 @@ namespace WFit
                 stats(i) = minimizer->Status();
                 if (stats(i) != 0)
                     ak(i) = ak(i) * 1000000;
-                chisq(i) = minimizer->MinValue() / ((ms->data_shape.sum() - k) * (_data_frame->n_samples - 1));
+                chisq(i) = minimizer->MinValue() / ((ms->data_shape.sum()) * (_data_frame->n_samples - 1));
 
                 for (int j = 0; j < k; j++)
                     log << minimizer->X()[i] << " ";
