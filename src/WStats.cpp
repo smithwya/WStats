@@ -92,6 +92,7 @@ int main(int argc, char **argv)
 
 	WFit::set_options({100000, 10000, .01, 0});
 	WFit::load_data(&G_R[4]);
+	WFit::minimizer->SetStrategy(2);
 	vector<VectorXd> ak_results = WFit::ak_criteria(mod_ptrs);
 	for(int i = 0; i < n_models; i++){
 		cout<<"Used model: "<< models[i]<<endl;

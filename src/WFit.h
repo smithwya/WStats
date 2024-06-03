@@ -24,7 +24,7 @@ namespace WFit
     std::vector<double> _params = {};
     std::vector<double> _steps = {};
     int _num_params = 0;
-    ROOT::Math::Minimizer *minimizer = ROOT::Math::Factory::CreateMinimizer("Minuit2", "");
+    ROOT::Math::Minimizer *minimizer = ROOT::Math::Factory::CreateMinimizer("Minuit2", "Minimize");
     WModel *_model;
     WFrame *_data_frame;
     Eigen::MatrixXd _cov_inv;
@@ -119,6 +119,28 @@ namespace WFit
         }
         minimizer->Minimize();
     };
+
+    const double* minimize_bootstrap(int num_bootstraps){
+
+        ROOT::Math::Functor f(&minfunc, _num_params);
+        minimizer->SetFunction(f);
+
+        //freeze covariance matrix
+        _cov_inv = _data_frame->get_cov_trunc(_model->data_shape).inverse();
+
+        Eigen::MatrixXd params = Eigen::MatrixXd(_model->num_params, num_bootstraps);
+
+        const double* fparams = minimizer->X();
+
+        for(int i = 0; i < num_bootstraps; i++){
+        
+        
+
+        }
+
+        minimizer->Minimize();
+
+    }
 
     Eigen::VectorXd chisq_per_dof(vector<WModel *> ms)
     {
