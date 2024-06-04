@@ -18,17 +18,38 @@
 #include <TRandom3.h>
 #include <TRandomGen.h>
 
-namespace WFit
+class WFit
 {
-    std::vector<double> _options = {};
-    std::vector<double> _params = {};
-    std::vector<double> _steps = {};
-    int _num_params = 0;
-    ROOT::Math::Minimizer *minimizer = ROOT::Math::Factory::CreateMinimizer("Minuit2", "Minimize");
+
+private:
+    std::vector<double> _options;
+    std::vector<double> _params;
+    std::vector<double> _steps;
+    int _num_params;
+    ROOT::Math::Minimizer *minimizer;
     WModel *_model;
     WFrame *_data_frame;
     Eigen::MatrixXd _cov_inv;
     Eigen::MatrixXd _trunc_data;
+
+public:
+    WFit()
+    {
+        _options = {};
+        _params = {};
+        _steps = {};
+        _num_params = 0;
+        minimizer = ROOT::Math::Factory::CreateMinimizer("Minuit2", "Minimize");
+        _model = NULL;
+        _data_frame = NULL;
+        _cov_inv = Eigen::MatrixXd::Zero(1, 1);
+        _trunc_data = Eigen::MatrixXd::Zero(1, 1);
+    }
+
+    void set_strat(int strat){
+        minimizer->SetStrategy(strat);
+        return;
+    }
 
     void set_params(std::vector<double> pars)
     {
@@ -53,11 +74,11 @@ namespace WFit
         return;
     };
 
+    // truncates loaded data to the currently loaded model
     void truncate_data(Eigen::VectorXd shape)
     {
-
         int length = shape.sum();
-        _trunc_data = Eigen::MatrixXd(length, _data_frame->n_samples);
+        _trunc_data = Eigen::MatrixXd(length, _data_frame->data.cols());
         int index = 0;
 
         for (int i = 0; i < shape.size(); i++)
@@ -69,17 +90,20 @@ namespace WFit
                 index++;
             }
         }
+        return;
     }
 
+    //Loads a model
     void set_model(WModel *m)
     {
         _model = m;
-        truncate_data(m->data_shape);
+        truncate_data(_model->data_shape);
     }
-
+    //loads data frame
     void load_data(WFrame *d)
     {
         _data_frame = d;
+        _cov_inv = sample_covariance(d->data).inverse();
     }
 
     Eigen::MatrixXd sample_covariance(const Eigen::MatrixXd &data)
@@ -87,7 +111,6 @@ namespace WFit
         const int n_samples = data.cols();
         Eigen::MatrixXd centered_dat = data.colwise() - data.rowwise().mean();
         Eigen::MatrixXd cov = centered_dat * centered_dat.transpose() / (n_samples - 1);
-
         return cov;
     };
 
@@ -108,9 +131,8 @@ namespace WFit
 
     void minimize()
     {
-        ROOT::Math::Functor f(&minfunc, _num_params);
+        ROOT::Math::Functor f(this, &WFit::minfunc, _num_params);
         minimizer->SetFunction(f);
-
         _cov_inv = _data_frame->get_cov_trunc(_model->data_shape).inverse();
 
         for (int i = 0; i < _num_params; i++)
@@ -120,26 +142,25 @@ namespace WFit
         minimizer->Minimize();
     };
 
-    const double* minimize_bootstrap(int num_bootstraps){
+    const double * minimize_bootstrap(int num_bootstraps)
+    {
 
-        ROOT::Math::Functor f(&minfunc, _num_params);
+        ROOT::Math::Functor f(this, &WFit::minfunc, _num_params);
         minimizer->SetFunction(f);
 
-        //freeze covariance matrix
+        // freeze covariance matrix
         _cov_inv = _data_frame->get_cov_trunc(_model->data_shape).inverse();
 
         Eigen::MatrixXd params = Eigen::MatrixXd(_model->num_params, num_bootstraps);
 
-        const double* fparams = minimizer->X();
+        const double *fparams = minimizer->X();
 
-        for(int i = 0; i < num_bootstraps; i++){
-        
-        
-
+        for (int i = 0; i < num_bootstraps; i++)
+        {
         }
 
         minimizer->Minimize();
-
+        return minimizer->X();
     }
 
     Eigen::VectorXd chisq_per_dof(vector<WModel *> ms)
@@ -188,25 +209,25 @@ namespace WFit
             int N_cut = ms->data_shape.size() - ms->data_shape.sum();
             ak_prob(i) = minimizer->MinValue() + 2 * k + 2 * N_cut;
             result(i) = ms->extract_observable(minimizer->X());
-            cout<<"derivative taken"<<endl;
+            cout << "derivative taken" << endl;
             errs(i) = ms->extract_error(minimizer->Errors());
             statuses(i) = minimizer->Status();
-            if (statuses(i) != 0) ak_prob(i) = ak_prob(i) * 1000000;
+            if (statuses(i) != 0)
+                ak_prob(i) = ak_prob(i) * 1000000;
             chisq_p_dof(i) = minimizer->MinValue() / ((ms->data_shape.sum()) * (_data_frame->n_samples - 1));
         }
 
         ak_prob = -0.5 * (ak_prob.array() - ak_prob.minCoeff());
         ak_prob = ak_prob.unaryExpr(&TMath::Exp);
-        ak_prob= ak_prob / ak_prob.sum();
-        for (int j = 0; j < n_models; j++){
-            if (ak_prob(j) < 0.01) ak_prob(j) = 0;
+        ak_prob = ak_prob / ak_prob.sum();
+        for (int j = 0; j < n_models; j++)
+        {
+            if (ak_prob(j) < 0.01)
+                ak_prob(j) = 0;
         }
 
-        ak_prob= ak_prob / ak_prob.sum();
-
+        ak_prob = ak_prob / ak_prob.sum();
 
         return {result, errs, ak_prob, chisq_p_dof, statuses};
     };
-
-
-}
+};

@@ -23,7 +23,6 @@
 using namespace std;
 using namespace WMath;
 using namespace Eigen;
-using namespace WFit;
 using namespace WPseudo;
 
 int main(int argc, char **argv)
@@ -39,6 +38,8 @@ int main(int argc, char **argv)
 	string save_file = argv[8];
 	string log_file = argv[9];
 
+	
+	
 	// Read in the data
 	Coulomb_corr G = Coulomb_corr(R_max, T_max);
 	G.load(fname);
@@ -55,7 +56,7 @@ int main(int argc, char **argv)
 
 	// Generate the set of models to test
 	vector<nExp_model> models = {};
-	vector<int> n_exps = {1,2,3};
+	vector<int> n_exps = {2};
 	vector<int> pl_degree_set = {1};
 	vector<int> t_start_set = {0};
 	vector<int> t_end_set = {11};
@@ -90,10 +91,11 @@ int main(int argc, char **argv)
 		mod_ptrs.push_back(&models[i]);
 	}
 
-	WFit::set_options({100000, 10000, .01, 0});
-	WFit::load_data(&G_R[4]);
-	WFit::minimizer->SetStrategy(2);
-	vector<VectorXd> ak_results = WFit::ak_criteria(mod_ptrs);
+	WFit fitter = WFit();
+	fitter.set_options({100000, 10000, .01, 1});
+	fitter.load_data(&G_R[0]);
+	fitter.set_strat(2);
+	vector<VectorXd> ak_results = fitter.ak_criteria(mod_ptrs);
 	for(int i = 0; i < n_models; i++){
 		cout<<"Used model: "<< models[i]<<endl;
 	}
@@ -103,11 +105,17 @@ int main(int argc, char **argv)
 	cout<<"Probabilities: "<<ak_results[2].transpose()<<endl<<endl;
 	cout<<"Chisq/dof: "<<ak_results[3].transpose()<<endl<<endl;
 	cout<<"Fit statuses: "<<ak_results[4].transpose()<<endl<<endl;
+	cout<<endl;
+	cout<<1e6*G_R[0].cov_matrix<<endl;
+	cout<<endl;
+	cout<<G_R[0].data.rowwise().mean()<<endl;
+	cout<<endl;
+	cout<<G_R[0].data.cols()<<endl;
 	/*
 	int N_vars= 10;
 	int N_samples=100;
 	int N_params = 3;
-
+	WFit fitter = WFit();
 	double params[3] = {2,4,0.3};
 	Eigen::VectorXd ind_vars=Eigen::VectorXd(N_vars);
 	ind_vars<<1,2,3,4,5,6,7,8,9,10;
@@ -120,16 +128,14 @@ int main(int argc, char **argv)
 
 	Eigen::MatrixXd fakedat = gen_N_gauss_sample(N_samples,poly_base.evaluate(params),VectorXd::Ones(N_vars)*0.3);
 	WFrame test_frame(fakedat);
+	fitter.set_strat(2);
+	fitter.load_data(&test_frame);
+	fitter.set_model(&poly);
+	fitter.set_options({100000, 10000, .001, 1});
 
-	load_data(&test_frame);
-	set_model(&poly);
-	set_options({100000, 10000, .001, 1});
-
-	cout<<chisq_per_dof({&poly})<<endl;
-
-	
-
+	cout<<fitter.chisq_per_dof({&poly})<<endl;
 
 	*/
+
 	return 0;
 }
