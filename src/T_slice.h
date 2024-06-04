@@ -18,8 +18,8 @@ class T_slice : public WFrame{
     T_slice(Coulomb_corr *c, int r,int t_max):WFrame(){
         R=r;
         T_max = t_max;
-        n_samples = c->data_list[0].size();
-        data = Eigen::MatrixXd::Zero(t_max, n_samples);
+        n_samples = c->data_list.size();
+        data = Eigen::MatrixXd::Zero(t_max, c->n_samples);
 
         for(int i = 0; i < n_samples; i++){
             data.col(i) = c->data_list[i].row(r);

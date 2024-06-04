@@ -50,10 +50,12 @@ int main(int argc, char **argv)
 
 	for (int i = 0; i < R_max; i++)
 	{
-		T_slice temp = T_slice(&G, i, T_max);
+		T_slice temp = T_slice(&G, 0, T_max);
 		G_R.push_back(temp);
+		//cout<<G_R[i].data.rows()<<" "<<G_R[0].data.cols()<<endl;
+		//cout<<G_R[i].data.col(143)<<endl<<endl;
 	}
-
+	
 	// Generate the set of models to test
 	vector<nExp_model> models = {};
 	vector<int> n_exps = {2};
@@ -106,11 +108,11 @@ int main(int argc, char **argv)
 	cout<<"Chisq/dof: "<<ak_results[3].transpose()<<endl<<endl;
 	cout<<"Fit statuses: "<<ak_results[4].transpose()<<endl<<endl;
 	cout<<endl;
-	cout<<1e6*G_R[0].cov_matrix<<endl;
+	cout<<G_R[0].cov_matrix<<endl;
 	cout<<endl;
-	cout<<G_R[0].data.rowwise().mean()<<endl;
-	cout<<endl;
-	cout<<G_R[0].data.cols()<<endl;
+	cout<<G_R[0].data.rowwise().mean().transpose()<<endl;
+
+	
 	/*
 	int N_vars= 10;
 	int N_samples=100;

@@ -215,6 +215,7 @@ public:
             if (statuses(i) != 0)
                 ak_prob(i) = ak_prob(i) * 1000000;
             chisq_p_dof(i) = minimizer->MinValue() / ((ms->data_shape.sum()) * (_data_frame->n_samples - 1));
+            cout<< "model on data: "<< _model->evaluate(minimizer->X()).transpose()<<endl;
         }
 
         ak_prob = -0.5 * (ak_prob.array() - ak_prob.minCoeff());
