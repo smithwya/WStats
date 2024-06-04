@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 	string log_file = argv[9];
 
 	
-	
+	/*
 	// Read in the data
 	Coulomb_corr G = Coulomb_corr(R_max, T_max);
 	G.load(fname);
@@ -111,9 +111,9 @@ int main(int argc, char **argv)
 	cout<<G_R[0].cov_matrix<<endl;
 	cout<<endl;
 	cout<<G_R[0].data.rowwise().mean().transpose()<<endl;
-
+	*/
 	
-	/*
+	
 	int N_vars= 10;
 	int N_samples=100;
 	int N_params = 3;
@@ -122,7 +122,7 @@ int main(int argc, char **argv)
 	Eigen::VectorXd ind_vars=Eigen::VectorXd(N_vars);
 	ind_vars<<1,2,3,4,5,6,7,8,9,10;
 	VectorXd sh = VectorXd::Ones(ind_vars.size());
-	cout<<sh<<endl;
+	//cout<<sh<<endl;
 
 	Polynomial poly_base = Polynomial(N_params,ind_vars,Eigen::VectorXd::Ones(N_vars),"");
 
@@ -137,7 +137,7 @@ int main(int argc, char **argv)
 
 	cout<<fitter.chisq_per_dof({&poly})<<endl;
 
-	*/
+	
 
 	return 0;
 }
