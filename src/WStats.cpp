@@ -58,8 +58,8 @@ int main(int argc, char **argv)
 	
 	// Generate the set of models to test
 	vector<nExp_model> models = {};
-	vector<int> n_exps = {2};
-	vector<int> pl_degree_set = {1};
+	vector<int> n_exps = {1,2,3};
+	vector<int> pl_degree_set = {0,1};
 	vector<int> t_start_set = {0};
 	vector<int> t_end_set = {11};
 
@@ -95,24 +95,29 @@ int main(int argc, char **argv)
 
 	WFit fitter = WFit();
 	fitter.set_options({100000, 10000, .01, 1});
-	fitter.load_data(&G_R[0]);
+
+	WFrame temp_frame = WFrame(G_R[0].subset(0,200));
+
+	fitter.load_data(&temp_frame);
+
+
 	fitter.set_strat(2);
 	vector<VectorXd> ak_results = fitter.ak_criteria(mod_ptrs);
+	
 	for(int i = 0; i < n_models; i++){
-		cout<<"Used model: "<< models[i]<<endl;
+
+		cout<<"Model: "<< models[i]<<endl;
+		}
 	}
 
+	
 	cout<<"Results: "<< ak_results[0].transpose()<<endl<<endl;
 	cout<<"Errors: "<<ak_results[1].transpose()<<endl<<endl;
 	cout<<"Probabilities: "<<ak_results[2].transpose()<<endl<<endl;
 	cout<<"Chisq/dof: "<<ak_results[3].transpose()<<endl<<endl;
 	cout<<"Fit statuses: "<<ak_results[4].transpose()<<endl<<endl;
-	cout<<endl;
-	cout<<G_R[0].cov_matrix<<endl;
-	cout<<endl;
-	cout<<G_R[0].data.rowwise().mean().transpose()<<endl;
-	*/
 	
+	*/
 	
 	int N_vars= 10;
 	int N_samples=100;
@@ -122,6 +127,8 @@ int main(int argc, char **argv)
 	Eigen::VectorXd ind_vars=Eigen::VectorXd(N_vars);
 	ind_vars<<1,2,3,4,5,6,7,8,9,10;
 	VectorXd sh = VectorXd::Ones(ind_vars.size());
+	sh(2)=0;
+	sh(3)=0;
 	//cout<<sh<<endl;
 
 	Polynomial poly_base = Polynomial(N_params,ind_vars,Eigen::VectorXd::Ones(N_vars),"");

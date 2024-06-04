@@ -135,22 +135,13 @@ public:
             }
         }
         return trunc_cov;
-
-        /*
-        _trunc_data = Eigen::MatrixXd(length, n_samples);
-        int index = 0;
-
-        for (int i = 0; i < shape.size(); i++)
-        {
-
-            if (shape(i) == 1)
-            {
-                _trunc_data.row(index) =data.row(i);
-                index++;
-            }
-        }
-        */
     }
+
+    Eigen::MatrixXd subset(int start, int end){
+        if(start < 0 || end >= n_samples || start>end) return Eigen::MatrixXd::Zero(1,1);
+        return data(Eigen::placeholders::all,Eigen::seqN(start,end));
+    };
+
 
     friend ostream &operator<<(std::ostream &os, WFrame const &m)
     {

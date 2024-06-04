@@ -42,6 +42,17 @@ namespace WPseudo
         return pseudo_dat;
     };
 
+    Eigen::MatrixXd boot_resample(const Eigen::MatrixXd* dat, int samp_size){
+        
+        Eigen::MatrixXd resamp = Eigen::MatrixXd::Zero(dat->rows(),samp_size);
+        int index = 0;
+        for(int i = 0; i<samp_size; i++){
+            index = (r0->Rndm())*dat->cols();
+            resamp.col(i) = dat->col(index);
+        }
+        return resamp;
+    }
+
 
 
 

@@ -4,6 +4,7 @@
 #include <Eigen/Dense>
 #include <string>
 #include "WMath.h"
+#include <TRandom3.h>
 
 using namespace std;
 
@@ -78,5 +79,6 @@ namespace WMath
         }
         return shape;
     }
+
 
 }

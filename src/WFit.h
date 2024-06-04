@@ -97,13 +97,12 @@ public:
     void set_model(WModel *m)
     {
         _model = m;
-        truncate_data(_model->data_shape);
     }
-    //loads data frame
+    //loads data frame and sets the inverse covariance matrix to the full one
     void load_data(WFrame *d)
     {
         _data_frame = d;
-        _cov_inv = sample_covariance(d->data).inverse();
+        _cov_inv = d->cov_matrix.inverse();
     }
 
     Eigen::MatrixXd sample_covariance(const Eigen::MatrixXd &data)
@@ -131,9 +130,11 @@ public:
 
     void minimize()
     {
+        truncate_data(_model->data_shape);
+        _cov_inv = _data_frame->get_cov_trunc(_model->data_shape).inverse();
+
         ROOT::Math::Functor f(this, &WFit::minfunc, _num_params);
         minimizer->SetFunction(f);
-        _cov_inv = _data_frame->get_cov_trunc(_model->data_shape).inverse();
 
         for (int i = 0; i < _num_params; i++)
         {
@@ -142,8 +143,9 @@ public:
         minimizer->Minimize();
     };
 
-    const double * minimize_bootstrap(int num_bootstraps)
+    const double * minimize_bootstrap(int num_bootstraps, int size_bootstrap)
     {
+        vector<const double*> boot_sampled_pars = {};
 
         ROOT::Math::Functor f(this, &WFit::minfunc, _num_params);
         minimizer->SetFunction(f);
@@ -151,12 +153,14 @@ public:
         // freeze covariance matrix
         _cov_inv = _data_frame->get_cov_trunc(_model->data_shape).inverse();
 
-        Eigen::MatrixXd params = Eigen::MatrixXd(_model->num_params, num_bootstraps);
-
-        const double *fparams = minimizer->X();
-
         for (int i = 0; i < num_bootstraps; i++)
         {
+
+
+
+
+
+
         }
 
         minimizer->Minimize();
@@ -212,10 +216,9 @@ public:
             cout << "derivative taken" << endl;
             errs(i) = ms->extract_error(minimizer->Errors());
             statuses(i) = minimizer->Status();
-            if (statuses(i) != 0)
-                ak_prob(i) = ak_prob(i) * 1000000;
-            chisq_p_dof(i) = minimizer->MinValue() / ((ms->data_shape.sum()) * (_data_frame->n_samples - 1));
-            cout<< "model on data: "<< _model->evaluate(minimizer->X()).transpose()<<endl;
+            if (statuses(i) > 1 ) ak_prob(i) = ak_prob(i) * 1000000;
+            chisq_p_dof(i) = (minimizer->MinValue() - ((ms->data_shape.sum()) * (_data_frame->n_samples - 1)))/(ms->data_shape.sum()-N_cut-ms->num_params);
+            //cout<< "model on data: "<< _model->evaluate(minimizer->X()).transpose()<<endl;
         }
 
         ak_prob = -0.5 * (ak_prob.array() - ak_prob.minCoeff());
