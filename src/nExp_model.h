@@ -44,8 +44,36 @@ public:
         return num/denom;
     }
 
-    double extract_err(const double* errs){
-        return 0;
+    
+    double extract_error(const double* pars, const double* errs){
+        double geo_sum = 0;
+        double geo_err=0;
+        double amp_sum=0;
+        double amp_err = 0;
+
+        double result = 0;
+
+
+        for(int i = 0; i <2*n_exponentials; i+=2){
+
+            double a = pow(pars[i],2);
+            double da = 2*sqrt(a)*errs[i];
+
+            double m = pow(pars[i+1],2);
+            double dm = 2*sqrt(m)*errs[i+1];
+            
+            amp_sum+=a;
+            geo_sum+=a*m;
+
+            amp_err+=pow(da,2);
+            geo_err+=pow(a*m*sqrt(pow(da/a,2)+pow(dm/m,2)),2);
+        }
+        amp_err = sqrt(amp_err);
+        geo_err = sqrt(geo_err);
+        result = sqrt(pow(amp_err/amp_sum,2)+pow(geo_err/geo_sum,2));
+        
+        result = result * (geo_sum/amp_sum);
+        return result;
     }
 
     double evaluate_pt( double *x, const double *pars)

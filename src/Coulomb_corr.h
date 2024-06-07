@@ -29,7 +29,7 @@ class Coulomb_corr : public WFrame{
             double val=0;
 
             infile.open(fname);
-            cout<<fname<<endl;
+            cout<<"Loaded "<<fname<<endl;
             Eigen::MatrixXd temp = -Eigen::MatrixXd::Ones(R_max,T_max);
 
             while(infile>>R>>T>>val){

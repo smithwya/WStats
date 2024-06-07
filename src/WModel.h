@@ -29,7 +29,7 @@ public:
         return 0;
     };
 
-    virtual double extract_error(const double *xx){
+    virtual double extract_error(const double *pars, const double *errs){
         return 0;
     };
     

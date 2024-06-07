@@ -156,11 +156,6 @@ public:
         for (int i = 0; i < num_bootstraps; i++)
         {
 
-
-
-
-
-
         }
 
         minimizer->Minimize();
@@ -201,7 +196,7 @@ public:
         Eigen::VectorXd chisq_p_dof = Eigen::VectorXd::Zero(n_models);
         for (int i = 0; i < n_models; i++)
         {
-            WModel *ms = models[i];
+            WModel* ms = models[i];
             set_model(ms);
             int k = ms->num_params;
             // initial guess for parameters
@@ -213,12 +208,10 @@ public:
             int N_cut = ms->data_shape.size() - ms->data_shape.sum();
             ak_prob(i) = minimizer->MinValue() + 2 * k + 2 * N_cut;
             result(i) = ms->extract_observable(minimizer->X());
-            cout << "derivative taken" << endl;
-            errs(i) = ms->extract_error(minimizer->Errors());
+            errs(i) = _model->extract_error(minimizer->X(),minimizer->Errors());
             statuses(i) = minimizer->Status();
             if (statuses(i) > 1 ) ak_prob(i) = ak_prob(i) * 1000000;
             chisq_p_dof(i) = (minimizer->MinValue() - ((ms->data_shape.sum()) * (_data_frame->n_samples - 1)))/(ms->data_shape.sum()-N_cut-ms->num_params);
-            //cout<< "model on data: "<< _model->evaluate(minimizer->X()).transpose()<<endl;
         }
 
         ak_prob = -0.5 * (ak_prob.array() - ak_prob.minCoeff());

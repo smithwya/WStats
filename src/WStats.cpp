@@ -29,17 +29,13 @@ int main(int argc, char **argv)
 {
 	
 	string fname = argv[1];
-	double beta = stod(argv[2]);
-	int xi = atoi(argv[3]);
-	int N = atoi(argv[4]);
-	int T = atoi(argv[5]);
-	int R_max = atoi(argv[6]);
-	int T_max = atoi(argv[7]);
-	string save_file = argv[8];
-	string log_file = argv[9];
-
+	int R_max = atoi(argv[2]);
+	int T_max = atoi(argv[3]);
+	string save_file = "Fits"+fname.substr(4,fname.size()-7)+"vr";
+	string log_file = "Fits"+fname.substr(4,fname.size()-7)+"log";
 	
-	/*
+	freopen(log_file.c_str(),"w",stdout);
+	
 	// Read in the data
 	Coulomb_corr G = Coulomb_corr(R_max, T_max);
 	G.load(fname);
@@ -52,10 +48,8 @@ int main(int argc, char **argv)
 	{
 		T_slice temp = T_slice(&G, 0, T_max);
 		G_R.push_back(temp);
-		//cout<<G_R[i].data.rows()<<" "<<G_R[0].data.cols()<<endl;
-		//cout<<G_R[i].data.col(143)<<endl<<endl;
 	}
-	
+
 	// Generate the set of models to test
 	vector<nExp_model> models = {};
 	vector<int> n_exps = {1,2,3};
@@ -80,7 +74,7 @@ int main(int argc, char **argv)
 					VectorXd shape = gen_shape(T_max, t_s, t_e);
 					nExp_model mod = nExp_model(n_e, pl_d, 2*n_e + pl_d, ind_vars, shape, "");
 					models.push_back(mod);
-					cout << mod << endl;
+					std::cout << mod << endl;
 				}
 			}
 		}
@@ -93,58 +87,30 @@ int main(int argc, char **argv)
 		mod_ptrs.push_back(&models[i]);
 	}
 
-	WFit fitter = WFit();
-	fitter.set_options({100000, 10000, .01, 1});
+	//WFrame temp_frame = WFrame(G_R[0].subset(0,500));
 
-	WFrame temp_frame = WFrame(G_R[0].subset(0,200));
-
-	fitter.load_data(&temp_frame);
-
-
-	fitter.set_strat(2);
-	vector<VectorXd> ak_results = fitter.ak_criteria(mod_ptrs);
-	
 	for(int i = 0; i < n_models; i++){
 
-		cout<<"Model: "<< models[i]<<endl;
-		}
+		std::cout<<"Model: "<< models[i]<<endl;
+		
+	}
+	WFit fitter = WFit();
+	fitter.set_options({100000, 10000, .001, 1});
+	fitter.set_strat(2);
+
+	
+
+	for(int R = 0; R< R_max; R++){
+	fitter.load_data(&G_R[R]);
+	cout<<"Fitting R = "<<R<<endl<<endl;
+	vector<VectorXd> ak_results = fitter.ak_criteria(mod_ptrs);
+	std::cout<<"Results: "<< ak_results[0].transpose()<<endl<<endl;
+	std::cout<<"Errors: "<<ak_results[1].transpose()<<endl<<endl;
+	std::cout<<"Probabilities: "<<ak_results[2].transpose()<<endl<<endl;
+	std::cout<<"Chisq/dof: "<<ak_results[3].transpose()<<endl<<endl;
+	std::cout<<"Fit statuses: "<<ak_results[4].transpose()<<endl<<endl;
 	}
 
-	
-	cout<<"Results: "<< ak_results[0].transpose()<<endl<<endl;
-	cout<<"Errors: "<<ak_results[1].transpose()<<endl<<endl;
-	cout<<"Probabilities: "<<ak_results[2].transpose()<<endl<<endl;
-	cout<<"Chisq/dof: "<<ak_results[3].transpose()<<endl<<endl;
-	cout<<"Fit statuses: "<<ak_results[4].transpose()<<endl<<endl;
-	
-	*/
-	
-	int N_vars= 10;
-	int N_samples=100;
-	int N_params = 3;
-	WFit fitter = WFit();
-	double params[3] = {2,4,0.3};
-	Eigen::VectorXd ind_vars=Eigen::VectorXd(N_vars);
-	ind_vars<<1,2,3,4,5,6,7,8,9,10;
-	VectorXd sh = VectorXd::Ones(ind_vars.size());
-	sh(2)=0;
-	sh(3)=0;
-	//cout<<sh<<endl;
-
-	Polynomial poly_base = Polynomial(N_params,ind_vars,Eigen::VectorXd::Ones(N_vars),"");
-
-	Polynomial poly = Polynomial(N_params,ind_vars,sh,"");
-
-	Eigen::MatrixXd fakedat = gen_N_gauss_sample(N_samples,poly_base.evaluate(params),VectorXd::Ones(N_vars)*0.3);
-	WFrame test_frame(fakedat);
-	fitter.set_strat(2);
-	fitter.load_data(&test_frame);
-	fitter.set_model(&poly);
-	fitter.set_options({100000, 10000, .001, 1});
-
-	cout<<fitter.chisq_per_dof({&poly})<<endl;
-
-	
 
 	return 0;
 }
