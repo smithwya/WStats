@@ -51,23 +51,21 @@ public:
         return (TMath::Exp(-exponent)) * pole_term;
     };
 
+
+
+    double extract_observable(const double* pars){
+        return pars[1];
+    }
+
+
+    double extract_error(const double* pars, const double* errs){
+        return errs[1];
+    }
+
     friend ostream &operator<<(std::ostream &os, Exp_model const &m)
     {
-
-        os << "(* Fitting with shape " << m.data_shape.transpose() << " *)" << endl;
-        os << "G[T_,xx_]:=Exp[0";
-        for (int i = 1; i <= m.exp_degree + 1; i++)
-        {
-
-            os << "+xx[[" << i << "]]*T^" << i;
-        }
-        os << "]*(1";
-
-        for (int j = 1; j < m.pole_degree + 1; j++)
-        {
-            os << "+xx[[" << m.exp_degree + j + 1 << "]]/(T^" << j << ")";
-        }
-        os << ")";
+        os<<"Exponential of polynomial with degree "<<m.exp_degree<<" and pole of degree "<<m.pole_degree<<endl;
+        os << "Fitting with shape " << m.data_shape.transpose();
         return os;
     }
 };

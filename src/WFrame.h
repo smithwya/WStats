@@ -142,6 +142,11 @@ public:
         return data(Eigen::placeholders::all,Eigen::seqN(start,end));
     };
 
+    void sparsen(int len){
+        data = data(Eigen::placeholders::all,Eigen::seqN(0,Eigen::placeholders::last,len));
+
+        cov_matrix = cov(data);
+    };
 
     friend ostream &operator<<(std::ostream &os, WFrame const &m)
     {
