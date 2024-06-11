@@ -23,4 +23,21 @@ class Polynomial: public WModel
         }
         return result;
     };
+
+
+    double extract_observable(const double* pars){
+        return pars[1];
+    }
+
+
+    double extract_error(const double* pars, const double* errs){
+        return errs[1];
+    }
+
+        friend ostream &operator<<(std::ostream &os, Polynomial const &m)
+    {
+
+        os << "Fitting Polynomial of degree" <<m.num_params-1<<" with shape "<< m.data_shape.transpose() << endl;
+        return os;
+    }
 };

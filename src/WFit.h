@@ -100,6 +100,7 @@ public:
     void set_model(WModel *m)
     {
         _model = m;
+        _num_params = m->num_params;
     }
     //loads data frame and sets the inverse covariance matrix to the full one
     void load_data(WFrame *d)
@@ -210,25 +211,30 @@ public:
         Eigen::VectorXd chisq_p_dof = Eigen::VectorXd::Zero(n_models);
         for (int i = 0; i < n_models; i++)
         {
-            cout<<"model "<<i<<endl;
+            minimizer->Clear();
+
             WModel* ms = models[i];
+
             set_model(ms);
             int k = ms->num_params;
-            cout<<k<<" params"<<endl;
+            cout<<endl<<endl;
             // initial guess for parameters
             set_params(vector<double>(k, 1));
             // initial step sizes
             set_steps(vector<double>(k, 0.5));
             minimize();
-            cout<<"minimized"<<endl;
             int N_cut = ms->data_shape.size() - ms->data_shape.sum();
             ak_prob(i) = minimizer->MinValue() + 2 * k + 2 * N_cut;
             result(i) = ms->extract_observable(minimizer->X());
             errs(i) = _model->extract_error(minimizer->X(),minimizer->Errors());
             statuses(i) = minimizer->Status();
             //if (statuses(i) > 1 ) ak_prob(i) = ak_prob(i) * 1000000;
+            if(_data_frame->n_samples==1){
+                chisq_p_dof(i) = minimizer->MinValue()/(ms->data_shape.sum()-k);
+            }
+            else{
             chisq_p_dof(i) = (minimizer->MinValue() - ((ms->data_shape.sum()) * (_data_frame->n_samples - 1)))/(ms->data_shape.sum()-N_cut-ms->num_params);
-            //chisq_p_dof(i) = minimizer->MinValue()/(ms->data_shape.sum()- k);
+            }
         }
         cout<<"fit all models"<<endl;
         ak_prob = -0.5 * (ak_prob.array() - ak_prob.minCoeff());

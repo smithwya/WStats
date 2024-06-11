@@ -64,21 +64,18 @@ public:
         }
     }
 
-    WFrame(Eigen::MatrixXd d, Eigen::VectorXd v, std::string s)
+    WFrame(Eigen::VectorXd dat, Eigen::VectorXd xvals, Eigen::VectorXd vars)
     {
-        n_samples = d.cols();
-        data = d;
-        indep_vars = v;
-        description = s;
-        if (d.cols() > d.rows())
-        {
-            cov_matrix = cov(data);
+        n_samples = 1;
+        data = dat;
+        indep_vars = xvals;
+        description = "";
+        cov_matrix = Eigen::MatrixXd::Zero(indep_vars.size(),indep_vars.size());
+
+        for(int i =0; i < vars.size(); i++){
+            cov_matrix(i,i) = vars(i);
         }
-        else
-        {
-            cov_matrix = Eigen::MatrixXd::Ones(1, 1);
-            cout << "Warning: Not enough samples to calculate covariance matrix" << endl;
-        }
+        
     }
 
     virtual void load(vector<string> fnames) {};
@@ -91,7 +88,6 @@ public:
 
     Eigen::VectorXd cov_diag()
     {
-
         return cov_matrix.diagonal();
     }
 

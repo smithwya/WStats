@@ -47,17 +47,17 @@ int main(int argc, char **argv)
 	for (int i = 0; i < R_max; i++)
 	{
 		T_slice temp = T_slice(&G, i, T_max);
-		//temp.sparsen(2);
+		// temp.sparsen(2);
 		G_R.push_back(temp);
 	}
 
 	// Generate the set of models to test
 	vector<int> n_exps = {1, 2};
 	vector<int> pl_degree_set = {0, 1};
-	vector<int> poly_degrees = {2,3};
+	vector<int> poly_degrees = {2, 3};
 
 	vector<int> t_start_set = {0};
-	vector<int> t_end_set = {10,11};
+	vector<int> t_end_set = {10, 11};
 
 	VectorXd ind_vars = VectorXd::Zero(T_max);
 	for (int i = 0; i < T_max; i++)
@@ -80,7 +80,6 @@ int main(int argc, char **argv)
 				{
 					nExp_model mod = nExp_model(n_e, pl_d, 2 * n_e + pl_d, ind_vars, shape, "");
 					nexp_models.push_back(mod);
-
 				}
 				for (int p_d : poly_degrees)
 				{
@@ -91,23 +90,24 @@ int main(int argc, char **argv)
 		}
 	}
 
-	for(int i = 0; i < nexp_models.size(); i++){
-		std::cout<<nexp_models[i]<<endl;
+	for (int i = 0; i < nexp_models.size(); i++)
+	{
+		std::cout << nexp_models[i] << endl;
 		mod_ptrs.push_back(&nexp_models[i]);
 	}
 
-	for(int i = 0; i < epoly_models.size(); i++){
-		std::cout<<epoly_models[i]<<endl;
+	for (int i = 0; i < epoly_models.size(); i++)
+	{
+		std::cout << epoly_models[i] << endl;
 		mod_ptrs.push_back(&epoly_models[i]);
 	}
 
 	int n_models = mod_ptrs.size();
 
-	//WFrame temp_frame = WFrame(G_R[0].subset(0,500));
+	// WFrame temp_frame = WFrame(G_R[0].subset(0,500));
 	WFit fitter = WFit();
 	fitter.set_options({100000, 10000, .01, 1});
 	fitter.set_strat(2);
-
 
 	VectorXd avg_val = VectorXd::Zero(R_max);
 	VectorXd avg_err = VectorXd::Zero(R_max);
@@ -115,7 +115,9 @@ int main(int argc, char **argv)
 	for (int R = 0; R < R_max; R++)
 	{
 		fitter.load_data(&G_R[R]);
-		cout <<endl<<endl<< "Fitting R = " << R << endl
+		cout << endl
+			 << endl
+			 << "Fitting R = " << R << endl
 			 << endl;
 		vector<VectorXd> ak_results = fitter.ak_criteria(mod_ptrs);
 		std::cout << "Results: " << ak_results[0].transpose() << endl
@@ -127,27 +129,106 @@ int main(int argc, char **argv)
 		std::cout << "Chisq/dof: " << ak_results[3].transpose() << endl
 				  << endl;
 		std::cout << "Fit statuses: " << ak_results[4].transpose() << endl
-					<< endl;
+				  << endl;
 
-		for(int i = 0; i < n_models; i++){
-			avg_err(R)+=pow(ak_results[1](i),2)*ak_results[2](i);
-			avg_err(R)+=pow(ak_results[0](i),2)*ak_results[2](i);
+		for (int i = 0; i < n_models; i++)
+		{
+			avg_err(R) += pow(ak_results[1](i), 2) * ak_results[2](i);
+			avg_err(R) += pow(ak_results[0](i), 2) * ak_results[2](i);
 		}
 
-		avg_val(R) = (ak_results[0].array()*ak_results[2].array()).sum();
-		avg_err(R) -=pow(avg_val(R),2);
+		avg_val(R) = (ak_results[0].array() * ak_results[2].array()).sum();
+		avg_err(R) -= pow(avg_val(R), 2);
 		avg_err(R) = sqrt(avg_err(R));
 	}
 
-
 	ofstream pot_file(save_file);
-	cout<<save_file<<endl;
-	MatrixXd fresult(R_max,2);
+	cout << save_file << endl;
+	MatrixXd fresult(R_max, 2);
 	fresult.col(0) = avg_val;
 	fresult.col(1) = avg_err;
-	pot_file<<fresult<<endl;
+	pot_file << fresult << endl;
 
+
+
+	vector<Polynomial> lin_models_r = {};
+	vector<Cornell_model> corn_models_r = {};
+	vector<WModel *> mod_ptrs_r = {};
+
+	VectorXd ind_vars_r = VectorXd::Zero(R_max);
+	for (int i = 0; i < R_max; i++)
+	{
+		ind_vars_r(i) = i + 1;
+	}
+
+	vector<int> start_r = {0,1};
+	vector<int> end_r = {10,11};
+
+
+	for (int r_s : start_r)
+	{
+		for (int r_e : end_r)
+		{
+			VectorXd shape = gen_shape(R_max, r_s, r_e);
+
+			Polynomial p_mod = Polynomial(2, ind_vars_r, shape, "");
+			lin_models_r.push_back(p_mod);
+
+			Cornell_model c_mod = Cornell_model(ind_vars, shape, "");
+			corn_models_r.push_back(c_mod);
+
+		}
+	}
+
+	cout<<"models for fitting the R-dependence: "<<endl;
+	for (int i = 0; i < lin_models_r.size(); i++)
+	{
+		mod_ptrs_r.push_back(&lin_models_r[i]);
+		cout<<lin_models_r[i]<<endl;
+	}
+
+	for (int i = 0; i < corn_models_r.size(); i++)
+	{
+		mod_ptrs_r.push_back(&corn_models_r[i]);
+		cout<<corn_models_r[i]<<endl;
+	}
+
+	int n_models_r = mod_ptrs_r.size();
+
+	double avg_sigma = 0;
+	double avg_sigma_err = 0;
+
+	fitter.set_options({100000, 10000, .01, 1});
+	fitter.set_strat(2);
+
+	WFrame  potential_dat = WFrame(avg_val,ind_vars_r,avg_err.cwiseAbs2());
+	fitter.load_data(&potential_dat);
+
+	vector<VectorXd> ak_results_r = fitter.ak_criteria(mod_ptrs_r);
+
+	cout<<endl<<endl<<"Fitting the potential: "<<endl;
+	std::cout << "Results: " << ak_results_r[0].transpose() << endl
+			  << endl;
+	std::cout << "Errors: " << ak_results_r[1].transpose() << endl
+			  << endl;
+	std::cout << "Probabilities: " << ak_results_r[2].transpose() << endl
+			  << endl;
+	std::cout << "Chisq/dof: " << ak_results_r[3].transpose() << endl
+			  << endl;
+	std::cout << "Fit statuses: " << ak_results_r[4].transpose() << endl
+			  << endl;
+
+	for (int i = 0; i < n_models_r; i++)
+	{
+		avg_sigma_err += pow(ak_results_r[1](i), 2) * ak_results_r[2](i);
+		avg_sigma_err += pow(ak_results_r[0](i), 2) * ak_results_r[2](i);
+	}
+
+	avg_sigma = (ak_results_r[0].array() * ak_results_r[2].array()).sum();
+	avg_sigma_err -= pow(avg_sigma, 2);
+	avg_sigma_err = sqrt(avg_sigma_err);
+
+	pot_file<<"String tension: "<< avg_sigma<<" +/- "<<avg_sigma_err<<endl;
 	pot_file.close();
-
 	return 0;
 }
