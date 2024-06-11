@@ -1,32 +1,78 @@
-Data/L24_b240_xi1_g.dat
+Loaded Data/L24_b240_xi1_g.dat
 1 exponentials with a pole of degree 0
-shape: 1 1 1 1 1 1 1 1 1 1 1 1
-1 exponentials with a pole of degree 1
+shape: 1 1 1 1 1 1 1 1 1 1 1 0
+2 exponentials with a pole of degree 0
+shape: 1 1 1 1 1 1 1 1 1 1 1 0
+1 exponentials with a pole of degree 0
 shape: 1 1 1 1 1 1 1 1 1 1 1 1
 2 exponentials with a pole of degree 0
 shape: 1 1 1 1 1 1 1 1 1 1 1 1
+1 exponentials with a pole of degree 1
+shape: 1 1 1 1 1 1 1 1 1 1 1 0
+2 exponentials with a pole of degree 1
+shape: 1 1 1 1 1 1 1 1 1 1 1 0
+1 exponentials with a pole of degree 1
+shape: 1 1 1 1 1 1 1 1 1 1 1 1
 2 exponentials with a pole of degree 1
 shape: 1 1 1 1 1 1 1 1 1 1 1 1
-3 exponentials with a pole of degree 0
-shape: 1 1 1 1 1 1 1 1 1 1 1 1
-3 exponentials with a pole of degree 1
-shape: 1 1 1 1 1 1 1 1 1 1 1 1
-Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.001 strategy 2
+Exponential of polynomial with degree 2 and pole of degree 0
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 1 0
+Exponential of polynomial with degree 3 and pole of degree 0
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 1 0
+Exponential of polynomial with degree 2 and pole of degree 0
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 1 1
+Exponential of polynomial with degree 3 and pole of degree 0
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 1 1
+Exponential of polynomial with degree 2 and pole of degree 1
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 1 0
+Exponential of polynomial with degree 3 and pole of degree 1
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 1 0
+Exponential of polynomial with degree 2 and pole of degree 1
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 1 1
+Exponential of polynomial with degree 3 and pole of degree 1
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 1 1
+
+
+Fitting R = 0
+
+fitting 16 models
+model 0
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
 Minuit2Minimizer : Valid minimum - status = 0
-FVAL  = 39438.9755611288347
-Edm   = 4.47885359006709856e-14
-Nfcn  = 110
-0	  = 1.38866	 +/-  2.47125e-05
-1	  = -0.614045	 +/-  2.33022e-05
-Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.001 strategy 2
+FVAL  = 37434.4705477729003
+Edm   = 4.76192626537312886e-14
+Nfcn  = 108
+0	  = 1.38866	 +/-  2.47126e-05
+1	  = -0.614045	 +/-  2.33026e-05
+minimized
+model 1
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
 Minuit2Minimizer : Valid minimum - status = 0
-FVAL  = 23992.3499677500404
-Edm   = 4.20722624296799575e-10
-Nfcn  = 192
-0	  = 1.37938	 +/-  7.84288e-05
-1	  = 0.610545	 +/-  3.64295e-05
-2	  = 0.00967735	 +/-  7.83821e-05
-Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.001 strategy 2
+FVAL  = 21998.0341377607183
+Edm   = 8.67353760832754859e-07
+Nfcn  = 694
+0	  = 1.38229	 +/-  0.000143082
+1	  = 0.610932	 +/-  5.17781e-05
+2	  = 0.207158	 +/-  0.00159712
+3	  = 1.30806	 +/-  0.0142715
+minimized
+model 2
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 39438.9755800268686
+Edm   = 0.00505496243567904457
+Nfcn  = 237
+0	  = 1.38866	 +/-  4.06784e-05
+1	  = 0.614045	 +/-  2.9082e-05
+2	  = 0.205822	 +/-  2.6444e-05
+3	  = 1.30451	 +/-  0.000136087
+minimized
+model 3
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
 Minuit2Minimizer : Valid minimum - status = 0
 FVAL  = 23997.0795103829514
 Edm   = 5.65516926952374667e-08
@@ -35,58 +81,2405 @@ Nfcn  = 569
 1	  = 0.610932	 +/-  5.17483e-05
 2	  = 0.207173	 +/-  0.0015967
 3	  = 1.30819	 +/-  0.0142594
-Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.001 strategy 2
-Minuit2Minimizer : Valid minimum - status = 0
-FVAL  = 23991.6156614917745
-Edm   = 1.78110879836877752e-06
-Nfcn  = 3573
-0	  = -0.105982	 +/-  0.0282804
-1	  = -1.31468	 +/-  0.0566157
-2	  = 1.38016	 +/-  0.00042751
-3	  = 0.610652	 +/-  7.36129e-05
-4	  = 0.00712953	 +/-  0.00137216
-Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.001 strategy 2
-Minuit2Minimizer : Valid minimum - status = 0
-FVAL  = 23990.5515752403335
-Edm   = 1.40137909066412635e-06
-Nfcn  = 14827
-0	  = 0.165174	 +/-  0.0121731
-1	  = 1.15034	 +/-  0.068732
-2	  = -1.38164	 +/-  0.000417766
-3	  = 0.610787	 +/-  9.6554e-05
-4	  = 5.43971	 +/-  2.66222
-5	  = 3.14533	 +/-  0.120237
-Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.001 strategy 2
+minimized
+model 4
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
 Minuit2Minimizer : Valid minimum - status = 5
-FVAL  = 23992.3496119784031
-Edm   = 0.000913930412934860215
-Nfcn  = 2716
-0	  = -0.77578	 +/-  0.00171844
-1	  = 0.610486	 +/-  0.00548791
-2	  = 1.99209	 +/-  0.000752568
-3	  = 4.11086	 +/-  0.00385486
-4	  = 1.14054	 +/-  0.00115529
-5	  = 0.610571	 +/-  0.00254264
-6	  = 0.00967706	 +/-  9.77106e-05
-Model: 1 exponentials with a pole of degree 0
-shape: 1 1 1 1 1 1 1 1 1 1 1 1
-Model: 1 exponentials with a pole of degree 1
-shape: 1 1 1 1 1 1 1 1 1 1 1 1
-Model: 2 exponentials with a pole of degree 0
-shape: 1 1 1 1 1 1 1 1 1 1 1 1
-Model: 2 exponentials with a pole of degree 1
-shape: 1 1 1 1 1 1 1 1 1 1 1 1
-Model: 3 exponentials with a pole of degree 0
-shape: 1 1 1 1 1 1 1 1 1 1 1 1
-Model: 3 exponentials with a pole of degree 1
-shape: 1 1 1 1 1 1 1 1 1 1 1 1
-Results: 0.377051 0.372765 0.402635 0.380842  9.30923  11.5434
+FVAL  = 21993.3256196956463
+Edm   = 0.00932836624633637257
+Nfcn  = 345
+0	  = 1.37937	 +/-  0.000103279
+1	  = 0.610544	 +/-  3.54132e-05
+2	  = 0.0096793	 +/-  0.000111313
+3	  = -9.64654	 +/-  0.00339755
+minimized
+model 5
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 21993.3243960146501
+Edm   = 0.00887115460864151828
+Nfcn  = 1597
+0	  = -8.32045	 +/-  0.0019114
+1	  = 5.07618	 +/-  0.000189844
+2	  = 1.37938	 +/-  9.16771e-05
+3	  = 0.610544	 +/-  2.33965e-05
+4	  = 0.00967719	 +/-  0.000102925
+minimized
+model 6
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 23992.3521771527594
+Edm   = 0.00968648426351137459
+Nfcn  = 430
+0	  = 1.37938	 +/-  6.68031e-05
+1	  = 0.610545	 +/-  3.1041e-05
+2	  = 0.0096758	 +/-  6.79946e-05
+3	  = 0.634143	 +/-  4.39225e-06
+4	  = 0.0955806	 +/-  1.57683e-05
+minimized
+model 7
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 23991.61566359266
+Edm   = 5.38411291813534686e-06
+Nfcn  = 3398
+0	  = -0.106008	 +/-  0.028099
+1	  = -1.31464	 +/-  0.0565032
+2	  = 1.38016	 +/-  0.000425708
+3	  = 0.610652	 +/-  7.3541e-05
+4	  = 0.00712818	 +/-  0.00136272
+minimized
+model 8
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 7.09203e+07
+Edm   = 3.66461e+06
+Nfcn  = 187
+minimized
+model 9
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 73388752.5876505226
+Edm   = 0.00925204157829284668
+Nfcn  = 727
+0	  = 1.31395	 +/-  5.78399e-06
+1	  = 0.00217286	 +/-  1.06764e-07
+2	  = 0.132644	 +/-  1.08732e-05
+3	  = -9.27364e-14	 +/-  6.07187e-11
+4	  = -8092.8	 +/-  0.39259
+minimized
+model 10
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 39439
+Edm   = 0.0122403
+Nfcn  = 567
+minimized
+model 11
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 7.34831e+07
+Edm   = 0.0176781
+Nfcn  = 963
+minimized
+model 12
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 91950847.8030314595
+Edm   = 0.00779281556606292725
+Nfcn  = 709
+0	  = 7.57063	 +/-  0.000278738
+1	  = 1.15343	 +/-  4.55166e-07
+2	  = -3.38238e-12	 +/-  2.89697e-10
+3	  = -0.559332	 +/-  1.14014e-05
+4	  = -2.30694e+06	 +/-  0.375625
+minimized
+model 13
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 454204107.35771817
+Edm   = 0.00724887847900390625
+Nfcn  = 1074
+0	  = 2.16403	 +/-  1.57229e-05
+1	  = 1.8303	 +/-  2.38109e-05
+2	  = 6.39069e-12	 +/-  6.183e-10
+3	  = 0.017245	 +/-  3.8904e-07
+4	  = 0.676972	 +/-  6.66404e-05
+minimized
+model 14
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 9.19932e+07
+Edm   = 0.0121467
+Nfcn  = 650
+minimized
+model 15
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 502400151.631182194
+Edm   = 0.00630897283554077148
+Nfcn  = 1045
+0	  = 0.692634	 +/-  3.09798e-05
+1	  = 1.42447	 +/-  1.08716e-05
+2	  = 3.53216e-11	 +/-  1.22948e-09
+3	  = 0.118867	 +/-  4.10481e-06
+4	  = 2.51972	 +/-  6.06756e-05
+minimized
+fit all models
+Results:   0.377051   0.402624   0.377051   0.402635   0.372765    25.0884   0.372765   0.380845  0.0165198 0.00217286    0.37705 0.00183023    1.15343     1.8303    1.15342    1.42447
 
-Errors: 3.43386e-05 7.46493e-05  0.00102098  0.00561561     12.5001   0.0249697
+Errors:  3.4339e-05  0.00102141 4.74504e-05  0.00102098 9.00099e-05   0.0161908 6.35923e-05  0.00558127 2.18773e-05 1.06764e-07   4.095e-06 1.55044e-07 4.55166e-07 2.38109e-05 1.02521e-07 1.08716e-05
 
-Probabilities:         0  0.739481 0.0255638  0.144474 0.0904814         0
+Probabilities:         0 0.0298502         0         0  0.854443  0.115707         0         0         0         0         0         0         0         0         0         0
 
-Chisq/dof:   1545.1  0.48333  1.13494 0.516523 0.425263 0.869922
+Chisq/dof:     1930.68     1.50569      1545.1     1.13494    0.617946    0.864879    0.483575    0.516523 1.01283e+07 1.22278e+07     1716.78 9.18239e+06 1.53215e+07 9.08364e+07 1.14962e+07  7.1768e+07
 
-Fit statuses: 0 0 0 0 0 5
+Fit statuses: 0 0 5 0 5 5 5 0 3 5 3 3 5 5 3 5
 
+
+
+Fitting R = 1
+
+fitting 16 models
+model 0
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 30478.0859511025265
+Edm   = 0.00930180728028062731
+Nfcn  = 364
+0	  = 1.34331	 +/-  9.91707e-05
+1	  = 0.755161	 +/-  7.05463e-05
+2	  = -1.47672e-07	 +/-  3.20412e-10
+3	  = 0.118746	 +/-  5.12534e-07
+4	  = 2.53944	 +/-  1.67184e-05
+minimized
+model 1
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 24450.5
+Edm   = 0.0112171
+Nfcn  = 370
+minimized
+model 2
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 32495.9030457526023
+Edm   = 0.00884256562130758539
+Nfcn  = 364
+0	  = 1.34331	 +/-  9.2588e-05
+1	  = 0.755162	 +/-  7.0197e-05
+2	  = 0.908146	 +/-  4.50174e-05
+3	  = 0.702344	 +/-  3.85535e-05
+4	  = 7.11646	 +/-  0.000990636
+minimized
+model 3
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 26481.1
+Edm   = 0.0107794
+Nfcn  = 416
+minimized
+model 4
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22000.8093734912909
+Edm   = 0.00713267812898266129
+Nfcn  = 455
+0	  = 1.32367	 +/-  0.000390602
+1	  = 0.74956	 +/-  0.000111189
+2	  = 0.0229524	 +/-  0.00037174
+3	  = 0.324098	 +/-  0.000709995
+4	  = 200.204	 +/-  0.0428915
+minimized
+model 5
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 22000.8089981180456
+Edm   = 4.05050114882864222e-07
+Nfcn  = 1488
+0	  = -0.00541991	 +/-  1.93421
+1	  = 3.62098	 +/-  2
+2	  = 1.32367	 +/-  0.000229088
+3	  = 0.74956	 +/-  7.8657e-05
+4	  = 0.0229546	 +/-  0.000253903
+minimized
+model 6
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24001.3629693785915
+Edm   = 0.00806490165268769488
+Nfcn  = 447
+0	  = 1.32366	 +/-  0.000324299
+1	  = 0.749557	 +/-  0.000111261
+2	  = 0.0229668	 +/-  0.000352533
+3	  = 0.650556	 +/-  0.000158785
+4	  = 0.0210886	 +/-  0.00011162
+minimized
+model 7
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 24001.363058769839
+Edm   = 0.000172899235490276651
+Nfcn  = 688
+0	  = 1.32772	 +/-  190.59
+1	  = 4.35318	 +/-  10.7838
+2	  = 1.32366	 +/-  0.000229985
+3	  = 0.749557	 +/-  7.87374e-05
+4	  = 0.0229643	 +/-  0.000257283
+minimized
+model 8
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 30478.6851176134478
+Edm   = 0.00942523882986279204
+Nfcn  = 488
+0	  = 1.80445	 +/-  3.75417e-06
+1	  = 0.57021	 +/-  1.05373e-06
+2	  = 3.66357e-10	 +/-  4.01392e-08
+3	  = -170.574	 +/-  0.000451947
+4	  = -3419.9	 +/-  0.0134699
+minimized
+model 9
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 11972354.9277129322
+Edm   = 0.00841915048658847809
+Nfcn  = 1166
+0	  = 0.944564	 +/-  6.44087e-05
+1	  = -0.0200894	 +/-  1.56655e-07
+2	  = 0.183487	 +/-  2.0863e-05
+3	  = 2.89224e-13	 +/-  6.15696e-10
+4	  = -369061	 +/-  58.6009
+minimized
+model 10
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 32495.9
+Edm   = 0.0100772
+Nfcn  = 489
+minimized
+model 11
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 11462703.7288316004
+Edm   = 0.00745040364563465118
+Nfcn  = 769
+0	  = 0.96863	 +/-  0.000102557
+1	  = 0.0423156	 +/-  1.13087e-06
+2	  = 0.172908	 +/-  3.31675e-06
+3	  = 1.25562e-11	 +/-  7.39111e-10
+4	  = -8.3977e+07	 +/-  305.391
+minimized
+model 12
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 3.27235e+06
+Edm   = 0.0106774
+Nfcn  = 597
+minimized
+model 13
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 22000.8090132309444
+Edm   = 1.43968002979700082e-05
+Nfcn  = 1201
+0	  = 1.75209	 +/-  0.000608867
+1	  = 0.561839	 +/-  0.000118713
+2	  = -3.68256e-11	 +/-  1.5805e-06
+3	  = -8.25181e-11	 +/-  2.82564e-07
+4	  = 0.0229549	 +/-  0.000254576
+minimized
+model 14
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24001.3744474110244
+Edm   = 0.00851629583121393807
+Nfcn  = 825
+0	  = 1.75202	 +/-  0.000467463
+1	  = 0.561825	 +/-  5.18849e-05
+2	  = -2.11498e-08	 +/-  8.57415e-06
+3	  = 0.0229793	 +/-  0.00022219
+4	  = 0.499855	 +/-  0.000111066
+minimized
+model 15
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 50718721.4893411845
+Edm   = 0.0098989531397819519
+Nfcn  = 1396
+0	  = 0.478179	 +/-  9.6169e-05
+1	  = 0.01465	 +/-  1.71185e-07
+2	  = 1.14719	 +/-  5.50923e-06
+3	  = 3.10665e-11	 +/-  1.00256e-08
+4	  = 1.00603	 +/-  0.000162826
+minimized
+fit all models
+Results:    0.570269    0.578499    0.570269     0.57845     0.56184     0.56205    0.561835      9.7842     0.57021   0.0200894    0.570273   0.0423156 9.21801e-11    0.561839    0.561825     0.01465
+
+Errors: 0.000159787 0.000492289 0.000153623 0.000451498 0.000497679    0.157041 0.000423559     3071.16 1.05373e-06 1.56655e-07 6.22072e-05 1.13087e-06 1.36828e-08 0.000118713 5.18849e-05 1.71185e-07
+
+Probabilities:        0        0        0        0 0.786955 0.106523        0        0        0        0        0        0        0 0.106522        0        0
+
+Chisq/dof:     1061.14     410.255      850.79     311.635     1.68705      2.3618     1.48477     1.90901     1212.81 1.99173e+06     945.325 1.42984e+06      541727      2.3618     1.67181  7.2421e+06
+
+Fit statuses: 5 3 5 3 5 0 5 0 5 5 3 5 3 0 5 5
+
+
+
+Fitting R = 2
+
+fitting 16 models
+model 0
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 27917.3407827483134
+Edm   = 0.00504622811058652587
+Nfcn  = 338
+0	  = 1.28627	 +/-  0.000290012
+1	  = 0.833044	 +/-  0.000107836
+2	  = 1.14713	 +/-  6.0872e-06
+3	  = 7.3057e-07	 +/-  6.26002e-09
+4	  = 0.982916	 +/-  9.69833e-05
+minimized
+model 1
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22868.597617447369
+Edm   = 0.00396272938814945519
+Nfcn  = 433
+0	  = 1.14021	 +/-  0.00100795
+1	  = 0.808829	 +/-  0.000307126
+2	  = 0.621351	 +/-  0.00234517
+3	  = 0.961569	 +/-  0.000774
+4	  = 17.1837	 +/-  0.108073
+minimized
+model 2
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 29935.1492779362088
+Edm   = 0.0062066500358923804
+Nfcn  = 339
+0	  = 1.28626	 +/-  0.000256958
+1	  = 0.833054	 +/-  0.000127558
+2	  = 0.602472	 +/-  0.00106052
+3	  = 1.02009	 +/-  0.000205421
+4	  = 1.43898	 +/-  0.0694771
+minimized
+model 3
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24923.4316353458853
+Edm   = 0.00624629194862791337
+Nfcn  = 371
+0	  = 1.12383	 +/-  0.00100814
+1	  = 0.807211	 +/-  0.0002921
+2	  = 0.649923	 +/-  0.00216963
+3	  = 0.951874	 +/-  0.000863426
+4	  = 1860.83	 +/-  34.6336
+minimized
+model 4
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 21997.7708761692411
+Edm   = 0.00615958259368198924
+Nfcn  = 440
+0	  = 1.25324	 +/-  0.000479655
+1	  = 0.824562	 +/-  0.000137977
+2	  = 0.0426229	 +/-  0.000687129
+3	  = -308.192	 +/-  0.647597
+4	  = 4.70453e+06	 +/-  7550.95
+minimized
+model 5
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 21997.7702077883368
+Edm   = 1.94209761824796807e-08
+Nfcn  = 1067
+0	  = 0.00020283	 +/-  1.13003
+1	  = 3.06205	 +/-  2
+2	  = 1.25324	 +/-  0.000462613
+3	  = 0.824564	 +/-  0.000139592
+4	  = 0.0426191	 +/-  0.000573597
+minimized
+model 6
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 23996.8245041236187
+Edm   = 0.00456372911503422074
+Nfcn  = 426
+0	  = 1.25323	 +/-  0.00079002
+1	  = 0.824561	 +/-  0.000219023
+2	  = 0.0426364	 +/-  0.000955038
+3	  = 8.32182	 +/-  0.0395708
+4	  = -102.76	 +/-  0.444518
+minimized
+model 7
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 23996.8236632540757
+Edm   = 4.60461731376582488e-05
+Nfcn  = 1207
+0	  = 0.45549	 +/-  67.4785
+1	  = 4.14332	 +/-  0.429518
+2	  = 1.25323	 +/-  0.000462235
+3	  = 0.824563	 +/-  0.000139578
+4	  = 0.0426263	 +/-  0.000574038
+minimized
+model 8
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 31167.5347230090774
+Edm   = 0.00982186410328722559
+Nfcn  = 457
+0	  = 1.67961	 +/-  0.000104098
+1	  = -0.695634	 +/-  0.000149906
+2	  = 1.21615e-09	 +/-  6.082e-08
+3	  = 143.318	 +/-  0.0480948
+4	  = 1724.7	 +/-  0.241562
+minimized
+model 9
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 4.89651e+06
+Edm   = 3.24717e+06
+Nfcn  = 842
+minimized
+model 10
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 29935.1524810258925
+Edm   = 0.00708860054510296322
+Nfcn  = 539
+0	  = 1.65447	 +/-  5.17757e-05
+1	  = -0.693982	 +/-  4.69204e-05
+2	  = 1.08653e-09	 +/-  7.65102e-08
+3	  = -1143.43	 +/-  0.114768
+4	  = -5.2671e+07	 +/-  4745.18
+minimized
+model 11
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 1.69909e+06
+Edm   = 2.13694e+06
+Nfcn  = 1160
+minimized
+model 12
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 23152.8472212273336
+Edm   = 0.00982655983534641564
+Nfcn  = 817
+0	  = 1.49404	 +/-  0.00123608
+1	  = 0.655833	 +/-  0.00015702
+2	  = -0.00348464	 +/-  2.98129e-06
+3	  = 0.0737854	 +/-  0.000423597
+4	  = -5.29673e+07	 +/-  16.0764
+minimized
+model 13
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 1.19043e+07
+Edm   = 0.0146485
+Nfcn  = 1510
+minimized
+model 14
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 24054.5
+Edm   = 0.0119833
+Nfcn  = 570
+minimized
+model 15
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 23996.8237079653481
+Edm   = 9.96618229846194924e-05
+Nfcn  = 942
+0	  = 1.57058	 +/-  0.00115929
+1	  = 0.679904	 +/-  0.000231049
+2	  = 1.28149e-09	 +/-  2.72235e-06
+3	  = -1.58814e-10	 +/-  2.57676e-07
+4	  = 0.0426272	 +/-  0.000572483
+minimized
+fit all models
+Results: 0.693962  0.71612 0.693979 0.715367 0.679902 0.679906 0.679901   2.6037 0.695634 0.219274 0.693982  0.43143 0.655833 0.400166 0.675274 0.679904
+
+Errors:  0.00047763  0.00246923 0.000446015  0.00239136 0.000770387  0.00284347  0.00126494     600.293 0.000149906 2.03085e-05 4.69204e-05 1.49152e-05  0.00015702 1.53079e-07 0.000324985 0.000231049
+
+Probabilities:        0        0        0        0 0.880762 0.119238        0        0        0        0        0        0        0        0        0        0
+
+Chisq/dof:     741.043       146.6     594.715     116.929     1.25298     1.75404      0.9805     1.26052     1311.22      812421     660.795      209387     193.975 2.37645e+06     8.31772     1.26053
+
+Fit statuses: 5 5 5 5 5 0 5 0 5 3 5 3 5 3 3 0
+
+
+
+Fitting R = 3
+
+fitting 16 models
+model 0
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 26550.2600059097967
+Edm   = 0.00484201573999598622
+Nfcn  = 307
+0	  = 1.22472	 +/-  0.000477139
+1	  = 0.891374	 +/-  0.00014366
+2	  = -0.0012317	 +/-  4.13508e-06
+3	  = -1.72471e-05	 +/-  1.50611e-07
+4	  = 0.347002	 +/-  0.00086005
+minimized
+model 1
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22437.5115181486726
+Edm   = 0.00362167137063806877
+Nfcn  = 922
+0	  = 1.08076	 +/-  0.00153417
+1	  = 0.863666	 +/-  0.00038985
+2	  = 0.620103	 +/-  0.00429018
+3	  = 1.0519	 +/-  0.00106653
+4	  = 5.87138	 +/-  0.110087
+minimized
+model 2
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 28552.8302969448887
+Edm   = 0.00769267362557002343
+Nfcn  = 307
+0	  = 1.2247	 +/-  0.000401607
+1	  = 0.891356	 +/-  0.00017105
+2	  = -1.31769	 +/-  0.00545323
+3	  = 0.979587	 +/-  0.000697992
+4	  = 64.4365	 +/-  0.138395
+minimized
+model 3
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24486.8732326901336
+Edm   = 0.00930649660949711688
+Nfcn  = 976
+0	  = 1.06134	 +/-  0.000533732
+1	  = 0.861206	 +/-  0.000257588
+2	  = 0.651392	 +/-  0.00151333
+3	  = 1.03756	 +/-  0.00078012
+4	  = 5064.7	 +/-  36.6335
+minimized
+model 4
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 21994.6992712110514
+Edm   = 0.00507838002886273898
+Nfcn  = 426
+0	  = 1.17514	 +/-  0.000471827
+1	  = 0.879356	 +/-  0.000186578
+2	  = 0.0698526	 +/-  0.000815369
+3	  = -23.7431	 +/-  0.2914
+4	  = 5.05452e+06	 +/-  17597.3
+minimized
+model 5
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 21994.6974509185347
+Edm   = 6.18420367526149295e-08
+Nfcn  = 539
+0	  = 1.81467e-06	 +/-  0.11687
+1	  = 1.77026	 +/-  2.00006
+2	  = 1.17517	 +/-  0.000791994
+3	  = 0.879364	 +/-  0.000222131
+4	  = 0.0698184	 +/-  0.00110546
+minimized
+model 6
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 23993.7790996582116
+Edm   = 0.00471810861199628562
+Nfcn  = 452
+0	  = 1.17518	 +/-  0.00106094
+1	  = 0.879364	 +/-  0.000177665
+2	  = 0.0698041	 +/-  0.00125473
+3	  = 9.04494	 +/-  0.00513481
+4	  = 13.4493	 +/-  0.107015
+minimized
+model 7
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 23993.7786258372871
+Edm   = 1.36111013308889826e-05
+Nfcn  = 496
+0	  = -0.000344091	 +/-  0.116392
+1	  = 1.76941	 +/-  2
+2	  = 1.17517	 +/-  0.000791274
+3	  = 0.87936	 +/-  0.000221801
+4	  = 0.0698267	 +/-  0.00110394
+minimized
+model 8
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 26550.3
+Edm   = 0.021021
+Nfcn  = 499
+minimized
+model 9
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 1.16619e+06
+Edm   = 50058.6
+Nfcn  = 937
+minimized
+model 10
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 28552.9
+Edm   = 0.013565
+Nfcn  = 526
+minimized
+model 11
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 690083
+Edm   = 0.0105367
+Nfcn  = 1735
+minimized
+model 12
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 44350.3845440590812
+Edm   = 0.00756387631554389372
+Nfcn  = 843
+0	  = 0.786437	 +/-  0.00229033
+1	  = 0.528023	 +/-  0.000794538
+2	  = -0.035099	 +/-  2.76174e-05
+3	  = 0.516935	 +/-  0.00347661
+4	  = 4.66829e+06	 +/-  134.295
+minimized
+model 13
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 21994.6974730652946
+Edm   = 1.15819939077272416e-05
+Nfcn  = 1819
+0	  = 1.38103	 +/-  0.00186003
+1	  = 0.77328	 +/-  0.000392528
+2	  = -9.03334e-10	 +/-  5.34965e-06
+3	  = 1.2687e-11	 +/-  4.82862e-07
+4	  = 0.0698211	 +/-  0.0010946
+minimized
+model 14
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 311815.41970894119
+Edm   = 0.00732296175556257367
+Nfcn  = 948
+0	  = 2.59074	 +/-  0.00100199
+1	  = 1.02668	 +/-  7.1591e-05
+2	  = 2.56057e-10	 +/-  1.89577e-08
+3	  = -0.302839	 +/-  0.000304672
+4	  = 6.92531	 +/-  0.00142988
+minimized
+model 15
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 23993.778625716328
+Edm   = 5.42509652449770771e-05
+Nfcn  = 1762
+0	  = 1.38102	 +/-  0.00185494
+1	  = -0.773275	 +/-  0.000389881
+2	  = -4.30886e-10	 +/-  7.66664e-07
+3	  = -3.85948e-11	 +/-  6.64666e-08
+4	  = 0.0698253	 +/-  0.00109289
+minimized
+fit all models
+Results: 0.794548 0.835224 0.794516 0.833299 0.773266 0.773281  0.77328 0.773274 0.794542 0.493929 0.794548 0.407751 0.528023  0.77328  1.02668 0.773275
+
+Errors: 0.000912225  0.00537201 0.000797518  0.00198992 0.000937449  0.00152491  0.00199912   0.0015349 0.000207962 0.000265222 0.000120155 2.90801e-05 0.000794538 0.000392528  7.1591e-05 0.000389881
+
+Probabilities:        0        0        0        0 0.786834 0.106583        0        0        0        0        0        0        0 0.106582        0        0
+
+Chisq/dof:  570.158  74.7519  456.483  62.3592 0.814182  1.13949 0.642122 0.825518   651.61   190700  507.206  83261.9   3726.9  1.13949  35978.4 0.825518
+
+Fit statuses: 5 5 5 5 5 0 5 0 3 3 3 3 5 0 5 0
+
+
+
+Fitting R = 4
+
+fitting 16 models
+model 0
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 25267.9979553616067
+Edm   = 0.0081804590554384049
+Nfcn  = 285
+0	  = 1.16418	 +/-  0.000886519
+1	  = 0.942383	 +/-  0.000188644
+2	  = -2.92784e-05	 +/-  4.4789e-07
+3	  = -3.12933e-06	 +/-  6.6603e-08
+4	  = 0.163918	 +/-  0.00140654
+minimized
+model 1
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22264.8538717405099
+Edm   = 0.0060535655175044667
+Nfcn  = 492
+0	  = 0.672264	 +/-  0.0040101
+1	  = 1.10929	 +/-  0.00117665
+2	  = 0.988457	 +/-  0.00161111
+3	  = 0.906089	 +/-  0.00059413
+4	  = 2.64916	 +/-  0.00842712
+minimized
+model 2
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 27276.4533196703269
+Edm   = 0.00345777227630605921
+Nfcn  = 291
+0	  = 1.16418	 +/-  0.000715335
+1	  = 0.942413	 +/-  0.000323282
+2	  = 0.915108	 +/-  0.000867608
+3	  = 0.878804	 +/-  0.000318335
+4	  = 3.38944	 +/-  0.0063353
+minimized
+model 3
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 23991.879937841939
+Edm   = 0.00394048315502004698
+Nfcn  = 1014
+0	  = 0.529795	 +/-  0.00723912
+1	  = 1.42739	 +/-  0.0256966
+2	  = 1.11459	 +/-  0.00274792
+3	  = 0.927311	 +/-  0.0005294
+4	  = -72.0882	 +/-  5.0202
+minimized
+model 4
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 21996.5632063286794
+Edm   = 0.00386478882137453184
+Nfcn  = 559
+0	  = 1.09443	 +/-  0.0015953
+1	  = 0.92574	 +/-  0.000408805
+2	  = 0.106112	 +/-  0.00295738
+3	  = 1.29308	 +/-  0.00263166
+4	  = -3297.64	 +/-  8.5753
+minimized
+model 5
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 21996.563158896708
+Edm   = 2.06120787576575478e-06
+Nfcn  = 1520
+0	  = 0.000372695	 +/-  0.295516
+1	  = 2.30736	 +/-  2
+2	  = 1.09443	 +/-  0.0012999
+3	  = 0.925739	 +/-  0.000351756
+4	  = 0.106109	 +/-  0.00202911
+minimized
+model 6
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 23996.0242010476068
+Edm   = 0.00762474930161261
+Nfcn  = 575
+0	  = 1.09439	 +/-  0.00196015
+1	  = 0.925737	 +/-  0.000591711
+2	  = 0.106174	 +/-  0.00317544
+3	  = 0.761297	 +/-  0.000467731
+4	  = -0.531298	 +/-  0.00466115
+minimized
+model 7
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 23996.0240270900395
+Edm   = 1.34848885497954606e-06
+Nfcn  = 1440
+0	  = 0.000152604	 +/-  0.160102
+1	  = 1.96231	 +/-  2
+2	  = 1.09439	 +/-  0.00129969
+3	  = 0.925735	 +/-  0.000351804
+4	  = 0.106169	 +/-  0.00203198
+minimized
+model 8
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 25268.0001042278927
+Edm   = 0.00754266670628567226
+Nfcn  = 601
+0	  = 1.35534	 +/-  0.000790364
+1	  = 0.888096	 +/-  0.000250794
+2	  = 3.66145e-09	 +/-  3.53097e-07
+3	  = 79.5554	 +/-  0.173771
+4	  = -503.053	 +/-  1.18002
+minimized
+model 9
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 1.70233e+06
+Edm   = 0.0107337
+Nfcn  = 460
+minimized
+model 10
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 27276.4570633718686
+Edm   = 0.00622244047917774878
+Nfcn  = 441
+0	  = 1.35536	 +/-  0.000269944
+1	  = 0.888155	 +/-  0.000225229
+2	  = -3.5496e-09	 +/-  2.42344e-07
+3	  = 0.431955	 +/-  1.40167e-05
+4	  = 10185.9	 +/-  3.62594
+minimized
+model 11
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 1387307.95903802034
+Edm   = 0.0088898208923637867
+Nfcn  = 904
+0	  = 0.687749	 +/-  0.000140149
+1	  = 0.0202794	 +/-  0.000654908
+2	  = -0.739527	 +/-  0.000133524
+3	  = 4.43492e-10	 +/-  5.95318e-08
+4	  = 189891	 +/-  33.0209
+minimized
+model 12
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 104385.552046323079
+Edm   = 0.00729875550314318389
+Nfcn  = 608
+0	  = 2.09652	 +/-  0.000163883
+1	  = 1.06822	 +/-  1.7706e-05
+2	  = -3.1501e-10	 +/-  4.29412e-08
+3	  = -0.251147	 +/-  0.000299941
+4	  = 195122	 +/-  0.0248113
+minimized
+model 13
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 21996.5631854473359
+Edm   = 1.8854128936318849e-05
+Nfcn  = 883
+0	  = 1.19777	 +/-  0.00285098
+1	  = -0.856991	 +/-  0.00065628
+2	  = 2.57543e-09	 +/-  1.00804e-05
+3	  = 4.35717e-11	 +/-  9.78381e-07
+4	  = 0.106113	 +/-  0.00202493
+minimized
+model 14
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 24810.9
+Edm   = 0.0123011
+Nfcn  = 708
+minimized
+model 15
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 23996.0240617526106
+Edm   = 1.79305810201476057e-05
+Nfcn  = 1658
+0	  = 1.1977	 +/-  0.00284775
+1	  = 0.856985	 +/-  0.000656358
+2	  = 2.0829e-09	 +/-  1.06231e-05
+3	  = 2.5532e-10	 +/-  1.03917e-06
+4	  = 0.10617	 +/-  0.00202247
+minimized
+fit all models
+Results:  0.888085  0.950517  0.888142   1.07692  0.856994  0.856993  0.856989  0.856986  0.888096    1.7451  0.888155 0.0202794   1.06822  0.856991  0.782062  0.856985
+
+Errors:  0.00194555  0.00659386  0.00165945   0.0186779  0.00361344  0.00311389  0.00447756  0.00295579 0.000250794 5.24848e-06 0.000225229 0.000654908  1.7706e-05  0.00065628  0.00108053 0.000656358
+
+Probabilities:        0        0        0        0 0.786983 0.106509        0        0        0        0        0        0        0 0.106508        0        0
+
+Chisq/dof:  409.875  45.9756  328.845 0.484992  1.08046  1.51263 0.891578  1.14629  468.429   280057  365.384   170415  13732.8  1.51264  102.859  1.14629
+
+Fit statuses: 5 5 5 5 5 0 5 0 5 3 5 5 5 0 3 0
+
+
+
+Fitting R = 5
+
+fitting 16 models
+model 0
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24454.2047532930555
+Edm   = 0.00423879284790018573
+Nfcn  = 171
+0	  = 1.10805	 +/-  0.000761999
+1	  = 0.990228	 +/-  0.000476327
+2	  = -2.58579e-05	 +/-  1.2105e-05
+3	  = 5.14932e-06	 +/-  1.23569e-06
+4	  = 0.0954858	 +/-  0.00101411
+minimized
+model 1
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 22237
+Edm   = 0.0122887
+Nfcn  = 345
+minimized
+model 2
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 26453.2438520111718
+Edm   = 0.00544874951810925268
+Nfcn  = 174
+0	  = 1.10808	 +/-  0.0010683
+1	  = 0.990243	 +/-  0.000527165
+2	  = 0.792099	 +/-  0.00106668
+3	  = 0.917974	 +/-  0.00246989
+4	  = 0.336086	 +/-  0.0113717
+minimized
+model 3
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 23996.0817003602351
+Edm   = 0.00882596990049933083
+Nfcn  = 952
+0	  = 1.03611	 +/-  0.00632628
+1	  = 0.968673	 +/-  0.00159618
+2	  = 0.585647	 +/-  0.00839337
+3	  = 1.42138	 +/-  0.0320898
+4	  = -10.1603	 +/-  0.902484
+minimized
+model 4
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22003.0997680998116
+Edm   = 0.00389427083791815676
+Nfcn  = 266
+0	  = 1.0143	 +/-  0.00179414
+1	  = 0.967682	 +/-  0.000443775
+2	  = 0.154155	 +/-  0.00353081
+3	  = 4.3432	 +/-  0.0461106
+4	  = 61.6449	 +/-  2.68319
+minimized
+model 5
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 1
+FVAL  = 21997.2053149746316
+Edm   = 3.42041198998716811e-05
+Nfcn  = 387
+0	  = 0.731891	 +/-  0.00867542
+1	  = 1.00311	 +/-  0.00536313
+2	  = 0.721759	 +/-  0.00857786
+3	  = 0.943096	 +/-  0.00263205
+4	  = 0.135723	 +/-  0.00545013
+minimized
+model 6
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24002.2958458473258
+Edm   = 0.00651218046550638974
+Nfcn  = 269
+0	  = 1.01433	 +/-  0.00237675
+1	  = 0.967685	 +/-  0.000570272
+2	  = 0.154113	 +/-  0.00463851
+3	  = 1.16966	 +/-  0.000911683
+4	  = 0.52985	 +/-  0.0164712
+minimized
+model 7
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 1
+FVAL  = 23996.3720919187799
+Edm   = 3.52058359809730441e-05
+Nfcn  = 370
+0	  = 0.731912	 +/-  0.00867525
+1	  = 1.00317	 +/-  0.00535854
+2	  = 0.721797	 +/-  0.00857866
+3	  = 0.943076	 +/-  0.00262709
+4	  = 0.13567	 +/-  0.00544984
+minimized
+model 8
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24454.3244990760868
+Edm   = 0.00855955651786644012
+Nfcn  = 399
+0	  = 1.22753	 +/-  0.000832825
+1	  = 0.980638	 +/-  0.000374146
+2	  = 4.68739e-09	 +/-  5.31859e-07
+3	  = -73.0204	 +/-  0.464654
+4	  = -130.847	 +/-  0.879844
+minimized
+model 9
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 785305
+Edm   = 0.0112737
+Nfcn  = 625
+minimized
+model 10
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 26453.3
+Edm   = 0.0181309
+Nfcn  = 396
+minimized
+model 11
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 199646
+Edm   = 0.0122022
+Nfcn  = 947
+minimized
+model 12
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 24729.1
+Edm   = 500.174
+Nfcn  = 530
+minimized
+model 13
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 22003.0994812435347
+Edm   = 2.16188670024726039e-06
+Nfcn  = 7865
+0	  = 1.02882	 +/-  0.00404534
+1	  = 0.936403	 +/-  0.00104569
+2	  = -4.02094e-10	 +/-  6.52904e-06
+3	  = -6.24868e-11	 +/-  7.49135e-07
+4	  = 0.154148	 +/-  0.0035201
+minimized
+model 14
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 26928
+Edm   = 715.688
+Nfcn  = 603
+minimized
+model 15
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 24002.2957763039194
+Edm   = 2.70145286507754712e-05
+Nfcn  = 1704
+0	  = 1.02883	 +/-  0.00404923
+1	  = 0.936409	 +/-  0.0010482
+2	  = 1.66127e-09	 +/-  1.1531e-05
+3	  = -3.47037e-10	 +/-  1.01406e-06
+4	  = 0.154146	 +/-  0.00352234
+minimized
+fit all models
+Results: 0.980552   1.0505 0.980581  1.20031 0.936409 0.948648 0.936414 0.948687 0.980638 0.604553 0.980626  1.03671 0.933383 0.936403 0.932796 0.936409
+
+Errors:   0.0021278  0.00660484  0.00287053    0.030955  0.00476298   0.0233288  0.00630348    0.023328 0.000374146 0.000100004  0.00036884 7.27991e-06 9.25139e-05  0.00104569 8.27044e-05   0.0010482
+
+Probabilities:         0         0         0         0  0.269259  0.694296         0         0         0         0         0         0         0 0.0364454         0         0
+
+Chisq/dof: 308.151 41.3312 246.524 1.01021 2.01425 1.64106 1.58843 1.19601 352.189  127219 273.917 21957.3 456.683  2.8199 367.506 2.04225
+
+Fit statuses: 5 3 5 5 5 1 5 1 5 3 3 3 3 0 3 0
+
+
+
+Fitting R = 6
+
+fitting 16 models
+model 0
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 23669.9670490537501
+Edm   = 0.00929420212196419016
+Nfcn  = 195
+0	  = 1.06082	 +/-  0.00119863
+1	  = 1.03705	 +/-  0.000539074
+2	  = 2.43587e-05	 +/-  2.44436e-05
+3	  = -4.43206e-05	 +/-  1.72048e-06
+4	  = 0.143681	 +/-  0.00358213
+minimized
+model 1
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22000.7757147336197
+Edm   = 0.00451559227076359093
+Nfcn  = 534
+0	  = 0.62974	 +/-  0.00922931
+1	  = 1.42114	 +/-  0.0456608
+2	  = 0.962564	 +/-  0.0133262
+3	  = 1.00795	 +/-  0.00325969
+4	  = 1.95963	 +/-  0.0731295
+minimized
+model 2
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 25679.9793383247743
+Edm   = 0.00359931073398911394
+Nfcn  = 194
+0	  = 1.06086	 +/-  0.00160755
+1	  = 1.03707	 +/-  0.000532815
+2	  = 0.571103	 +/-  0.0251979
+3	  = 0.831885	 +/-  0.00971392
+4	  = 2.74277	 +/-  0.0667363
+minimized
+model 3
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24007.6679861116172
+Edm   = 0.00776696756656747311
+Nfcn  = 534
+0	  = 0.629918	 +/-  0.00749602
+1	  = 1.42281	 +/-  0.0426763
+2	  = 0.962992	 +/-  0.0142311
+3	  = 1.00805	 +/-  0.00339986
+4	  = 77.7069	 +/-  13.3578
+minimized
+model 4
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22007.5195924352047
+Edm   = 0.00444513244656263851
+Nfcn  = 263
+0	  = 0.942499	 +/-  0.00385906
+1	  = 1.00831	 +/-  0.00100009
+2	  = 0.207335	 +/-  0.00698906
+3	  = 1.31343	 +/-  0.00723947
+4	  = 1018.33	 +/-  15.3446
+minimized
+model 5
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 1
+FVAL  = 21999.2047740893977
+Edm   = 5.98349631298516765e-06
+Nfcn  = 563
+0	  = 0.674642	 +/-  0.011805
+1	  = 1.06539	 +/-  0.00770152
+2	  = 0.697587	 +/-  0.0106259
+3	  = 0.978983	 +/-  0.00252165
+4	  = 0.165636	 +/-  0.00962649
+minimized
+model 6
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24014.0643318681723
+Edm   = 0.0047121635616349522
+Nfcn  = 259
+0	  = 0.942269	 +/-  0.00394681
+1	  = 1.00826	 +/-  0.00109404
+2	  = 0.20787	 +/-  0.00804169
+3	  = 1.20208	 +/-  0.00706432
+4	  = 0.81864	 +/-  0.014457
+minimized
+model 7
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 1
+FVAL  = 24006.0288081883918
+Edm   = 3.58516618112524359e-06
+Nfcn  = 467
+0	  = 0.665062	 +/-  0.0120075
+1	  = 1.06647	 +/-  0.00794731
+2	  = 0.706248	 +/-  0.0105173
+3	  = 0.979992	 +/-  0.00246667
+4	  = 0.166251	 +/-  0.00967667
+minimized
+model 8
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 28032.7
+Edm   = 5383.09
+Nfcn  = 339
+minimized
+model 9
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 146804
+Edm   = 105471
+Nfcn  = 897
+minimized
+model 10
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 29859.7
+Edm   = 3981.98
+Nfcn  = 355
+minimized
+model 11
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 200361
+Edm   = 12544.4
+Nfcn  = 678
+minimized
+model 12
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22034.5033754504766
+Edm   = 0.0045622112593264319
+Nfcn  = 516
+0	  = 0.832783	 +/-  0.00471864
+1	  = 0.988934	 +/-  8.55313e-05
+2	  = -0.00354897	 +/-  0.000246187
+3	  = 0.257107	 +/-  0.00584834
+4	  = 1.94326e+06	 +/-  79.5962
+minimized
+model 13
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 22007.5178372167029
+Edm   = 3.62756059372447775e-05
+Nfcn  = 1359
+0	  = 0.888109	 +/-  0.00571363
+1	  = 1.01664	 +/-  0.00165966
+2	  = -1.63938e-09	 +/-  2.09276e-06
+3	  = -2.68366e-10	 +/-  1.05027e-06
+4	  = 0.20757	 +/-  0.00601181
+minimized
+model 14
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24033.1493692060794
+Edm   = 0.00471600542368832976
+Nfcn  = 504
+0	  = 0.844563	 +/-  0.00371046
+1	  = 0.995072	 +/-  7.70352e-05
+2	  = -0.00273533	 +/-  0.000323292
+3	  = 0.246229	 +/-  0.00385468
+4	  = -0.0386334	 +/-  0.000850939
+minimized
+model 15
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 369215
+Edm   = 0.0108489
+Nfcn  = 1039
+minimized
+fit all models
+Results:  1.07548   1.3168  1.07552  1.31829  1.01669  1.04377  1.01659  1.04356 0.990444 0.631369 0.989862 0.338552 0.988934  1.01664 0.995072  2.59148
+
+Errors:  0.00361438   0.0549813  0.00474031   0.0532092   0.0119457   0.0353153   0.0122442   0.0354608 0.000164253 0.000146583 0.000202617  0.00155235 8.55313e-05  0.00165966 7.70352e-05  0.00131149
+
+Probabilities:         0  0.526255         0         0 0.0490994  0.424646         0         0         0         0         0         0         0         0         0         0
+
+Chisq/dof: 210.121 1.96262 169.198  2.4585 2.64566 2.04095 2.89604 2.57554 863.386 20802.5 652.415 22046.6  7.5839 3.70357 5.64367 49318.1
+
+Fit statuses: 5 5 5 5 5 1 5 1 3 3 3 3 5 0 5 3
+
+
+
+Fitting R = 7
+
+fitting 16 models
+model 0
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 23095.5256690761635
+Edm   = 0.00541994294326286763
+Nfcn  = 201
+0	  = 1.0256	 +/-  0.00138645
+1	  = 1.08418	 +/-  0.000810124
+2	  = 0.0113263	 +/-  4.40128e-05
+3	  = -9.20041e-05	 +/-  2.37718e-06
+4	  = 1.35547	 +/-  0.00438024
+minimized
+model 1
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22022.7518555614843
+Edm   = 0.00763737379020312801
+Nfcn  = 441
+0	  = 0.775685	 +/-  0.00566568
+1	  = 1.25396	 +/-  0.00167445
+2	  = 0.755051	 +/-  0.00298551
+3	  = 1.01634	 +/-  0.00117232
+4	  = 1.91522	 +/-  0.0229487
+minimized
+model 2
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 25094.624573244193
+Edm   = 0.00265992263666703366
+Nfcn  = 203
+0	  = 1.02561	 +/-  0.00166216
+1	  = 1.0842	 +/-  0.00103786
+2	  = 0.640316	 +/-  0.020908
+3	  = 1.09671	 +/-  0.00949905
+4	  = -4.83856	 +/-  0.257251
+minimized
+model 3
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 23998.4426767194018
+Edm   = 0.00624259692995110527
+Nfcn  = 545
+0	  = -0.673322	 +/-  0.00955183
+1	  = 1.40203	 +/-  0.0622449
+2	  = 0.88607	 +/-  0.0264672
+3	  = 1.04323	 +/-  0.00568641
+4	  = 539.156	 +/-  60.783
+minimized
+model 4
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 22010.8
+Edm   = 0.0105199
+Nfcn  = 327
+minimized
+model 5
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 1
+FVAL  = 22010.7808068588201
+Edm   = 7.83474724223789464e-08
+Nfcn  = 293
+0	  = 0.622684	 +/-  0.00991648
+1	  = 1.04784	 +/-  0.0101395
+2	  = 0.622681	 +/-  0.00991653
+3	  = 1.04784	 +/-  0.0101398
+4	  = 0.267448	 +/-  0.00886757
+minimized
+model 6
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24010.0041608894498
+Edm   = 0.00660671620426001027
+Nfcn  = 339
+0	  = 0.880649	 +/-  0.00520345
+1	  = 1.04784	 +/-  0.00161155
+2	  = 0.267328	 +/-  0.0118567
+3	  = -6.29452	 +/-  0.37474
+4	  = 7.83606	 +/-  0.348923
+minimized
+model 7
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 1
+FVAL  = 24010.0037710006909
+Edm   = 8.20674298478739954e-08
+Nfcn  = 293
+0	  = 0.622722	 +/-  0.00993894
+1	  = 1.04785	 +/-  0.0101388
+2	  = 0.622721	 +/-  0.00993897
+3	  = 1.04785	 +/-  0.010139
+4	  = 0.267327	 +/-  0.00886938
+minimized
+model 8
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 23095.5624741377142
+Edm   = 0.00973315417286357842
+Nfcn  = 464
+0	  = 1.05221	 +/-  0.000127655
+1	  = 1.17546	 +/-  0.000154327
+2	  = 1.53731e-08	 +/-  2.64358e-06
+3	  = 328.177	 +/-  0.307562
+4	  = -646.975	 +/-  0.635639
+minimized
+model 9
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 87108.8
+Edm   = 0.0124104
+Nfcn  = 504
+minimized
+model 10
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 25094.6437887863976
+Edm   = 0.00891250354106887244
+Nfcn  = 443
+0	  = 1.0522	 +/-  0.000916723
+1	  = 1.17557	 +/-  0.00112341
+2	  = -2.84168e-08	 +/-  1.87509e-06
+3	  = -0.000235366	 +/-  5.20261e-06
+4	  = 33701.8	 +/-  10.9369
+minimized
+model 11
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 88579.1623342610692
+Edm   = 0.00688601842557545751
+Nfcn  = 855
+0	  = 0.422125	 +/-  0.00113589
+1	  = 0.125206	 +/-  0.000756616
+2	  = 0.321106	 +/-  0.0012058
+3	  = 1.93071e-09	 +/-  1.93938e-07
+4	  = 231641	 +/-  96.9573
+minimized
+model 12
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 50497.1681288192776
+Edm   = 0.00619114254368469119
+Nfcn  = 937
+0	  = 0.350866	 +/-  5.93767e-06
+1	  = 1.12377	 +/-  2.29329e-07
+2	  = -1.27163e-08	 +/-  5.63257e-07
+3	  = 1.7669	 +/-  4.57723e-06
+4	  = 232056	 +/-  0.126718
+minimized
+model 13
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 22010.7808248205511
+Edm   = 2.9433631791963358e-05
+Nfcn  = 876
+0	  = 0.775457	 +/-  0.00798774
+1	  = 1.09797	 +/-  0.00264965
+2	  = -2.85027e-09	 +/-  2.92649e-06
+3	  = -1.37914e-10	 +/-  1.22009e-06
+4	  = 0.26746	 +/-  0.0100216
+minimized
+model 14
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 27921.8736317635739
+Edm   = 0.00529143031963030808
+Nfcn  = 1052
+0	  = 0.34386	 +/-  0.000546746
+1	  = 0.933548	 +/-  0.00103085
+2	  = 2.44368e-05	 +/-  8.82189e-07
+3	  = 1.43101	 +/-  0.00313712
+4	  = 4.93522	 +/-  0.0337587
+minimized
+model 15
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 234324
+Edm   = 0.0117709
+Nfcn  = 518
+minimized
+fit all models
+Results:  1.17545  1.30995  1.17549  1.40949  1.09801  1.09797  1.09797    1.098  1.17546 0.138485  1.17557 0.125206  1.12377  1.09797 0.933548  1.28287
+
+Errors:  0.00482553   0.0168182  0.00583939   0.0965305    0.017363   0.0380627   0.0186578   0.0381338 0.000154327 8.82516e-07  0.00112341 0.000756616 2.29329e-07  0.00264965  0.00103085 0.000334749
+
+Probabilities:        0        0        0        0  0.78696 0.106521        0        0        0        0        0        0        0  0.10652        0        0
+
+Chisq/dof: 138.316 5.62531 110.662 1.30533 3.11159 4.35616 2.44491  3.1434  158.08 10853.3  122.96  8073.9 4751.36 4.35616 491.734   30048
+
+Fit statuses: 5 5 5 5 3 1 5 1 5 3 5 5 5 0 5 3
+
+
+
+Fitting R = 8
+
+fitting 16 models
+model 0
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22588.1239276239248
+Edm   = 0.00769894496988854371
+Nfcn  = 205
+0	  = 1.0051	 +/-  0.0027153
+1	  = 1.13107	 +/-  0.00122769
+2	  = 1.38362	 +/-  0.000975431
+3	  = -0.00573053	 +/-  0.000176898
+4	  = 1.38453	 +/-  0.00183369
+minimized
+model 1
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 21998.5429689954362
+Edm   = 0.00849688892412814312
+Nfcn  = 557
+0	  = 0.792659	 +/-  0.0324332
+1	  = 1.07186	 +/-  0.00738135
+2	  = 0.727997	 +/-  0.0207773
+3	  = 1.35798	 +/-  0.0348191
+4	  = 1.81326	 +/-  0.018738
+minimized
+model 2
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24587.4910265599065
+Edm   = 0.00486569045096985064
+Nfcn  = 217
+0	  = 1.00512	 +/-  0.00222101
+1	  = 1.13109	 +/-  0.00131947
+2	  = 1.63261	 +/-  0.0312277
+3	  = -7.04866	 +/-  0.0581853
+4	  = 4.26316	 +/-  0.0465971
+minimized
+model 3
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24005.1229440359966
+Edm   = 0.00857097941116080619
+Nfcn  = 345
+0	  = 0.646594	 +/-  0.00376101
+1	  = 1.04011	 +/-  0.002703
+2	  = 0.837165	 +/-  0.00909326
+3	  = 1.26574	 +/-  0.00432399
+4	  = 7.88707	 +/-  0.658987
+minimized
+model 4
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22013.5385665503636
+Edm   = 0.00426850014628143981
+Nfcn  = 351
+0	  = 0.843047	 +/-  0.00843576
+1	  = 1.08949	 +/-  0.00283323
+2	  = 0.304401	 +/-  0.0202869
+3	  = 0.599979	 +/-  0.0499671
+4	  = 195.537	 +/-  18.6869
+minimized
+model 5
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 1
+FVAL  = 22013.5379870040306
+Edm   = 2.5604454086867444e-07
+Nfcn  = 325
+0	  = 0.596139	 +/-  0.0114936
+1	  = 1.08951	 +/-  0.0131823
+2	  = 0.596139	 +/-  0.0114936
+3	  = 1.08951	 +/-  0.0131823
+4	  = 0.304403	 +/-  0.0132496
+minimized
+model 6
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24012.6852564135115
+Edm   = 0.00517519477944006212
+Nfcn  = 370
+0	  = 0.843103	 +/-  0.00713178
+1	  = 1.08952	 +/-  0.00196879
+2	  = 0.304266	 +/-  0.0151722
+3	  = -0.0492053	 +/-  0.075107
+4	  = -0.578638	 +/-  0.0139023
+minimized
+model 7
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 1
+FVAL  = 24012.6848598443794
+Edm   = 2.62524706068727111e-07
+Nfcn  = 325
+0	  = 0.596113	 +/-  0.0115033
+1	  = 1.0895	 +/-  0.0131797
+2	  = 0.596113	 +/-  0.0115033
+3	  = 1.0895	 +/-  0.0131797
+4	  = 0.304479	 +/-  0.0132581
+minimized
+model 8
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22588.1321911406994
+Edm   = 0.00546856886285240762
+Nfcn  = 593
+0	  = 1.01011	 +/-  0.00189893
+1	  = 1.27936	 +/-  0.00126301
+2	  = -3.17544e-08	 +/-  3.93156e-06
+3	  = 1.9917	 +/-  0.00583643
+4	  = 0.687516	 +/-  0.000771648
+minimized
+model 9
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 103994
+Edm   = 0.0152814
+Nfcn  = 758
+minimized
+model 10
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24587.492988958471
+Edm   = 0.00410265540995169431
+Nfcn  = 416
+0	  = 1.01023	 +/-  0.00375428
+1	  = 1.27937	 +/-  0.00131075
+2	  = 4.10453e-08	 +/-  3.08802e-06
+3	  = -0.0221198	 +/-  5.40447e-07
+4	  = -67.4511	 +/-  0.00171121
+minimized
+model 11
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 139591.613093610416
+Edm   = 0.00866453078924678266
+Nfcn  = 448
+0	  = 1.06709	 +/-  4.56307e-07
+1	  = 0.448597	 +/-  4.62291e-06
+2	  = 1.42353	 +/-  4.18065e-06
+3	  = -2.98032e-08	 +/-  9.8277e-06
+4	  = -87.1155	 +/-  0.000234404
+minimized
+model 12
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22254.2194988626688
+Edm   = 0.00837008931193850003
+Nfcn  = 1018
+0	  = 0.310817	 +/-  0.0019232
+1	  = 0.90327	 +/-  0.00359092
+2	  = 0.0308884	 +/-  0.000248774
+3	  = 1.31499	 +/-  0.00208861
+4	  = -87.0151	 +/-  0.000377557
+minimized
+model 13
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 139255.322478815215
+Edm   = 0.00598814350087195635
+Nfcn  = 539
+0	  = 1.0383	 +/-  0.000757044
+1	  = 1.5541	 +/-  0.00158015
+2	  = 1.17138	 +/-  7.44336e-05
+3	  = -2.03489e-07	 +/-  1.43544e-05
+4	  = 1.27159	 +/-  0.000587003
+minimized
+model 14
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24225.3114274395921
+Edm   = 0.00780659244264825247
+Nfcn  = 776
+0	  = 0.280924	 +/-  0.00183768
+1	  = 0.846953	 +/-  0.00560446
+2	  = -0.0417801	 +/-  0.00142028
+3	  = 1.44795	 +/-  0.00397659
+4	  = 1.45448	 +/-  0.000701095
+minimized
+model 15
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 24012.6849280450006
+Edm   = 5.19618681218796593e-05
+Nfcn  = 587
+0	  = 0.710739	 +/-  0.0116541
+1	  = 1.18703	 +/-  0.00427595
+2	  = 1.32151e-08	 +/-  3.42142e-05
+3	  = -7.13608e-10	 +/-  3.16011e-06
+4	  = 0.304423	 +/-  0.016183
+minimized
+fit all models
+Results:  1.27932  1.46698  1.27937   1.4077  1.18699  1.18703  1.18705  1.18701  1.27936  2.26668  1.27937 0.448597  0.90327   1.5541 0.846953  1.18703
+
+Errors:   0.0101623    0.112139  0.00853497    0.030872   0.0341567    0.050076   0.0287231   0.0501109  0.00126301 0.000534045  0.00131075 4.62291e-06  0.00359092  0.00158015  0.00560446  0.00427595
+
+Probabilities: 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+Chisq/dof: 74.8905 1.59049 59.9491 2.14037 3.50551  4.9076 2.74281 3.52641 85.5903 13667.5 66.6103 14450.5 44.2032 23453.3 29.6639 3.52642
+
+Fit statuses: 5 5 5 5 5 1 5 1 5 3 5 5 5 5 5 0
+
+
+
+Fitting R = 9
+
+fitting 16 models
+model 0
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22260.7502480113799
+Edm   = 0.00396990231092786416
+Nfcn  = 208
+0	  = 0.995649	 +/-  0.00314009
+1	  = 1.17257	 +/-  0.00170624
+2	  = 0.00386224	 +/-  0.000108183
+3	  = -0.00179186	 +/-  3.75379e-05
+4	  = 4.78642	 +/-  0.0389314
+minimized
+model 1
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 21998.8
+Edm   = 0.0119198
+Nfcn  = 308
+minimized
+model 2
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24260.1229731348285
+Edm   = 0.00900579647714039311
+Nfcn  = 198
+0	  = 0.995609	 +/-  0.00136853
+1	  = 1.17256	 +/-  0.00143103
+2	  = 1.44668	 +/-  0.0186563
+3	  = -2.64856	 +/-  0.0631555
+4	  = 151.518	 +/-  1.22381
+minimized
+model 3
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 23999.0558901031945
+Edm   = 0.00462672776484396309
+Nfcn  = 298
+0	  = 0.562551	 +/-  0.00223432
+1	  = 1.06534	 +/-  0.00240574
+2	  = 0.873207	 +/-  0.00355486
+3	  = 1.27502	 +/-  0.00623937
+4	  = 601.624	 +/-  21.8232
+minimized
+model 4
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22008.0551011602038
+Edm   = 0.00496891720104031265
+Nfcn  = 350
+0	  = 0.840398	 +/-  0.00909949
+1	  = 1.13247	 +/-  0.00268422
+2	  = 0.285028	 +/-  0.0194687
+3	  = 1.17782	 +/-  0.0536578
+4	  = 5331.93	 +/-  79.7569
+minimized
+model 5
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 1
+FVAL  = 22008.0547550253032
+Edm   = 1.56017200171745054e-06
+Nfcn  = 322
+0	  = 0.594357	 +/-  0.0138396
+1	  = 1.13251	 +/-  0.0163315
+2	  = 0.594357	 +/-  0.0138396
+3	  = 1.13251	 +/-  0.0163315
+4	  = 0.284661	 +/-  0.0172996
+minimized
+model 6
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24007.8551989654006
+Edm   = 0.00238211660325760022
+Nfcn  = 307
+0	  = 0.840648	 +/-  0.0155451
+1	  = 1.13251	 +/-  0.00336046
+2	  = 0.28438	 +/-  0.0368624
+3	  = 3.55896	 +/-  0.69128
+4	  = 0.622428	 +/-  0.52581
+minimized
+model 7
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 1
+FVAL  = 24007.8544577061293
+Edm   = 5.73123505612407714e-08
+Nfcn  = 331
+0	  = 0.594482	 +/-  0.0138913
+1	  = 1.13255	 +/-  0.0163302
+2	  = 0.594482	 +/-  0.0138913
+3	  = 1.13255	 +/-  0.0163303
+4	  = 0.28428	 +/-  0.0173256
+minimized
+model 8
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 47414.6
+Edm   = 5449.04
+Nfcn  = 540
+minimized
+model 9
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 45677.1283058504632
+Edm   = 0.00812014960683882236
+Nfcn  = 642
+0	  = 0.45668	 +/-  0.00122506
+1	  = -0.574141	 +/-  0.00094172
+2	  = 0.049742	 +/-  0.00295822
+3	  = -0.117983	 +/-  0.000233003
+4	  = 415.437	 +/-  0.615356
+minimized
+model 10
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 54134.3
+Edm   = 10965.9
+Nfcn  = 526
+minimized
+model 11
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 36185.5724846095327
+Edm   = 0.00562565595464548096
+Nfcn  = 723
+0	  = 0.479472	 +/-  0.00107486
+1	  = -0.470774	 +/-  0.000763553
+2	  = 0.277615	 +/-  8.52344e-05
+3	  = 3.26128e-09	 +/-  7.79251e-07
+4	  = 6285.16	 +/-  1.6602
+minimized
+model 12
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 22555.8
+Edm   = 260.917
+Nfcn  = 235
+minimized
+model 13
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 95201.6
+Edm   = 0.0111611
+Nfcn  = 1276
+minimized
+model 14
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 29508.6
+Edm   = 7061.22
+Nfcn  = 227
+minimized
+model 15
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 97515.1421768872387
+Edm   = 0.00552263639110606164
+Nfcn  = 591
+0	  = 1.09694	 +/-  0.000595535
+1	  = 1.09334	 +/-  0.000596936
+2	  = 1.53242	 +/-  0.00120604
+3	  = -6.61625e-07	 +/-  4.0775e-05
+4	  = 0.87894	 +/-  0.00315586
+minimized
+fit all models
+Results:  1.37492  1.48423   1.3749  1.48175  1.28249  1.28257  1.28258  1.28267  1.12905 0.574141  1.13262 0.470774  1.08625  1.38395 0.689595  1.09334
+
+Errors:    0.012901   0.0311383  0.00631156   0.0175439   0.0397442   0.0652055   0.0675131   0.0654024   0.0011248  0.00094172 0.000995709 0.000763553 0.000754197 0.000394157  0.00186726 0.000596936
+
+Probabilities:         0  0.973949         0         0 0.0260514         0         0         0         0         0         0         0         0         0         0         0
+
+Chisq/dof: 33.9688 1.63542 27.2123 1.38199 2.72216 3.81095 2.20613 2.83635 3632.22 3948.02 3349.59  1524.7 94.4693 14642.5  690.08 10503.9
+
+Fit statuses: 5 3 5 5 5 1 5 1 3 5 3 5 3 3 3 5
+
+
+
+Fitting R = 10
+
+fitting 16 models
+model 0
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22118.8773795123707
+Edm   = 0.00781217067560646683
+Nfcn  = 220
+0	  = 0.994174	 +/-  0.0031994
+1	  = 1.20241	 +/-  0.00202695
+2	  = 1.48237	 +/-  0.00512714
+3	  = -0.0164926	 +/-  0.000246922
+4	  = 1.60742	 +/-  0.00353511
+minimized
+model 1
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22003.8274729452023
+Edm   = 0.00292996347707230598
+Nfcn  = 334
+0	  = 0.781424	 +/-  0.0106803
+1	  = 1.14689	 +/-  0.00359234
+2	  = 0.69458	 +/-  0.0197914
+3	  = 1.39113	 +/-  0.00507257
+4	  = 5.16805	 +/-  0.0790127
+minimized
+model 2
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24117.9686183191588
+Edm   = 0.00439845163782592863
+Nfcn  = 216
+0	  = 0.994074	 +/-  0.00384132
+1	  = 1.20236	 +/-  0.00243989
+2	  = -2.55604	 +/-  0.110602
+3	  = 0.844627	 +/-  0.0537892
+4	  = -20.6421	 +/-  0.45137
+minimized
+model 3
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24001.7218896187223
+Edm   = 0.00297591072740033269
+Nfcn  = 311
+0	  = 0.757497	 +/-  0.0140659
+1	  = 1.34609	 +/-  0.00249426
+2	  = 0.710392	 +/-  0.00931821
+3	  = 1.13292	 +/-  0.00417236
+4	  = -473.312	 +/-  13.6759
+minimized
+model 4
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22018.8560156756939
+Edm   = 0.00956732323902542703
+Nfcn  = 217
+0	  = 0.897554	 +/-  0.00114646
+1	  = 1.17814	 +/-  0.00109088
+2	  = 0.161484	 +/-  0.00637536
+3	  = 0.648754	 +/-  0.0129469
+4	  = 2469.09	 +/-  21.4289
+minimized
+model 5
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 1
+FVAL  = 22010.7144696520045
+Edm   = 1.1254476296595022e-05
+Nfcn  = 330
+0	  = 0.609003	 +/-  0.0163645
+1	  = 1.16832	 +/-  0.0187998
+2	  = 0.609003	 +/-  0.0163645
+3	  = 1.16832	 +/-  0.0187998
+4	  = 0.232495	 +/-  0.0199539
+minimized
+model 6
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24009.850176838303
+Edm   = 0.00515305513181374408
+Nfcn  = 323
+0	  = 0.861253	 +/-  0.0171336
+1	  = 1.1683	 +/-  0.00467608
+2	  = 0.232443	 +/-  0.0350434
+3	  = -7.02875	 +/-  2.85467
+4	  = 6.79683	 +/-  1.07395
+minimized
+model 7
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 1
+FVAL  = 24009.8496439384253
+Edm   = 1.36283322880716334e-05
+Nfcn  = 330
+0	  = 0.609024	 +/-  0.0164104
+1	  = 1.16833	 +/-  0.018799
+2	  = 0.609024	 +/-  0.0164105
+3	  = 1.16833	 +/-  0.018799
+4	  = 0.232444	 +/-  0.0199892
+minimized
+model 8
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 40838.7
+Edm   = 6637.17
+Nfcn  = 300
+minimized
+model 9
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 28832.756866428932
+Edm   = 0.00953676287463167682
+Nfcn  = 1007
+0	  = 0.49372	 +/-  0.00113045
+1	  = 0.550046	 +/-  0.000789214
+2	  = 0.280543	 +/-  0.00200052
+3	  = 5.21956e-08	 +/-  2.3262e-06
+4	  = 517.532	 +/-  0.947956
+minimized
+model 10
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 36658.1
+Edm   = 6363.83
+Nfcn  = 344
+minimized
+model 11
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 24902
+Edm   = 66.2478
+Nfcn  = 748
+minimized
+model 12
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22077.486038615596
+Edm   = 0.00556111429978045635
+Nfcn  = 927
+0	  = 0.284068	 +/-  0.003716
+1	  = 0.98961	 +/-  0.0119179
+2	  = -0.0489282	 +/-  0.00309158
+3	  = 1.32157	 +/-  0.00569577
+4	  = 3523.03	 +/-  6.22789
+minimized
+model 13
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 75085.8978039804206
+Edm   = 0.00699364933825563639
+Nfcn  = 565
+0	  = 0.978918	 +/-  0.0011262
+1	  = 0.96	 +/-  0.00063516
+2	  = 1.6731	 +/-  0.00181329
+3	  = -7.75697e-07	 +/-  6.34716e-05
+4	  = 1.0844	 +/-  0.0014718
+minimized
+model 14
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24078.8740771497323
+Edm   = 0.00696290857376880012
+Nfcn  = 1064
+0	  = 0.274139	 +/-  0.0029764
+1	  = 0.977861	 +/-  0.00906179
+2	  = 0.0503524	 +/-  0.00236421
+3	  = 1.38072	 +/-  0.00589776
+4	  = 1.23387	 +/-  0.000375024
+minimized
+model 15
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 24009.849663910416
+Edm   = 1.81925716725907333e-05
+Nfcn  = 1355
+0	  = 0.741866	 +/-  0.0225559
+1	  = 1.365	 +/-  0.00854217
+2	  = 1.05469e-08	 +/-  9.91617e-05
+3	  = 2.35466e-09	 +/-  8.5891e-06
+4	  = 0.232394	 +/-  0.0274987
+minimized
+fit all models
+Results:   1.4458  1.58895  1.44567  1.56468  1.38802  1.36496  1.36493  1.36499  1.28623 0.550046  1.33534   1.3314  0.98961     0.96 0.977861    1.365
+
+Errors:   0.0140338   0.0708443   0.0168549   0.0537337  0.00563502   0.0796614   0.0775758   0.0798496  0.00156796 0.000789214  0.00130725  0.00125037   0.0119179  0.00063516  0.00906179  0.00854217
+
+Probabilities:         0  0.988382         0         0         0 0.0116182         0         0         0         0         0         0         0         0         0         0
+
+Chisq/dof: 16.2347 2.47125 12.9969 1.71524 4.26515 4.34289  2.4278 3.12138 2692.81 1140.63 1407.79 114.252 14.7477 10619.4 11.3593 3.12138
+
+Fit statuses: 5 5 5 5 5 1 5 1 3 5 3 3 5 5 5 0
+
+
+
+Fitting R = 11
+
+fitting 16 models
+model 0
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22059.4238978338471
+Edm   = 0.00432805142554570921
+Nfcn  = 217
+0	  = 0.994667	 +/-  0.00227531
+1	  = 1.21338	 +/-  0.00176123
+2	  = -0.00756767	 +/-  0.000403576
+3	  = -0.00239811	 +/-  3.21381e-05
+4	  = 7.77805	 +/-  0.0957327
+minimized
+model 1
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 21995.9
+Edm   = 0.0105207
+Nfcn  = 312
+minimized
+model 2
+2 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24058.9327397340603
+Edm   = 0.00663681626247125678
+Nfcn  = 218
+0	  = 0.994659	 +/-  0.00303468
+1	  = 1.21333	 +/-  0.00131147
+2	  = -0.970103	 +/-  0.024746
+3	  = 0.845318	 +/-  0.0153762
+4	  = -509.62	 +/-  3.45219
+minimized
+model 3
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 23996.5091117161246
+Edm   = 0.00933623328091925941
+Nfcn  = 282
+0	  = -0.584692	 +/-  0.0658356
+1	  = 1.63912	 +/-  0.0254744
+2	  = 0.914106	 +/-  0.0133218
+3	  = 1.18713	 +/-  0.00518612
+4	  = -2113.61	 +/-  91.4802
+minimized
+model 4
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 21997.5806871667774
+Edm   = 0.00725728765246458352
+Nfcn  = 212
+0	  = 0.891105	 +/-  0.00110189
+1	  = 1.18693	 +/-  0.00143566
+2	  = 0.171746	 +/-  0.00513159
+3	  = 0.557115	 +/-  0.0142956
+4	  = 18092.2	 +/-  176.636
+minimized
+model 5
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 1
+FVAL  = 21996.926381111829
+Edm   = 4.84752656262924825e-06
+Nfcn  = 345
+0	  = 0.621843	 +/-  0.0206361
+1	  = 1.18374	 +/-  0.0197141
+2	  = 0.621843	 +/-  0.0206361
+3	  = 1.18374	 +/-  0.0197141
+4	  = 0.193954	 +/-  0.0224513
+minimized
+model 6
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 23997.2987774611975
+Edm   = 0.00727396611182484776
+Nfcn  = 215
+0	  = 0.890766	 +/-  0.00101111
+1	  = 1.18683	 +/-  0.00106507
+2	  = 0.172341	 +/-  0.00825561
+3	  = 0.215663	 +/-  0.0243392
+4	  = -2.51514	 +/-  0.0549543
+minimized
+model 7
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 1
+FVAL  = 23996.7129315946368
+Edm   = 4.02950576759784642e-06
+Nfcn  = 346
+0	  = 0.622042	 +/-  0.0207373
+1	  = 1.18381	 +/-  0.0196903
+2	  = 0.62204	 +/-  0.0207374
+3	  = 1.18381	 +/-  0.0196902
+4	  = 0.193397	 +/-  0.0224908
+minimized
+model 8
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 35755.1
+Edm   = 9852.22
+Nfcn  = 145
+minimized
+model 9
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 28892.7
+Edm   = 0.0101469
+Nfcn  = 1124
+minimized
+model 10
+3 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Invalid Minimum - status = 3
+FVAL  = 35930.1
+Edm   = 8780.55
+Nfcn  = 144
+minimized
+model 11
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 68192.7708715858462
+Edm   = 0.00708942605706397444
+Nfcn  = 484
+0	  = 0.751244	 +/-  0.000978022
+1	  = -0.255724	 +/-  0.00206637
+2	  = 1.35701	 +/-  0.000819861
+3	  = 1.21182e-07	 +/-  9.56964e-06
+4	  = 172.296	 +/-  0.302624
+minimized
+model 12
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 22038.5396751453372
+Edm   = 0.00370196172298165038
+Nfcn  = 1049
+0	  = 0.231571	 +/-  0.00547547
+1	  = 0.929784	 +/-  0.0162421
+2	  = -0.0630127	 +/-  0.00406975
+3	  = 1.64974	 +/-  0.0211
+4	  = 198.135	 +/-  0.119819
+minimized
+model 13
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 21996.9264019313523
+Edm   = 1.43003362405017538e-05
+Nfcn  = 991
+0	  = 0.773338	 +/-  0.0266275
+1	  = 1.40124	 +/-  0.0100766
+2	  = -2.69202e-08	 +/-  0.000288996
+3	  = -5.59098e-09	 +/-  3.0275e-05
+4	  = 0.194013	 +/-  0.0296849
+minimized
+model 14
+4 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 24032.3628253169372
+Edm   = 0.00688203610843629576
+Nfcn  = 979
+0	  = 0.274804	 +/-  0.00428954
+1	  = 0.984285	 +/-  0.0141649
+2	  = 0.0563753	 +/-  0.00339343
+3	  = 1.34237	 +/-  0.00951222
+4	  = 4.02457	 +/-  0.0543449
+minimized
+model 15
+5 params
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 23996.7129731439054
+Edm   = 4.38724411895453491e-05
+Nfcn  = 1152
+0	  = 0.773893	 +/-  0.0267171
+1	  = 1.40141	 +/-  0.0101308
+2	  = 1.30811e-07	 +/-  0.00031433
+3	  = 4.86522e-09	 +/-  3.257e-05
+4	  = 0.193375	 +/-  0.0297288
+minimized
+fit all models
+Results:   1.4723  1.67948  1.47217  1.78017  1.40881  1.40125  1.40857   1.4014   1.3008 0.317807  1.27952 0.255724 0.929784  1.40124 0.984285  1.40141
+
+Errors:  0.0104407   0.101691  0.0130966   0.217434 0.00599106  0.0986841 0.00518096  0.0990828 0.00123166 4.4907e-05 0.00116259 0.00206637  0.0162421  0.0100766  0.0141649  0.0101308
+
+Probabilities:         0  0.385432         0         0  0.446822 0.0838737         0         0         0         0         0         0         0 0.0838728         0         0
+
+Chisq/dof: 8.80299 1.14605 7.09327 1.06364 1.22581 1.58528  1.0332  1.2447 1966.59 1150.62  1326.9  5525.6 8.25661 1.58528 5.54535 1.24471
+
+Fit statuses: 5 3 5 5 5 1 5 1 3 3 3 5 5 0 5 0
+
+Fits/L24_b240_xi1_g.vr

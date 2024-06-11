@@ -105,7 +105,7 @@ int main(int argc, char **argv)
 
 	//WFrame temp_frame = WFrame(G_R[0].subset(0,500));
 	WFit fitter = WFit();
-	fitter.set_options({100000, 10000, .001, 1});
+	fitter.set_options({100000, 10000, .01, 1});
 	fitter.set_strat(2);
 
 
@@ -115,7 +115,7 @@ int main(int argc, char **argv)
 	for (int R = 0; R < R_max; R++)
 	{
 		fitter.load_data(&G_R[R]);
-		cout << "Fitting R = " << R << endl
+		cout <<endl<<endl<< "Fitting R = " << R << endl
 			 << endl;
 		vector<VectorXd> ak_results = fitter.ak_criteria(mod_ptrs);
 		std::cout << "Results: " << ak_results[0].transpose() << endl

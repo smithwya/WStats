@@ -53,7 +53,7 @@ public:
 
 
     double extract_observable(const double* pars){
-        return pars[1];
+        return abs(pars[1]);
     }
 
 
