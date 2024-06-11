@@ -161,8 +161,8 @@ int main(int argc, char **argv)
 		ind_vars_r(i) = i + 1;
 	}
 
-	vector<int> start_r = {0,1};
-	vector<int> end_r = {10,11};
+	vector<int> start_r = {0,1,2};
+	vector<int> end_r = {8,9,10,11};
 
 
 	for (int r_s : start_r)
@@ -201,10 +201,10 @@ int main(int argc, char **argv)
 	fitter.set_options({100000, 10000, .01, 1});
 	fitter.set_strat(2);
 
-	WFrame  potential_dat = WFrame(avg_val,ind_vars_r,avg_err.cwiseAbs2());
+	WFrame  potential_dat = WFrame(avg_val,ind_vars_r,avg_err);
 	fitter.load_data(&potential_dat);
 
-	vector<VectorXd> ak_results_r = fitter.ak_criteria(mod_ptrs_r);
+	vector<VectorXd> ak_results_r = fitter.ak_criteria_avg(mod_ptrs_r);
 
 	cout<<endl<<endl<<"Fitting the potential: "<<endl;
 	std::cout << "Results: " << ak_results_r[0].transpose() << endl
@@ -213,7 +213,7 @@ int main(int argc, char **argv)
 			  << endl;
 	std::cout << "Probabilities: " << ak_results_r[2].transpose() << endl
 			  << endl;
-	std::cout << "Chisq/dof: " << ak_results_r[3].transpose() << endl
+	std::cout << "Chisq: " << ak_results_r[3].transpose() << endl
 			  << endl;
 	std::cout << "Fit statuses: " << ak_results_r[4].transpose() << endl
 			  << endl;

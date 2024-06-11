@@ -73,9 +73,9 @@ public:
         cov_matrix = Eigen::MatrixXd::Zero(indep_vars.size(),indep_vars.size());
 
         for(int i =0; i < vars.size(); i++){
-            cov_matrix(i,i) = vars(i);
+            cov_matrix(i,i) = pow(vars(i),2);
         }
-        
+
     }
 
     virtual void load(vector<string> fnames) {};

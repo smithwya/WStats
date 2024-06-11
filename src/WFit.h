@@ -158,6 +158,22 @@ public:
         minimizer->Minimize();
     };
 
+    void minimize_avg(){
+        truncate_data(_model->data_shape);
+        _cov_inv = _data_frame->get_cov_trunc(_model->data_shape).inverse();
+
+        ROOT::Math::Functor f(this, &WFit::minfunc_avg, _num_params);
+
+        minimizer->SetFunction(f);
+
+        for (int i = 0; i < _num_params; i++)
+        {
+            minimizer->SetVariable(i, to_string(i), _params[i], _steps[i]);
+        }
+        minimizer->Minimize();
+
+    }
+
     const double * minimize_bootstrap(int num_bootstraps, int size_bootstrap)
     {
         vector<const double*> boot_sampled_pars = {};
@@ -229,12 +245,55 @@ public:
             errs(i) = _model->extract_error(minimizer->X(),minimizer->Errors());
             statuses(i) = minimizer->Status();
             //if (statuses(i) > 1 ) ak_prob(i) = ak_prob(i) * 1000000;
-            if(_data_frame->n_samples==1){
-                chisq_p_dof(i) = minimizer->MinValue()/(ms->data_shape.sum()-k);
-            }
-            else{
             chisq_p_dof(i) = (minimizer->MinValue() - ((ms->data_shape.sum()) * (_data_frame->n_samples - 1)))/(ms->data_shape.sum()-N_cut-ms->num_params);
-            }
+        }
+        cout<<"fit all models"<<endl;
+        ak_prob = -0.5 * (ak_prob.array() - ak_prob.minCoeff());
+        ak_prob = ak_prob.unaryExpr(&TMath::Exp);
+        ak_prob = ak_prob / ak_prob.sum();
+        for (int j = 0; j < n_models; j++)
+        {
+            if (ak_prob(j) < 0.01)
+                ak_prob(j) = 0;
+        }
+
+        ak_prob = ak_prob / ak_prob.sum();
+
+        return {result, errs, ak_prob, chisq_p_dof, statuses};
+    };
+
+    vector<Eigen::VectorXd> ak_criteria_avg(vector<WModel *> models)
+    {
+
+        int n_models = models.size();
+        cout<<"fitting "<<n_models<<" models"<<endl;
+        Eigen::VectorXd result = Eigen::VectorXd::Zero(n_models);
+        Eigen::VectorXd ak_prob = Eigen::VectorXd::Zero(n_models);
+        Eigen::VectorXd errs = Eigen::VectorXd::Zero(n_models);
+        Eigen::VectorXd statuses = Eigen::VectorXd::Zero(n_models);
+        Eigen::VectorXd chisq_p_dof = Eigen::VectorXd::Zero(n_models);
+        for (int i = 0; i < n_models; i++)
+        {
+            minimizer->Clear();
+
+            WModel* ms = models[i];
+
+            set_model(ms);
+            int k = ms->num_params;
+            cout<<endl<<endl;
+            // initial guess for parameters
+            set_params(vector<double>(k, 1));
+            // initial step sizes
+            set_steps(vector<double>(k, 0.5));
+            minimize_avg();
+            int N_cut = ms->data_shape.size() - ms->data_shape.sum();
+            ak_prob(i) = minimizer->MinValue() + 2 * k + 2 * N_cut;
+            result(i) = ms->extract_observable(minimizer->X());
+            errs(i) = _model->extract_error(minimizer->X(),minimizer->Errors());
+            statuses(i) = minimizer->Status();
+            //if (statuses(i) > 1 ) ak_prob(i) = ak_prob(i) * 1000000;
+            chisq_p_dof(i) = minimizer->MinValue();
+
         }
         cout<<"fit all models"<<endl;
         ak_prob = -0.5 * (ak_prob.array() - ak_prob.minCoeff());

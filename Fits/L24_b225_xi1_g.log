@@ -2223,23 +2223,73 @@ Fit statuses: 3 1 3 1 1 1 1 1 1 1 0 1 5 5 5 1
 
 Fits/L24_b225_xi1_g.vr
 models for fitting the R-dependence: 
+Fitting Polynomial of degree1 with shape 1 1 1 1 1 1 1 1 1 0 0 0
+
+Fitting Polynomial of degree1 with shape 1 1 1 1 1 1 1 1 1 1 0 0
+
 Fitting Polynomial of degree1 with shape 1 1 1 1 1 1 1 1 1 1 1 0
 
 Fitting Polynomial of degree1 with shape 1 1 1 1 1 1 1 1 1 1 1 1
+
+Fitting Polynomial of degree1 with shape 0 1 1 1 1 1 1 1 1 0 0 0
+
+Fitting Polynomial of degree1 with shape 0 1 1 1 1 1 1 1 1 1 0 0
 
 Fitting Polynomial of degree1 with shape 0 1 1 1 1 1 1 1 1 1 1 0
 
 Fitting Polynomial of degree1 with shape 0 1 1 1 1 1 1 1 1 1 1 1
 
+Fitting Polynomial of degree1 with shape 0 0 1 1 1 1 1 1 1 0 0 0
+
+Fitting Polynomial of degree1 with shape 0 0 1 1 1 1 1 1 1 1 0 0
+
+Fitting Polynomial of degree1 with shape 0 0 1 1 1 1 1 1 1 1 1 0
+
+Fitting Polynomial of degree1 with shape 0 0 1 1 1 1 1 1 1 1 1 1
+
+Fitting Cornell with shape 1 1 1 1 1 1 1 1 1 0 0 0
+
+Fitting Cornell with shape 1 1 1 1 1 1 1 1 1 1 0 0
+
 Fitting Cornell with shape 1 1 1 1 1 1 1 1 1 1 1 0
 
 Fitting Cornell with shape 1 1 1 1 1 1 1 1 1 1 1 1
+
+Fitting Cornell with shape 0 1 1 1 1 1 1 1 1 0 0 0
+
+Fitting Cornell with shape 0 1 1 1 1 1 1 1 1 1 0 0
 
 Fitting Cornell with shape 0 1 1 1 1 1 1 1 1 1 1 0
 
 Fitting Cornell with shape 0 1 1 1 1 1 1 1 1 1 1 1
 
-fitting 8 models
+Fitting Cornell with shape 0 0 1 1 1 1 1 1 1 0 0 0
+
+Fitting Cornell with shape 0 0 1 1 1 1 1 1 1 1 0 0
+
+Fitting Cornell with shape 0 0 1 1 1 1 1 1 1 1 1 0
+
+Fitting Cornell with shape 0 0 1 1 1 1 1 1 1 1 1 1
+
+fitting 24 models
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 9.76682650760214699
+Edm   = 1.05522128644335155e-19
+Nfcn  = 38
+0	  = 0.369791	 +/-  0.0196855
+1	  = 0.207392	 +/-  0.00607203
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 9.79258070692599425
+Edm   = 2.14783343639251131e-18
+Nfcn  = 38
+0	  = 0.369728	 +/-  0.0196816
+1	  = 0.207412	 +/-  0.00607075
 
 
 Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
@@ -2262,6 +2312,24 @@ Nfcn  = 40
 
 Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
 Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 1.34026978802064711
+Edm   = 6.56902864246377532e-18
+Nfcn  = 38
+0	  = 0.394941	 +/-  0.0215078
+1	  = 0.199841	 +/-  0.00660574
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 1.37466163947826647
+Edm   = 2.93008069898116694e-19
+Nfcn  = 42
+0	  = 0.394854	 +/-  0.0215027
+1	  = 0.199868	 +/-  0.00660411
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
 FVAL  = 1.91417064095460421
 Edm   = 2.57742448591507812e-17
 Nfcn  = 40
@@ -2276,6 +2344,62 @@ Edm   = 1.75889498044698275e-17
 Nfcn  = 38
 0	  = 0.394711	 +/-  0.0210253
 1	  = 0.199914	 +/-  0.00645087
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 1.31423705659733003
+Edm   = 9.09130198245997523e-19
+Nfcn  = 42
+0	  = 0.394751	 +/-  0.0215399
+1	  = 0.199896	 +/-  0.00661466
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 1.34856187885763434
+Edm   = 3.22999235398406045e-18
+Nfcn  = 40
+0	  = 0.394664	 +/-  0.0215348
+1	  = 0.199923	 +/-  0.00661302
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 1.88594646712005876
+Edm   = 4.09682069936712604e-17
+Nfcn  = 38
+0	  = 0.39198	 +/-  0.0212211
+1	  = 0.200766	 +/-  0.00651229
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 2.81382879497716143
+Edm   = 1.54218094736939519e-18
+Nfcn  = 38
+0	  = 0.394529	 +/-  0.0210555
+1	  = 0.199967	 +/-  0.0064592
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 9.76682669340234177
+Edm   = 1.8585749174011971e-07
+Nfcn  = 222
+0	  = 0.369793	 +/-  0.0196855
+1	  = 4.26382e-05	 +/-  0.108348
+2	  = 0.207391	 +/-  0.00607203
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 9.7925808958466849
+Edm   = 1.8897913766625254e-07
+Nfcn  = 222
+0	  = 0.369731	 +/-  0.0196816
+1	  = 4.30018e-05	 +/-  0.108401
+2	  = 0.207411	 +/-  0.00607075
 
 
 Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
@@ -2300,6 +2424,26 @@ Nfcn  = 222
 
 Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
 Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 1.34027089913787845
+Edm   = 1.09259226444810692e-06
+Nfcn  = 396
+0	  = 0.394948	 +/-  0.0215119
+1	  = 0.000527199	 +/-  0.534308
+2	  = 0.199839	 +/-  0.00660597
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 1.37466165780741356
+Edm   = 1.80816115766973507e-08
+Nfcn  = 367
+0	  = 0.394854	 +/-  0.0215029
+1	  = -6.35913e-05	 +/-  0.541989
+2	  = 0.199868	 +/-  0.00660413
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
 FVAL  = 1.9141772748883723
 Edm   = 6.10890807864429386e-06
 Nfcn  = 481
@@ -2316,17 +2460,57 @@ Nfcn  = 414
 0	  = 0.394714	 +/-  0.021026
 1	  = 4.82452e-05	 +/-  0.530026
 2	  = 0.199914	 +/-  0.00645091
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 1.31423982353949298
+Edm   = 2.78860092042267095e-06
+Nfcn  = 424
+0	  = 0.394746	 +/-  0.0215485
+1	  = 0.000861731	 +/-  0.52399
+2	  = 0.199898	 +/-  0.00661514
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 1.34856235559367788
+Edm   = 4.70258297274637403e-07
+Nfcn  = 429
+0	  = 0.394665	 +/-  0.0215355
+1	  = 0.000115357	 +/-  0.51734
+2	  = 0.199924	 +/-  0.00661307
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 1.88594785137228449
+Edm   = 1.34098997949329221e-06
+Nfcn  = 445
+0	  = 0.391966	 +/-  0.0212277
+1	  = 0.000385662	 +/-  0.694444
+2	  = 0.200771	 +/-  0.00651265
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 2.81383143019711257
+Edm   = 2.64047718525699371e-06
+Nfcn  = 415
+0	  = 0.39453	 +/-  0.0210648
+1	  = 0.000851998	 +/-  0.526162
+2	  = 0.199966	 +/-  0.00645971
 fit all models
 
 
 Fitting the potential: 
-Results: 0.207938  0.20716  0.20071 0.199914 0.207936 0.207159 0.200718 0.199914
+Results: 0.207392 0.207412 0.207938  0.20716 0.199841 0.199868  0.20071 0.199914 0.199896 0.199923 0.200766 0.199967 0.207391 0.207411 0.207936 0.207159 0.199839 0.199868 0.200718 0.199914 0.199898 0.199924 0.200771 0.199966
 
-Errors: 0.00599212 0.00595048 0.00650376 0.00645087 0.00599212 0.00595048 0.00650596 0.00645091
+Errors: 0.00607203 0.00607075 0.00599212 0.00595048 0.00660574 0.00660411 0.00650376 0.00645087 0.00661466 0.00661302 0.00651229  0.0064592 0.00607203 0.00607075 0.00599212 0.00595048 0.00660597 0.00660413 0.00650596 0.00645091 0.00661514 0.00661307 0.00651265 0.00645971
 
-Probabilities: 0.0119642 0.0176993  0.261666  0.447707         0         0 0.0962613  0.164702
+Probabilities:         0         0         0 0.0106067 0.0282751 0.0755493  0.156809  0.268299 0.0105381 0.0281581 0.0585068  0.100003         0         0         0         0 0.0104018 0.0277931 0.0576868 0.0987015         0 0.0103588 0.0215234 0.0367891
 
-Chisq/dof:   1.1205  1.13013 0.239271 0.315559  1.26056   1.2557 0.273454 0.355004
+Chisq/dof: 9.76683 9.79258 10.0845 11.3013 1.34027 1.37466 1.91417 2.84003 1.31424 1.34856 1.88595 2.81383 9.76683 9.79258 10.0845 11.3013 1.34027 1.37466 1.91418 2.84003 1.31424 1.34856 1.88595 2.81383
 
-Fit statuses: 0 0 0 0 0 0 0 0
+Fit statuses: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
