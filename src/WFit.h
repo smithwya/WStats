@@ -31,6 +31,7 @@ private:
     WFrame *_data_frame;
     Eigen::MatrixXd _cov_inv;
     Eigen::MatrixXd _trunc_data;
+    Eigen::VectorXd _sample_avg;
 
 public:
     WFit()
@@ -44,6 +45,7 @@ public:
         _data_frame = NULL;
         _cov_inv = Eigen::MatrixXd::Zero(1, 1);
         _trunc_data = Eigen::MatrixXd::Zero(1, 1);
+        _sample_avg = Eigen::VectorXd::Zero(1);
     }
 
     void set_strat(int strat){
@@ -90,6 +92,7 @@ public:
                 index++;
             }
         }
+        _sample_avg = _trunc_data.rowwise().mean();
         return;
     }
 
@@ -113,7 +116,7 @@ public:
         return cov;
     };
 
-    double minfunc(const double *xx)
+    double minfunc_samples(const double *xx)
     {
         double sum = 0;
         Eigen::VectorXd model_result = _model->evaluate(xx);
@@ -128,12 +131,23 @@ public:
         return sum;
     };
 
+    double minfunc_avg(const double *xx){
+        double sum = 0;
+        Eigen::VectorXd model_result = _model->evaluate(xx);
+        int n_samp = _data_frame->n_samples;
+        Eigen::VectorXd residual = _sample_avg - model_result;
+
+        return n_samp*residual.transpose()*_cov_inv*residual;
+
+    }
+
     void minimize()
     {
         truncate_data(_model->data_shape);
         _cov_inv = _data_frame->get_cov_trunc(_model->data_shape).inverse();
 
-        ROOT::Math::Functor f(this, &WFit::minfunc, _num_params);
+        //ROOT::Math::Functor f(this, &WFit::minfunc_avg, _num_params);
+        ROOT::Math::Functor f(this, &WFit::minfunc_samples, _num_params);
         minimizer->SetFunction(f);
 
         for (int i = 0; i < _num_params; i++)
@@ -147,7 +161,7 @@ public:
     {
         vector<const double*> boot_sampled_pars = {};
 
-        ROOT::Math::Functor f(this, &WFit::minfunc, _num_params);
+        ROOT::Math::Functor f(this, &WFit::minfunc_avg, _num_params);
         minimizer->SetFunction(f);
 
         // freeze covariance matrix
@@ -214,6 +228,7 @@ public:
             statuses(i) = minimizer->Status();
             //if (statuses(i) > 1 ) ak_prob(i) = ak_prob(i) * 1000000;
             chisq_p_dof(i) = (minimizer->MinValue() - ((ms->data_shape.sum()) * (_data_frame->n_samples - 1)))/(ms->data_shape.sum()-N_cut-ms->num_params);
+            //chisq_p_dof(i) = minimizer->MinValue()/(ms->data_shape.sum()- k);
         }
         cout<<"fit all models"<<endl;
         ak_prob = -0.5 * (ak_prob.array() - ak_prob.minCoeff());

@@ -46,7 +46,7 @@ int main(int argc, char **argv)
 
 	for (int i = 0; i < R_max; i++)
 	{
-		T_slice temp = T_slice(&G, 0, T_max);
+		T_slice temp = T_slice(&G, i, T_max);
 		//temp.sparsen(2);
 		G_R.push_back(temp);
 	}
@@ -54,10 +54,10 @@ int main(int argc, char **argv)
 	// Generate the set of models to test
 	vector<int> n_exps = {1, 2};
 	vector<int> pl_degree_set = {0, 1};
-	vector<int> poly_degrees = {};
+	vector<int> poly_degrees = {2,3};
 
 	vector<int> t_start_set = {0};
-	vector<int> t_end_set = {11};
+	vector<int> t_end_set = {10,11};
 
 	VectorXd ind_vars = VectorXd::Zero(T_max);
 	for (int i = 0; i < T_max; i++)
@@ -112,7 +112,7 @@ int main(int argc, char **argv)
 	VectorXd avg_val = VectorXd::Zero(R_max);
 	VectorXd avg_err = VectorXd::Zero(R_max);
 
-	for (int R = 0; R < 1; R++)
+	for (int R = 0; R < R_max; R++)
 	{
 		fitter.load_data(&G_R[R]);
 		cout << "Fitting R = " << R << endl
@@ -131,12 +131,21 @@ int main(int argc, char **argv)
 
 		for(int i = 0; i < n_models; i++){
 			avg_err(R)+=pow(ak_results[1](i),2)*ak_results[2](i);
+			avg_err(R)+=pow(ak_results[0](i),2)*ak_results[2](i);
 		}
 
+		avg_val(R) = (ak_results[0].array()*ak_results[2].array()).sum();
+		avg_err(R) -=pow(avg_val(R),2);
+		avg_err(R) = sqrt(avg_err(R));
 	}
 
 
-	fstream pot_file(save_file);
+	ofstream pot_file(save_file);
+	cout<<save_file<<endl;
+	MatrixXd fresult(R_max,2);
+	fresult.col(0) = avg_val;
+	fresult.col(1) = avg_err;
+	pot_file<<fresult<<endl;
 
 	pot_file.close();
 

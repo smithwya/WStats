@@ -34,11 +34,10 @@ public:
     {
         double result = 0;
         double exponent = 0;
-
-        for (int i = 0; i <= exp_degree; i++)
+        for (int i = 1; i <= exp_degree; i++)
         {
 
-            exponent += pars[i] * pow(x[0], i);
+            exponent += abs(pars[i]) * pow(x[0], i);
         }
 
         double pole_term = 1;
@@ -48,7 +47,7 @@ public:
             pole_term += pars[exp_degree + j] * pow(x[0], -j);
         }
 
-        return (TMath::Exp(-exponent)) * pole_term;
+        return pars[0]*(TMath::Exp(-exponent)) * pole_term;
     };
 
 
