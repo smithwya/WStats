@@ -1,0 +1,193 @@
+Loaded Data/L24_b245_xi3_g.dat
+1 exponentials with a pole of degree 0
+shape: 1 1 1 1 1 1 1 1 1 1 0 0
+2 exponentials with a pole of degree 0
+shape: 1 1 1 1 1 1 1 1 1 1 0 0
+1 exponentials with a pole of degree 0
+shape: 1 1 1 1 1 1 1 1 1 1 1 0
+2 exponentials with a pole of degree 0
+shape: 1 1 1 1 1 1 1 1 1 1 1 0
+1 exponentials with a pole of degree 0
+shape: 1 1 1 1 1 1 1 1 1 1 1 1
+2 exponentials with a pole of degree 0
+shape: 1 1 1 1 1 1 1 1 1 1 1 1
+1 exponentials with a pole of degree 1
+shape: 1 1 1 1 1 1 1 1 1 1 0 0
+2 exponentials with a pole of degree 1
+shape: 1 1 1 1 1 1 1 1 1 1 0 0
+1 exponentials with a pole of degree 1
+shape: 1 1 1 1 1 1 1 1 1 1 1 0
+2 exponentials with a pole of degree 1
+shape: 1 1 1 1 1 1 1 1 1 1 1 0
+1 exponentials with a pole of degree 1
+shape: 1 1 1 1 1 1 1 1 1 1 1 1
+2 exponentials with a pole of degree 1
+shape: 1 1 1 1 1 1 1 1 1 1 1 1
+Exponential of polynomial with degree 2 and pole of degree 0
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 0 0
+Exponential of polynomial with degree 3 and pole of degree 0
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 0 0
+Exponential of polynomial with degree 2 and pole of degree 0
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 1 0
+Exponential of polynomial with degree 3 and pole of degree 0
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 1 0
+Exponential of polynomial with degree 2 and pole of degree 0
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 1 1
+Exponential of polynomial with degree 3 and pole of degree 0
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 1 1
+Exponential of polynomial with degree 2 and pole of degree 1
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 0 0
+Exponential of polynomial with degree 3 and pole of degree 1
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 0 0
+Exponential of polynomial with degree 2 and pole of degree 1
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 1 0
+Exponential of polynomial with degree 3 and pole of degree 1
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 1 0
+Exponential of polynomial with degree 2 and pole of degree 1
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 1 1
+Exponential of polynomial with degree 3 and pole of degree 1
+Fitting with shape 1 1 1 1 1 1 1 1 1 1 1 1
+
+
+Fitting R = 0
+
+fitting 24 models
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 227471.181113491388
+Edm   = 1.14481109781012039e-12
+Nfcn  = 91
+0	  = 1.39086	 +/-  1.88761e-05
+1	  = 0.368739	 +/-  1.09101e-05
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 20650.5231343914638
+Edm   = 1.34326592173649786e-07
+Nfcn  = 1358
+0	  = 1.38273	 +/-  4.46399e-05
+1	  = 0.365275	 +/-  1.74849e-05
+2	  = 0.220601	 +/-  0.000245795
+3	  = 0.914325	 +/-  0.00167075
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 229978.908955038292
+Edm   = 1.0097851267465592e-11
+Nfcn  = 91
+0	  = 1.39088	 +/-  1.88658e-05
+1	  = 0.368738	 +/-  1.09081e-05
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 22656.2805951180635
+Edm   = 4.26192267918650777e-06
+Nfcn  = 1149
+0	  = 1.38273	 +/-  4.4668e-05
+1	  = 0.365276	 +/-  1.74859e-05
+2	  = 0.220567	 +/-  0.000245491
+3	  = -0.914329	 +/-  0.00167296
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 232194.755976328364
+Edm   = 9.69194621219181984e-12
+Nfcn  = 89
+0	  = 1.39088	 +/-  1.88655e-05
+1	  = 0.368735	 +/-  1.09076e-05
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 24665.8938776034338
+Edm   = 1.03068753043787968e-09
+Nfcn  = 545
+0	  = 1.38273	 +/-  4.46854e-05
+1	  = 0.365275	 +/-  1.74854e-05
+2	  = 0.220589	 +/-  0.000245406
+3	  = 0.914289	 +/-  0.0016734
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 31896.0908144633795
+Edm   = 7.40477605466386841e-06
+Nfcn  = 193
+0	  = 1.3829	 +/-  2.61329e-05
+1	  = 0.365915	 +/-  1.26032e-05
+2	  = 0.0127919	 +/-  2.9184e-05
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 20015.5922630590467
+Edm   = 4.40215596422970167e-06
+Nfcn  = 789
+0	  = -0.183328	 +/-  0.00125341
+1	  = 0.82534	 +/-  0.00447485
+2	  = 1.38099	 +/-  8.89377e-05
+3	  = 0.364957	 +/-  2.27468e-05
+4	  = 0.00475245	 +/-  0.000158152
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 33917.5091118369746
+Edm   = 5.1757930347595024e-12
+Nfcn  = 205
+0	  = 1.3829	 +/-  2.61325e-05
+1	  = 0.365914	 +/-  1.25993e-05
+2	  = 0.0127972	 +/-  2.91619e-05
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 5
+FVAL  = 33917.5103405017653
+Edm   = 0.00860098435077816248
+Nfcn  = 1238
+0	  = 29.7601	 +/-  0.000991223
+1	  = 6.74829	 +/-  0.00011723
+2	  = 1.3829	 +/-  2.02807e-05
+3	  = 0.365914	 +/-  1.12932e-05
+4	  = 0.0127962	 +/-  1.24991e-05
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 35917.98849207694
+Edm   = 2.97499718849624935e-06
+Nfcn  = 195
+0	  = 1.3829	 +/-  2.61285e-05
+1	  = 0.365914	 +/-  1.25922e-05
+2	  = 0.0127983	 +/-  2.91477e-05
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 24015.6736810911389
+Edm   = 6.67192235006192011e-08
+Nfcn  = 4957
+0	  = 1.38098	 +/-  8.82717e-05
+1	  = -0.364955	 +/-  2.26367e-05
+2	  = 0.183263	 +/-  0.00124493
+3	  = 0.824971	 +/-  0.00443608
+4	  = 0.00476445	 +/-  0.000156938
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = 227471.181152419391
+Edm   = 4.68367504853305682e-05
+Nfcn  = 332
+0	  = 1.9345	 +/-  5.25083e-05
+1	  = -0.135969	 +/-  8.04601e-06
+2	  = 3.3037e-14	 +/-  3.8679e-10
+
+
+Minuit2Minimizer: Minimize with max-calls 100000 convergence for edm < 0.01 strategy 2

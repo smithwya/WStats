@@ -135,11 +135,11 @@ public:
 
     Eigen::MatrixXd subset(int start, int end){
         if(start < 0 || end >= n_samples || start>end) return Eigen::MatrixXd::Zero(1,1);
-        return data(Eigen::placeholders::all,Eigen::seqN(start,end));
+        return data(Eigen::all,Eigen::seqN(start,end));
     };
 
     void sparsen(int len){
-        data = data(Eigen::placeholders::all,Eigen::seqN(0,Eigen::placeholders::last,len));
+        data = data(Eigen::all,Eigen::seqN(0,Eigen::last,len));
 
         cov_matrix = cov(data);
     };

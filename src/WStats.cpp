@@ -31,9 +31,10 @@ int main(int argc, char **argv)
 	string fname = argv[1];
 	int R_max = atoi(argv[2]);
 	int T_max = atoi(argv[3]);
+	
 	string save_file = "Fits" + fname.substr(4, fname.size() - 7) + "vr";
 	string log_file = "Fits" + fname.substr(4, fname.size() - 7) + "log";
-
+	string sigma_file = "Fits"+ fname.substr(4, fname.size() - 7) + "sigma";
 	freopen(log_file.c_str(), "w", stdout);
 
 	// Read in the data
@@ -57,7 +58,7 @@ int main(int argc, char **argv)
 	vector<int> poly_degrees = {2, 3};
 
 	vector<int> t_start_set = {0};
-	vector<int> t_end_set = {10, 11};
+	vector<int> t_end_set = {9,10, 11};
 
 	VectorXd ind_vars = VectorXd::Zero(T_max);
 	for (int i = 0; i < T_max; i++)
@@ -162,7 +163,7 @@ int main(int argc, char **argv)
 	}
 
 	vector<int> start_r = {0,1,2};
-	vector<int> end_r = {8,9,10,11};
+	vector<int> end_r = {6,7,8,9,10,11};
 
 
 	for (int r_s : start_r)
@@ -227,8 +228,11 @@ int main(int argc, char **argv)
 	avg_sigma = (ak_results_r[0].array() * ak_results_r[2].array()).sum();
 	avg_sigma_err -= pow(avg_sigma, 2);
 	avg_sigma_err = sqrt(avg_sigma_err);
-
-	pot_file<<"String tension: "<< avg_sigma<<" +/- "<<avg_sigma_err<<endl;
 	pot_file.close();
+
+	ofstream tension_file(sigma_file);
+	tension_file<< avg_sigma<<" "<<avg_sigma_err<<endl;
+	tension_file.close();
+
 	return 0;
 }

@@ -244,6 +244,7 @@ public:
             result(i) = ms->extract_observable(minimizer->X());
             errs(i) = _model->extract_error(minimizer->X(),minimizer->Errors());
             statuses(i) = minimizer->Status();
+			if(errs(i)>10.0) ak_prob(i) = ak_prob(i)*1e6;
             //if (statuses(i) > 1 ) ak_prob(i) = ak_prob(i) * 1000000;
             chisq_p_dof(i) = (minimizer->MinValue() - ((ms->data_shape.sum()) * (_data_frame->n_samples - 1)))/(ms->data_shape.sum()-N_cut-ms->num_params);
         }
@@ -291,7 +292,8 @@ public:
             result(i) = ms->extract_observable(minimizer->X());
             errs(i) = _model->extract_error(minimizer->X(),minimizer->Errors());
             statuses(i) = minimizer->Status();
-            //if (statuses(i) > 1 ) ak_prob(i) = ak_prob(i) * 1000000;
+			if(errs(i)>10.0) ak_prob(i) = ak_prob(i)*1e6;
+            //if (statuses(i) > 1 ) ak_prob(i) = ak_prob(i) * 1e6;
             chisq_p_dof(i) = minimizer->MinValue();
 
         }

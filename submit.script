@@ -11,5 +11,4 @@
 
 #SBATCH -A r00215
 
-srun ./bin/WStats $1 $2 $3 $4 $5 $6 $7 $8 $9
-
+srun ./bin/WStats $1 $2 $3
