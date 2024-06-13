@@ -133,17 +133,30 @@ public:
         return trunc_cov;
     }
 
+    
     Eigen::MatrixXd subset(int start, int end){
         if(start < 0 || end >= n_samples || start>end) return Eigen::MatrixXd::Zero(1,1);
-        return data(Eigen::all,Eigen::seqN(start,end));
+        return data(Eigen::placeholders::all,Eigen::seqN(start,end));
     };
-
+    
     void sparsen(int len){
-        data = data(Eigen::all,Eigen::seqN(0,Eigen::last,len));
-
-        cov_matrix = cov(data);
+        Eigen::MatrixXd newdat = Eigen::MatrixXd::Zero(data.rows(),data.cols()/len);
+        n_samples = data.cols()/len;
+        for(int i = 0; i<data.cols(); i+=len ){
+            newdat.col(i) = data.col(i);
+        }
+        data = newdat;
+        if (data.cols() > data.rows())
+        {
+            cov_matrix = WFrame::cov(data);
+        }
+        else
+        {
+            cov_matrix = Eigen::MatrixXd::Ones(1, 1);
+            cout << "Warning: Not enough samples to calculate covariance matrix" << endl;
+        }
     };
-
+    
     friend ostream &operator<<(std::ostream &os, WFrame const &m)
     {
         os << m.data << endl;

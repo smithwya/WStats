@@ -27,4 +27,18 @@ class T_slice : public WFrame{
         cov_matrix = WFrame::cov(data);
     }
 
+    T_slice(Coulomb_corr *c, int r,int t_max,int s_len):WFrame(){
+        R=r;
+        T_max = t_max;
+        n_samples = c->data_list.size()/s_len;
+        data = Eigen::MatrixXd::Zero(t_max, n_samples);
+
+        int index = 0;
+        for(int i = 0; i < c->n_samples; i+=s_len){
+            data.col(index) = c->data_list[i].row(r);
+            index++;
+        }
+        cov_matrix = WFrame::cov(data);
+    }
+
 };

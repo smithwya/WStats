@@ -27,14 +27,12 @@ using namespace WPseudo;
 
 int main(int argc, char **argv)
 {
-
 	string fname = argv[1];
 	int R_max = atoi(argv[2]);
 	int T_max = atoi(argv[3]);
-	
 	string save_file = "Fits" + fname.substr(4, fname.size() - 7) + "vr";
 	string log_file = "Fits" + fname.substr(4, fname.size() - 7) + "log";
-	string sigma_file = "Fits"+ fname.substr(4, fname.size() - 7) + "sigma";
+	string sigma_file = "Fits" + fname.substr(4, fname.size() - 7) + "sigma";
 	freopen(log_file.c_str(), "w", stdout);
 
 	// Read in the data
@@ -48,17 +46,16 @@ int main(int argc, char **argv)
 	for (int i = 0; i < R_max; i++)
 	{
 		T_slice temp = T_slice(&G, i, T_max);
-		// temp.sparsen(2);
 		G_R.push_back(temp);
 	}
 
 	// Generate the set of models to test
-	vector<int> n_exps = {1, 2};
+	vector<int> n_exps = {1, 2, 3};
 	vector<int> pl_degree_set = {0, 1};
-	vector<int> poly_degrees = {2, 3};
+	vector<int> poly_degrees = {2};
 
 	vector<int> t_start_set = {0};
-	vector<int> t_end_set = {9,10, 11};
+	vector<int> t_end_set = {9, 10, 11};
 
 	VectorXd ind_vars = VectorXd::Zero(T_max);
 	for (int i = 0; i < T_max; i++)
@@ -105,20 +102,21 @@ int main(int argc, char **argv)
 
 	int n_models = mod_ptrs.size();
 
-	// WFrame temp_frame = WFrame(G_R[0].subset(0,500));
 	WFit fitter = WFit();
-	fitter.set_options({100000, 10000, .01, 1});
+	fitter.set_options({100000, 10000, .01, 0});
 	fitter.set_strat(2);
 
 	VectorXd avg_val = VectorXd::Zero(R_max);
 	VectorXd avg_err = VectorXd::Zero(R_max);
+	VectorXd best_chi = VectorXd::Zero(R_max);
 
 	for (int R = 0; R < R_max; R++)
 	{
+		//G_R[R].sparsen(2);
 		fitter.load_data(&G_R[R]);
 		cout << endl
 			 << endl
-			 << "Fitting R = " << R << endl
+			 << "Fitting R = " << R + 1 << endl
 			 << endl;
 		vector<VectorXd> ak_results = fitter.ak_criteria(mod_ptrs);
 		std::cout << "Results: " << ak_results[0].transpose() << endl
@@ -127,9 +125,11 @@ int main(int argc, char **argv)
 				  << endl;
 		std::cout << "Probabilities: " << ak_results[2].transpose() << endl
 				  << endl;
-		std::cout << "Chisq/dof: " << ak_results[3].transpose() << endl
+		std::cout << "Chisq: " << ak_results[3].transpose() << endl
 				  << endl;
 		std::cout << "Fit statuses: " << ak_results[4].transpose() << endl
+				  << endl;
+		std::cout << "Best Chisquared: " << ak_results[5].transpose() << endl
 				  << endl;
 
 		for (int i = 0; i < n_models; i++)
@@ -141,17 +141,19 @@ int main(int argc, char **argv)
 		avg_val(R) = (ak_results[0].array() * ak_results[2].array()).sum();
 		avg_err(R) -= pow(avg_val(R), 2);
 		avg_err(R) = sqrt(avg_err(R));
+		best_chi(R) = ak_results[5](0);
 	}
 
 	ofstream pot_file(save_file);
 	cout << save_file << endl;
-	MatrixXd fresult(R_max, 2);
+	MatrixXd fresult(R_max, 3);
 	fresult.col(0) = avg_val;
 	fresult.col(1) = avg_err;
+	fresult.col(2) = best_chi;
 	pot_file << fresult << endl;
 
-
-
+	////////////////////////////////////////////R-fits
+	/*
 	vector<Polynomial> lin_models_r = {};
 	vector<Cornell_model> corn_models_r = {};
 	vector<WModel *> mod_ptrs_r = {};
@@ -205,7 +207,7 @@ int main(int argc, char **argv)
 	WFrame  potential_dat = WFrame(avg_val,ind_vars_r,avg_err);
 	fitter.load_data(&potential_dat);
 
-	vector<VectorXd> ak_results_r = fitter.ak_criteria_avg(mod_ptrs_r);
+	vector<VectorXd> ak_results_r = fitter.ak_criteria(mod_ptrs_r);
 
 	cout<<endl<<endl<<"Fitting the potential: "<<endl;
 	std::cout << "Results: " << ak_results_r[0].transpose() << endl
@@ -233,6 +235,7 @@ int main(int argc, char **argv)
 	ofstream tension_file(sigma_file);
 	tension_file<< avg_sigma<<" "<<avg_sigma_err<<endl;
 	tension_file.close();
+	*/
 
 	return 0;
 }
