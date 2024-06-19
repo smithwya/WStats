@@ -5,6 +5,9 @@
 #include <Eigen/Dense>
 #include <string>
 #include <TRandom3.h>
+#include <uncertainties/ureal.hpp>
+#include <uncertainties/io.hpp>
+#include <uncertainties/impl.hpp>
 
 using namespace std;
 

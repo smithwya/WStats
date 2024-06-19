@@ -7,6 +7,7 @@
 #include <fstream>
 #include <vector>
 #include "Math/Minimizer.h"
+#include "Minuit2/Minuit2Minimizer.h"
 #include "WModel.h"
 #include "WFrame.h"
 #include "WFit.h"
@@ -41,6 +42,7 @@ public:
         _steps = {};
         _num_params = 0;
         minimizer = ROOT::Math::Factory::CreateMinimizer("Minuit2", "Minimize");
+
         _model = NULL;
         _data_frame = NULL;
         _cov_inv = Eigen::MatrixXd::Zero(1, 1);
@@ -94,20 +96,20 @@ public:
         }
         _sample_avg = _trunc_data.rowwise().mean();
         return;
-    }
+    };
 
     //Loads a model
     void set_model(WModel *m)
     {
         _model = m;
         _num_params = m->num_params;
-    }
+    };
     //loads data frame and sets the inverse covariance matrix to the full one
     void load_data(WFrame *d)
     {
         _data_frame = d;
         _cov_inv = d->cov_matrix.inverse();
-    }
+    };
 
     double minfunc_samples(const double *xx)
     {
@@ -132,7 +134,7 @@ public:
 
         return n_samp*residual.transpose()*_cov_inv*residual;
 
-    }
+    };
 
     void minimize()
     {
@@ -146,9 +148,36 @@ public:
         for (int i = 0; i < _num_params; i++)
         {
             minimizer->SetVariable(i, to_string(i), _params[i], _steps[i]);
+            double var_min = _model->var_lims(i,0);
+            double var_max = _model->var_lims(i,1);
+            //automatically removes limits if var_min >= var_max
+            minimizer->SetVariableLimits(i,var_min,var_max);
+
         }
         minimizer->Minimize();
     };
+
+    void randomize_start_params(){
+        vector<double> pars = {};
+        TRandom *r = new TRandom3();
+        
+        for (int i = 0; i < _num_params; i++)
+        {
+
+            double val = 1;
+            double var_min = _model->var_lims(i,0);
+            double var_max = _model->var_lims(i,1);
+
+            if(var_min<var_max){
+                val=var_min+(var_max-var_min)*r->Rndm();
+            }
+            pars.push_back(val);
+
+        }
+        set_params(pars);
+        return;
+    }
+
 
     vector<Eigen::VectorXd> ak_criteria(vector<WModel *> models)
     {
@@ -164,26 +193,37 @@ public:
         int num_dat = _data_frame->data.cols();
         for (int i = 0; i < n_models; i++)
         {
-            minimizer->Clear();
+
             WModel* ms = models[i];
 
             set_model(ms);
             int k = ms->num_params;
-
-
-            set_params(vector<double>(k, 1));
-            set_steps(vector<double>(k, 0.5));
-
-            minimize();
-
-
             int d = ms->data_shape.sum();
             int N_cut = ms->data_shape.size() - d;
-            ak_prob(i) = minimizer->MinValue() + 2 * k + 2 * N_cut;
-            result(i) = ms->extract_observable(minimizer->X());
-            errs(i) = _model->extract_error(minimizer->X(),minimizer->Errors());
-            statuses(i) = minimizer->Status();
-			if(errs(i)>1.0) ak_prob(i) = ak_prob(i)*1e6;
+
+            double temp_f = -1.0;
+
+
+            for(int j = 0; j <10; j++){
+
+                minimizer->Clear();
+                set_params(vector<double>(k, 1));
+                set_steps(vector<double>(k, 0.1));
+
+                randomize_start_params();
+
+                minimize();
+                if(minimizer->MinValue()<temp_f || temp_f<0){
+                    ak_prob(i) = minimizer->MinValue() + 2 * k + 2 * N_cut;
+                    result(i) = ms->extract_observable(minimizer->X());
+                    errs(i) = _model->extract_error(minimizer->X(),minimizer->Errors());
+                    statuses(i) = minimizer->Status();
+
+                    temp_f = minimizer->MinValue();
+                }
+            }
+
+			//if(errs(i)>2.0) ak_prob(i) = ak_prob(i)*1e6;
             //if (statuses(i) > 1 ) ak_prob(i) = ak_prob(i) * 1000000;
             chisq(i) = (minimizer->MinValue()-(num_dat-1)*d)/(d-k);
         }

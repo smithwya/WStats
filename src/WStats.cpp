@@ -50,12 +50,12 @@ int main(int argc, char **argv)
 	}
 
 	// Generate the set of models to test
-	vector<int> n_exps = {1, 2, 3};
-	vector<int> pl_degree_set = {0, 1};
-	vector<int> poly_degrees = {2};
+	vector<int> n_exps = {1, 2};
+	vector<int> pl_degree_set = {0};
+	//vector<int> poly_degrees = {2};
 
 	vector<int> t_start_set = {0};
-	vector<int> t_end_set = {9, 10, 11};
+	vector<int> t_end_set = {11};
 
 	VectorXd ind_vars = VectorXd::Zero(T_max);
 	for (int i = 0; i < T_max; i++)
@@ -79,11 +79,13 @@ int main(int argc, char **argv)
 					nExp_model mod = nExp_model(n_e, pl_d, 2 * n_e + pl_d, ind_vars, shape, "");
 					nexp_models.push_back(mod);
 				}
+				/*
 				for (int p_d : poly_degrees)
 				{
 					Exp_model emod = Exp_model(p_d, pl_d, p_d + pl_d + 1, ind_vars, shape, "");
 					epoly_models.push_back(emod);
 				}
+				*/
 			}
 		}
 	}
@@ -94,12 +96,13 @@ int main(int argc, char **argv)
 		mod_ptrs.push_back(&nexp_models[i]);
 	}
 
+/*
 	for (int i = 0; i < epoly_models.size(); i++)
 	{
 		std::cout << epoly_models[i] << endl;
 		mod_ptrs.push_back(&epoly_models[i]);
 	}
-
+*/
 	int n_models = mod_ptrs.size();
 
 	WFit fitter = WFit();

@@ -5,6 +5,7 @@
 #include "TMath.h"
 #include "WModel.h"
 #include "TROOT.h"
+
 using namespace std;
 
 class nExp_model : public WModel
@@ -23,6 +24,15 @@ public:
     {
         n_exponentials = n_exp;
         pole_degree = p;
+        
+        var_lims = Eigen::MatrixXd::Zero(n,2);
+        for(int i = 0; i <2*n_exponentials; i+=2){
+            var_lims(i,0)=0;
+            var_lims(i,1)=10;
+            var_lims(i+1,0)=0.001;
+            var_lims(i+1,1)=10;
+        }
+
         if (2*n_exponentials + p != n)
         {
             cout << "WARNING: wrong number of parameters in model" << endl;
@@ -36,9 +46,11 @@ public:
 
         double num = 0;
         double denom = 0;
+        double mass = 0;
         for(int i = 0; i <2*n_exponentials; i+=2){
-        num+= pow(pars[i],2)*pow(pars[i+1],2);
-        denom+=pow(pars[i],2);
+            mass+=pars[i+1];
+            num+= pars[i]*mass;
+            denom+=pars[i];
         }
 
         return num/denom;
@@ -46,43 +58,37 @@ public:
 
     
     double extract_error(const double* pars, const double* errs){
-        double geo_sum = 0;
-        double geo_err=0;
-        double amp_sum=0;
-        double amp_err = 0;
 
-        double result = 0;
+       namespace unc = uncertainties;
+
+       unc::udouble mass(0,0);
+       unc::udouble numer(0,0);
+       unc::udouble denom(0,0);
 
 
         for(int i = 0; i <2*n_exponentials; i+=2){
+            unc::udouble tmp_amp(pars[i],errs[i]);
+            unc::udouble tmp_mass(pars[i+1],errs[i+1]);
 
-            double a = pow(pars[i],2);
-            double da = 2*sqrt(a)*errs[i];
-
-            double m = pow(pars[i+1],2);
-            double dm = 2*sqrt(m)*errs[i+1];
-            
-            amp_sum+=a;
-            geo_sum+=a*m;
-
-            amp_err+=pow(da,2);
-            geo_err+=pow(a*m*sqrt(pow(da/a,2)+pow(dm/m,2)),2);
+            mass+=tmp_mass;
+            numer+=tmp_amp*mass;
+            denom+=tmp_amp;
         }
-        amp_err = sqrt(amp_err);
-        geo_err = sqrt(geo_err);
-        result = sqrt(pow(amp_err/amp_sum,2)+pow(geo_err/geo_sum,2));
         
-        result = result * (geo_sum/amp_sum);
-        return result;
+        unc::udouble result = numer/denom;
+
+        return result.s();
     }
 
     double evaluate_pt( double *x, const double *pars)
     {
         double exp = 0;
         int param_index = 0;
+        double mass = 0;
 
         for(int i = 0; i <2*n_exponentials; i+=2){
-            exp+= pow(pars[i],2)*TMath::Exp(-pow(pars[i+1],2)*x[0]);
+            mass+=pars[i+1];
+            exp+= pars[i]*TMath::Exp(-mass*x[0]);
         }
 
         double pole = 1;

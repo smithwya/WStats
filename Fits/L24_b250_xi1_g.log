@@ -1,0 +1,210 @@
+Loaded Data/L24_b250_xi1_g.dat
+1 exponentials with a pole of degree 0
+shape: 1 1 1 1 1 1 1 1 1 1 1 1
+2 exponentials with a pole of degree 0
+shape: 1 1 1 1 1 1 1 1 1 1 1 1
+
+
+Fitting R = 1
+
+fitting 2 models
+Results: 0.338164   2.9105
+
+Errors: 2.4886e-05 0.00356124
+
+Probabilities: 1 0
+
+Chisq:     1138.72 5.82529e+07
+
+Fit statuses: 0 3
+
+Best Chisquared: 1138.72
+
+
+
+Fitting R = 2
+
+fitting 2 models
+Results: 0.490136 0.527451
+
+Errors: 6.34498e-05   0.0014774
+
+Probabilities: 0 1
+
+Chisq:   817.98 0.385965
+
+Fit statuses: 0 0
+
+Best Chisquared: 0.385965
+
+
+
+Fitting R = 3
+
+fitting 2 models
+Results: 0.575334 0.638768
+
+Errors: 0.000113457  0.00272112
+
+Probabilities: 0 1
+
+Chisq:   674.19 0.776838
+
+Fit statuses: 0 0
+
+Best Chisquared: 0.776838
+
+
+
+Fitting R = 4
+
+fitting 2 models
+Results: 0.638704 0.725896
+
+Errors: 0.000181422  0.00403716
+
+Probabilities: 0 1
+
+Chisq: 584.416 1.02848
+
+Fit statuses: 0 0
+
+Best Chisquared: 1.02848
+
+
+
+Fitting R = 5
+
+fitting 2 models
+Results: 0.694493  1.36006
+
+Errors: 0.000268446    0.366583
+
+Probabilities: 0 1
+
+Chisq: 522.142 619.252
+
+Fit statuses: 0 3
+
+Best Chisquared: 619.252
+
+
+
+Fitting R = 6
+
+fitting 2 models
+Results: 0.748399 0.877089
+
+Errors: 0.000387356  0.00764847
+
+Probabilities: 0 1
+
+Chisq: 431.206 1.68069
+
+Fit statuses: 0 0
+
+Best Chisquared: 1.68069
+
+
+
+Fitting R = 7
+
+fitting 2 models
+Results: 0.802515  0.94688
+
+Errors: 0.000547087   0.0102029
+
+Probabilities: 0 1
+
+Chisq: 331.727 1.32058
+
+Fit statuses: 0 0
+
+Best Chisquared: 1.32058
+
+
+
+Fitting R = 8
+
+fitting 2 models
+Results: 0.857998  1.00847
+
+Errors: 0.000759889   0.0513624
+
+Probabilities: 0 1
+
+Chisq: 226.554 259.022
+
+Fit statuses: 0 3
+
+Best Chisquared: 259.022
+
+
+
+Fitting R = 9
+
+fitting 2 models
+Results: 0.910167 0.884373
+
+Errors:  0.00100116 0.000400919
+
+Probabilities: 1 0
+
+Chisq: 143.248 276.966
+
+Fit statuses: 0 3
+
+Best Chisquared: 143.248
+
+
+
+Fitting R = 10
+
+fitting 2 models
+Results: 0.956586  1.09953
+
+Errors: 0.00126115  0.0239847
+
+Probabilities: 0 1
+
+Chisq: 88.6543 1.16938
+
+Fit statuses: 0 0
+
+Best Chisquared: 1.16938
+
+
+
+Fitting R = 11
+
+fitting 2 models
+Results: 0.98738 5.43018
+
+Errors: 0.00145217    0.32622
+
+Probabilities: 0 1
+
+Chisq:  57.623 8.13526
+
+Fit statuses: 0 0
+
+Best Chisquared: 8.13526
+
+
+
+Fitting R = 12
+
+fitting 2 models
+Results: 0.999519  1.18515
+
+Errors: 0.0015193 0.0398262
+
+Probabilities: 0 1
+
+Chisq:  42.3668 0.739564
+
+Fit statuses: 0 0
+
+Best Chisquared: 0.739564
+
+Fits/L24_b250_xi1_g.vr
