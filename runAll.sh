@@ -6,7 +6,7 @@ N=24
 T=24
 Rmax=12
 Tmax=12
-runtime=00:10:00
+runtime=00:20:00
 
 #makes 'Configs' and 'Data' folders in filepath location
 
