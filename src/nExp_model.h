@@ -58,8 +58,9 @@ public:
             num+= pars[i]*mass;
             denom+=pars[i];
         }
-
-        return num/denom;
+        
+        //return num/denom;
+        return pars[1];
     }
 
     
@@ -83,7 +84,8 @@ public:
         
         unc::udouble result = numer/denom;
 
-        return result.s();
+        //return result.s();
+        return errs[1];
     }
 
     double evaluate_pt( double *x, const double *pars)

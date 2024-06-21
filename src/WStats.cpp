@@ -30,9 +30,9 @@ int main(int argc, char **argv)
 	string fname = argv[1];
 	int R_max = atoi(argv[2]);
 	int T_max = atoi(argv[3]);
-	string save_file = "Fits" + fname.substr(4, fname.size() - 7) + "vr";
-	string log_file = "Fits" + fname.substr(4, fname.size() - 7) + "log";
-	string sigma_file = "Fits" + fname.substr(4, fname.size() - 7) + "sigma";
+	string save_file = "Fits" + fname.substr(4, fname.size() - 7) + "wvr";
+	string log_file = "Fits" + fname.substr(4, fname.size() - 7) + "wlog";
+	string sigma_file = "Fits" + fname.substr(4, fname.size() - 7) + "wsigma";
 	freopen(log_file.c_str(), "w", stdout);
 
 	// Read in the data
@@ -50,11 +50,11 @@ int main(int argc, char **argv)
 	}
 
 	// Generate the set of models to test
-	vector<int> n_exps = {1,2,3};
+	vector<int> n_exps = {1};
 	vector<int> pl_degree_set = {0,1};
 	//vector<int> poly_degrees = {2};
 
-	vector<int> t_start_set = {0};
+	vector<int> t_start_set = {0,1,2};
 	vector<int> t_end_set = {11};
 
 	VectorXd ind_vars = VectorXd::Zero(T_max);
@@ -157,7 +157,7 @@ int main(int argc, char **argv)
 	pot_file << fresult << endl;
 	
 	////////////////////////////////////////////R-fits
-	/*
+	
 	vector<Polynomial> lin_models_r = {};
 	vector<Cornell_model> corn_models_r = {};
 	vector<WModel *> mod_ptrs_r = {};
@@ -169,7 +169,7 @@ int main(int argc, char **argv)
 	}
 
 	vector<int> start_r = {0,1,2};
-	vector<int> end_r = {6,7,8,9,10,11};
+	vector<int> end_r = {8,9,10,11};
 
 
 	for (int r_s : start_r)
@@ -205,7 +205,7 @@ int main(int argc, char **argv)
 	double avg_sigma = 0;
 	double avg_sigma_err = 0;
 
-	fitter.set_options({100000, 10000, .01, 1});
+	fitter.set_options({10000, 1000, .01, 0});
 	fitter.set_strat(2);
 
 	WFrame  potential_dat = WFrame(avg_val,ind_vars_r,avg_err);
@@ -239,7 +239,7 @@ int main(int argc, char **argv)
 	ofstream tension_file(sigma_file);
 	tension_file<< avg_sigma<<" "<<avg_sigma_err<<endl;
 	tension_file.close();
-	*/
+	
 
 	return 0;
 }
