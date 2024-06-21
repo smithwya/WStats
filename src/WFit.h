@@ -108,6 +108,7 @@ public:
     void load_data(WFrame *d)
     {
         _data_frame = d;
+        _sample_avg = d->data.rowwise().mean();
         _cov_inv = d->cov_matrix.inverse();
     };
 
@@ -141,8 +142,8 @@ public:
         truncate_data(_model->data_shape);
         _cov_inv = _data_frame->get_cov_trunc(_model->data_shape).inverse();
 
-        //ROOT::Math::Functor f(this, &WFit::minfunc_avg, _num_params);
-        ROOT::Math::Functor f(this, &WFit::minfunc_samples, _num_params);
+        ROOT::Math::Functor f(this, &WFit::minfunc_avg, _num_params);
+        //ROOT::Math::Functor f(this, &WFit::minfunc_samples, _num_params);
         minimizer->SetFunction(f);
 
         for (int i = 0; i < _num_params; i++)
@@ -150,8 +151,10 @@ public:
             minimizer->SetVariable(i, to_string(i), _params[i], _steps[i]);
             double var_min = _model->var_lims(i,0);
             double var_max = _model->var_lims(i,1);
-            //automatically removes limits if var_min >= var_max
+            
+            if(var_min<var_max){
             minimizer->SetVariableLimits(i,var_min,var_max);
+            }
 
         }
         minimizer->Minimize();
@@ -203,14 +206,14 @@ public:
 
             double temp_f = -1.0;
 
+            vector<double> best_pars = vector<double>(k,1.1);
 
-            for(int j = 0; j <10; j++){
-
+            for(int j = 0; j <100; j++){
                 minimizer->Clear();
-                set_params(vector<double>(k, 1));
-                set_steps(vector<double>(k, 0.1));
+                set_params(best_pars);
+                set_steps(vector<double>(k, 0.5));
 
-                randomize_start_params();
+                //randomize_start_params();
 
                 minimize();
                 if(minimizer->MinValue()<temp_f || temp_f<0){
@@ -220,12 +223,23 @@ public:
                     statuses(i) = minimizer->Status();
 
                     temp_f = minimizer->MinValue();
+                    for(int m = 0; m < k; m++){
+                        best_pars.at(m)=minimizer->X()[m];
+                    }
                 }
+
             }
 
-			//if(errs(i)>2.0) ak_prob(i) = ak_prob(i)*1e6;
+			if(errs(i)>1.0) ak_prob(i) += 1e6;
             //if (statuses(i) > 1 ) ak_prob(i) = ak_prob(i) * 1000000;
-            chisq(i) = (minimizer->MinValue()-(num_dat-1)*d)/(d-k);
+            //chisq(i) = (minimizer->MinValue()-(num_dat-1)*d)/(d-k);
+            chisq(i) = minimizer->MinValue()/(d-k);
+            cout<<k<<" params"<<endl;
+            cout<<"Best parameters for model "<<i+1<<": "<<endl;
+            for(int m = 0; m < k; m++){
+                cout<<best_pars.at(m)<<" ";
+            }
+            cout<<endl<<endl;
         }
         int minLoc;
         double min = ak_prob.minCoeff(&minLoc);

@@ -50,8 +50,8 @@ int main(int argc, char **argv)
 	}
 
 	// Generate the set of models to test
-	vector<int> n_exps = {1, 2};
-	vector<int> pl_degree_set = {0};
+	vector<int> n_exps = {1,2,3};
+	vector<int> pl_degree_set = {0,1};
 	//vector<int> poly_degrees = {2};
 
 	vector<int> t_start_set = {0};
@@ -105,8 +105,9 @@ int main(int argc, char **argv)
 */
 	int n_models = mod_ptrs.size();
 
+
 	WFit fitter = WFit();
-	fitter.set_options({100000, 10000, .01, 0});
+	fitter.set_options({10000, 1000, .01, 0});
 	fitter.set_strat(2);
 
 	VectorXd avg_val = VectorXd::Zero(R_max);
@@ -154,7 +155,7 @@ int main(int argc, char **argv)
 	fresult.col(1) = avg_err;
 	fresult.col(2) = best_chi;
 	pot_file << fresult << endl;
-
+	
 	////////////////////////////////////////////R-fits
 	/*
 	vector<Polynomial> lin_models_r = {};

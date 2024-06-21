@@ -28,10 +28,16 @@ public:
         var_lims = Eigen::MatrixXd::Zero(n,2);
         for(int i = 0; i <2*n_exponentials; i+=2){
             var_lims(i,0)=0;
-            var_lims(i,1)=10;
+            var_lims(i,1)=5;
             var_lims(i+1,0)=0.001;
-            var_lims(i+1,1)=10;
+            var_lims(i+1,1)=5;
         }
+        
+        for(int i = 2*n_exponentials; i < n; i++){
+            var_lims(i,0)=0;
+            var_lims(i,1)=1;
+        }
+        
 
         if (2*n_exponentials + p != n)
         {
