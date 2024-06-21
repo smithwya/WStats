@@ -191,7 +191,7 @@ int main(int argc, char **argv)
 	for (int i = 0; i < lin_models_r.size(); i++)
 	{
 		mod_ptrs_r.push_back(&lin_models_r[i]);
-		cout<<lin_models_r[i]<<endl;
+		cout<<"model "<<i+1<<" "<<lin_models_r[i]<<endl;
 	}
 
 	for (int i = 0; i < corn_models_r.size(); i++)
