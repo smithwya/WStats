@@ -4,3 +4,4 @@ bin/*
 Makefile
 Data/*
 Plots/*
+Fits/*
