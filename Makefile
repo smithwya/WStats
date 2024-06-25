@@ -5,7 +5,7 @@ CXX = $(shell root-config --cxx)
 LD = $(shell root-config --ld)
 
 #compiling flags
-CPPFLAGS := $(shell root-config --cflags) $(STDINCDIR) -I/home/wyatt/eigen -I/home/smithwya/eigen -I/home/smithwya/uncertainties-cpp
+CPPFLAGS := $(shell root-config --cflags) $(STDINCDIR) -I/home/wyatt/eigen -I/home/smithwya/eigen -I../uncertainties-cpp
 CPPFLAGS += -O3
 
 #linking flags

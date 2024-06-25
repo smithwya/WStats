@@ -1,0 +1,665 @@
+Loaded Data/L24_b240_xi2_g.dat
+1 exponentials with a pole of degree 0
+shape: 1 1 1 1 1 1 1 1 1 1 1 1
+1 exponentials with a pole of degree 0
+shape: 0 1 1 1 1 1 1 1 1 1 1 1
+1 exponentials with a pole of degree 0
+shape: 0 0 1 1 1 1 1 1 1 1 1 1
+1 exponentials with a pole of degree 1
+shape: 1 1 1 1 1 1 1 1 1 1 1 1
+1 exponentials with a pole of degree 1
+shape: 0 1 1 1 1 1 1 1 1 1 1 1
+1 exponentials with a pole of degree 1
+shape: 0 0 1 1 1 1 1 1 1 1 1 1
+
+
+Fitting R = 1
+
+fitting 6 models
+2 params
+Best parameters for model 1: 
+1.9154 0.214083 
+
+2 params
+Best parameters for model 2: 
+1.90647 0.212312 
+
+2 params
+Best parameters for model 3: 
+1.89915 0.211148 
+
+3 params
+Best parameters for model 4: 
+1.88617 0.210365 0.0136608 
+
+3 params
+Best parameters for model 5: 
+1.87979 0.209803 0.0183427 
+
+3 params
+Best parameters for model 6: 
+1.87905 0.209757 0.0191048 
+
+Results: 0.214083 0.212312 0.211148 0.210365 0.209803 0.209757
+
+Errors:  1.3774e-05 1.46825e-05 1.67555e-05 1.70573e-05 2.17787e-05 2.77627e-05
+
+Probabilities:         0         0         0         0 0.0673682  0.932632
+
+Chisq: 12863.9 2634.81 492.938  193.88 5.20068 4.90711
+
+Fit statuses: 0 0 0 0 0 0
+
+Best Chisquared: 4.90711
+
+
+
+Fitting R = 2
+
+fitting 6 models
+2 params
+Best parameters for model 1: 
+1.76361 0.328364 
+
+2 params
+Best parameters for model 2: 
+1.74684 0.325322 
+
+2 params
+Best parameters for model 3: 
+1.73291 0.323188 
+
+3 params
+Best parameters for model 4: 
+1.70311 0.321191 0.0353603 
+
+3 params
+Best parameters for model 5: 
+1.68951 0.319997 0.0475815 
+
+3 params
+Best parameters for model 6: 
+1.68586 0.319749 0.0519872 
+
+Results: 0.328364 0.325322 0.323188 0.321191 0.319997 0.319749
+
+Errors: 3.81072e-05 3.96918e-05 4.40967e-05 4.63416e-05 5.96329e-05 7.93484e-05
+
+Probabilities: 0 0 0 0 0 1
+
+Chisq:  6545.21  1529.06  336.052  113.977  3.39276 0.677794
+
+Fit statuses: 0 0 0 0 0 0
+
+Best Chisquared: 0.677794
+
+
+
+Fitting R = 3
+
+fitting 6 models
+2 params
+Best parameters for model 1: 
+1.59161 0.407517 
+
+2 params
+Best parameters for model 2: 
+1.5641 0.402192 
+
+2 params
+Best parameters for model 3: 
+1.54306 0.398722 
+
+3 params
+Best parameters for model 4: 
+1.49559 0.395257 0.0662199 
+
+3 params
+Best parameters for model 5: 
+1.47461 0.393275 0.0893298 
+
+3 params
+Best parameters for model 6: 
+1.46845 0.392816 0.0983325 
+
+Results: 0.407517 0.402192 0.398722 0.395257 0.393275 0.392816
+
+Errors: 7.46201e-05 7.72877e-05 8.55035e-05 9.08348e-05 0.000118278   0.0001612
+
+Probabilities: 0 0 0 0 0 1
+
+Chisq: 4531.38 1041.88 231.795 77.7166 3.46025 1.45607
+
+Fit statuses: 0 0 0 0 0 0
+
+Best Chisquared: 1.45607
+
+
+
+Fitting R = 4
+
+fitting 6 models
+2 params
+Best parameters for model 1: 
+1.42424 0.476278 
+
+2 params
+Best parameters for model 2: 
+1.38392 0.467493 
+
+2 params
+Best parameters for model 3: 
+1.35493 0.46212 
+
+3 params
+Best parameters for model 4: 
+1.29068 0.456859 0.106041 
+
+3 params
+Best parameters for model 5: 
+1.26058 0.453633 0.146335 
+
+3 params
+Best parameters for model 6: 
+1.25049 0.452775 0.16432 
+
+Results: 0.476278 0.467493  0.46212 0.456859 0.453633 0.452775
+
+Errors: 0.000125769 0.000131376 0.000147743 0.000158588 0.000213589 0.000299895
+
+Probabilities: 0 0 0 0 0 1
+
+Chisq:  3175.54  710.456   159.55  57.5898  2.41604 0.389675
+
+Fit statuses: 0 0 0 0 0 0
+
+Best Chisquared: 0.389675
+
+
+
+Fitting R = 5
+
+fitting 6 models
+2 params
+Best parameters for model 1: 
+1.2741 0.542649 
+
+2 params
+Best parameters for model 2: 
+1.21925 0.529183 
+
+2 params
+Best parameters for model 3: 
+1.18143 0.521308 
+
+3 params
+Best parameters for model 4: 
+1.10151 0.51382 0.156366 
+
+3 params
+Best parameters for model 5: 
+1.06026 0.508697 0.223816 
+
+3 params
+Best parameters for model 6: 
+1.0436 0.507029 0.260545 
+
+Results: 0.542649 0.529183 0.521308  0.51382 0.508697 0.507029
+
+Errors: 0.000195247 0.000206814 0.000236833 0.000257535 0.000358986 0.000523056
+
+Probabilities: 0 0 0 0 0 1
+
+Chisq:  2312.07  514.129   118.18  48.3617   2.8599 0.513464
+
+Fit statuses: 0 0 0 0 0 0
+
+Best Chisquared: 0.513464
+
+
+
+Fitting R = 6
+
+fitting 6 models
+2 params
+Best parameters for model 1: 
+1.14823 0.609466 
+
+2 params
+Best parameters for model 2: 
+1.07636 0.589968 
+
+2 params
+Best parameters for model 3: 
+1.03026 0.579585 
+
+3 params
+Best parameters for model 4: 
+0.936993 0.569484 0.215785 
+
+3 params
+Best parameters for model 5: 
+0.885116 0.562066 0.319767 
+
+3 params
+Best parameters for model 6: 
+0.864494 0.559582 0.37604 
+
+Results: 0.609466 0.589968 0.579585 0.569484 0.562066 0.559582
+
+Errors: 0.000288748 0.000311771 0.000360972 0.000401014 0.000583763   0.0009143
+
+Probabilities: 0 0 0 0 0 1
+
+Chisq: 1655.37 348.393 71.5397 35.6122 1.91151 0.45438
+
+Fit statuses: 0 0 0 0 0 0
+
+Best Chisquared: 0.45438
+
+
+
+Fitting R = 7
+
+fitting 6 models
+2 params
+Best parameters for model 1: 
+1.05109 0.680721 
+
+2 params
+Best parameters for model 2: 
+0.960983 0.653149 
+
+2 params
+Best parameters for model 3: 
+0.904189 0.638525 
+
+3 params
+Best parameters for model 4: 
+0.80115 0.625977 0.282719 
+
+3 params
+Best parameters for model 5: 
+0.733811 0.614502 0.447217 
+
+3 params
+Best parameters for model 6: 
+0.704511 0.61028 0.549162 
+
+Results: 0.680721 0.653149 0.638525 0.625977 0.614502  0.61028
+
+Errors: 0.000428606 0.000473015 0.000570143 0.000628983 0.000974629  0.00158373
+
+Probabilities: 0 0 0 0 0 1
+
+Chisq: 1152.36 230.578 49.3355   28.88 2.48851 1.17955
+
+Fit statuses: 0 0 0 0 0 0
+
+Best Chisquared: 1.17955
+
+
+
+Fitting R = 8
+
+fitting 6 models
+2 params
+Best parameters for model 1: 
+0.982741 0.756168 
+
+2 params
+Best parameters for model 2: 
+0.876143 0.719407 
+
+2 params
+Best parameters for model 3: 
+0.808995 0.700154 
+
+3 params
+Best parameters for model 4: 
+0.701025 0.685658 0.344647 
+
+3 params
+Best parameters for model 5: 
+0.616302 0.668838 0.592544 
+
+3 params
+Best parameters for model 6: 
+0.574509 0.661634 0.777232 
+
+Results: 0.756168 0.719407 0.700154 0.685658 0.668838 0.661634
+
+Errors: 0.000623365 0.000708983 0.000880078  0.00096936  0.00158089  0.00273119
+
+Probabilities:         0         0         0         0 0.0119668  0.988033
+
+Chisq:  745.804  147.342  30.6896  22.1409  1.62496 0.310362
+
+Fit statuses: 0 0 0 0 0 0
+
+Best Chisquared: 0.310362
+
+
+
+Fitting R = 9
+
+fitting 6 models
+2 params
+Best parameters for model 1: 
+0.944663 0.835588 
+
+2 params
+Best parameters for model 2: 
+0.825649 0.78999 
+
+2 params
+Best parameters for model 3: 
+0.752864 0.766967 
+
+3 params
+Best parameters for model 4: 
+0.643478 0.751019 0.378437 
+
+3 params
+Best parameters for model 5: 
+0.545202 0.728735 0.697694 
+
+3 params
+Best parameters for model 6: 
+0.488086 0.717351 1 
+
+Results: 0.835588  0.78999 0.766967 0.751019 0.728735 0.717351
+
+Errors: 0.000885679   0.0010653  0.00139217  0.00150664  0.00265372  0.00135085
+
+Probabilities: 0 0 0 0 0 1
+
+Chisq: 417.853 77.6529 19.4776 14.9943 3.26167 1.93011
+
+Fit statuses: 0 0 0 0 0 0
+
+Best Chisquared: 1.93011
+
+
+
+Fitting R = 10
+
+fitting 6 models
+2 params
+Best parameters for model 1: 
+0.928818 0.910168 
+
+2 params
+Best parameters for model 2: 
+0.804307 0.858322 
+
+2 params
+Best parameters for model 3: 
+0.729294 0.832798 
+
+3 params
+Best parameters for model 4: 
+0.624896 0.817501 0.375354 
+
+3 params
+Best parameters for model 5: 
+0.521135 0.792059 0.717166 
+
+3 params
+Best parameters for model 6: 
+0.469856 0.781353 1 
+
+Results: 0.910168 0.858322 0.832798 0.817501 0.792059 0.781353
+
+Errors: 0.00119683 0.00151546 0.00211035 0.00217119 0.00414295  0.0020537
+
+Probabilities:         0         0         0         0 0.0807007  0.919299
+
+Chisq: 229.825 36.9008 9.46667 7.88397 2.04873 1.36059
+
+Fit statuses: 0 0 0 0 0 0
+
+Best Chisquared: 1.36059
+
+
+
+Fitting R = 11
+
+fitting 6 models
+2 params
+Best parameters for model 1: 
+0.925171 0.964884 
+
+2 params
+Best parameters for model 2: 
+0.805978 0.91281 
+
+2 params
+Best parameters for model 3: 
+0.738992 0.889332 
+
+3 params
+Best parameters for model 4: 
+0.640088 0.874579 0.334918 
+
+3 params
+Best parameters for model 5: 
+0.556322 0.853908 0.582992 
+
+3 params
+Best parameters for model 6: 
+0.472928 0.836035 1 
+
+Results: 0.964884  0.91281 0.889332 0.874579 0.853908 0.836035
+
+Errors: 0.00146246 0.00196611 0.00293055 0.00284731 0.00577945 0.00286405
+
+Probabilities:        0        0        0        0 0.356161 0.643839
+
+Chisq: 123.025 15.0605 3.98067 3.14028 1.34203 1.07887
+
+Fit statuses: 0 0 0 0 0 0
+
+Best Chisquared: 1.07887
+
+
+
+Fitting R = 12
+
+fitting 6 models
+2 params
+Best parameters for model 1: 
+0.925838 0.985576 
+
+2 params
+Best parameters for model 2: 
+0.809604 0.93365 
+
+2 params
+Best parameters for model 3: 
+0.745868 0.910981 
+
+3 params
+Best parameters for model 4: 
+0.649257 0.896418 0.316558 
+
+3 params
+Best parameters for model 5: 
+0.574136 0.877821 0.527851 
+
+3 params
+Best parameters for model 6: 
+0.486947 0.859242 0.938173 
+
+Results: 0.985576  0.93365 0.910981 0.896418 0.877821 0.859242
+
+Errors: 0.00157721 0.00220305 0.00338289  0.0032162 0.00666897  0.0143874
+
+Probabilities:        0        0        0        0 0.473926 0.526074
+
+Chisq:  92.7473  10.2431   2.7427  2.16289  1.12687 0.972307
+
+Fit statuses: 0 0 0 0 0 0
+
+Best Chisquared: 0.972307
+
+Fits/L24_b240_xi2_g.wvr
+models for fitting the R-dependence: 
+model 1 Fitting Polynomial of degree1 with shape 1 1 1 1 1 1 1 1 1 0 0 0
+
+model 2 Fitting Polynomial of degree1 with shape 1 1 1 1 1 1 1 1 1 1 0 0
+
+model 3 Fitting Polynomial of degree1 with shape 1 1 1 1 1 1 1 1 1 1 1 0
+
+model 4 Fitting Polynomial of degree1 with shape 1 1 1 1 1 1 1 1 1 1 1 1
+
+model 5 Fitting Polynomial of degree1 with shape 0 1 1 1 1 1 1 1 1 0 0 0
+
+model 6 Fitting Polynomial of degree1 with shape 0 1 1 1 1 1 1 1 1 1 0 0
+
+model 7 Fitting Polynomial of degree1 with shape 0 1 1 1 1 1 1 1 1 1 1 0
+
+model 8 Fitting Polynomial of degree1 with shape 0 1 1 1 1 1 1 1 1 1 1 1
+
+model 9 Fitting Polynomial of degree1 with shape 0 0 1 1 1 1 1 1 1 0 0 0
+
+model 10 Fitting Polynomial of degree1 with shape 0 0 1 1 1 1 1 1 1 1 0 0
+
+model 11 Fitting Polynomial of degree1 with shape 0 0 1 1 1 1 1 1 1 1 1 0
+
+model 12 Fitting Polynomial of degree1 with shape 0 0 1 1 1 1 1 1 1 1 1 1
+
+Fitting Cornell with shape 1 1 1 1 1 1 1 1 1 0 0 0
+
+Fitting Cornell with shape 1 1 1 1 1 1 1 1 1 1 0 0
+
+Fitting Cornell with shape 1 1 1 1 1 1 1 1 1 1 1 0
+
+Fitting Cornell with shape 1 1 1 1 1 1 1 1 1 1 1 1
+
+Fitting Cornell with shape 0 1 1 1 1 1 1 1 1 0 0 0
+
+Fitting Cornell with shape 0 1 1 1 1 1 1 1 1 1 0 0
+
+Fitting Cornell with shape 0 1 1 1 1 1 1 1 1 1 1 0
+
+Fitting Cornell with shape 0 1 1 1 1 1 1 1 1 1 1 1
+
+Fitting Cornell with shape 0 0 1 1 1 1 1 1 1 0 0 0
+
+Fitting Cornell with shape 0 0 1 1 1 1 1 1 1 1 0 0
+
+Fitting Cornell with shape 0 0 1 1 1 1 1 1 1 1 1 0
+
+Fitting Cornell with shape 0 0 1 1 1 1 1 1 1 1 1 1
+
+fitting 24 models
+2 params
+Best parameters for model 1: 
+0.123995 0.0880256 
+
+2 params
+Best parameters for model 2: 
+0.124332 0.0877404 
+
+2 params
+Best parameters for model 3: 
+0.124395 0.0876867 
+
+2 params
+Best parameters for model 4: 
+0.124432 0.0876558 
+
+2 params
+Best parameters for model 5: 
+0.194539 0.0634635 
+
+2 params
+Best parameters for model 6: 
+0.194942 0.0632885 
+
+2 params
+Best parameters for model 7: 
+0.195014 0.0632574 
+
+2 params
+Best parameters for model 8: 
+0.195073 0.0632318 
+
+2 params
+Best parameters for model 9: 
+0.226838 0.0556297 
+
+2 params
+Best parameters for model 10: 
+0.226864 0.0556218 
+
+2 params
+Best parameters for model 11: 
+0.226846 0.0556273 
+
+2 params
+Best parameters for model 12: 
+0.226908 0.0556089 
+
+3 params
+Best parameters for model 13: 
+0.123995 6.46176e-10 0.0880256 
+
+3 params
+Best parameters for model 14: 
+0.124332 -5.8201e-10 0.0877404 
+
+3 params
+Best parameters for model 15: 
+0.124395 -5.59928e-10 0.0876867 
+
+3 params
+Best parameters for model 16: 
+0.124432 -1.31478e-09 0.0876558 
+
+3 params
+Best parameters for model 17: 
+0.194539 -7.43362e-10 0.0634635 
+
+3 params
+Best parameters for model 18: 
+0.194942 1.12245e-10 0.0632885 
+
+3 params
+Best parameters for model 19: 
+0.195014 2.38928e-10 0.0632574 
+
+3 params
+Best parameters for model 20: 
+0.195073 1.94088e-09 0.0632318 
+
+3 params
+Best parameters for model 21: 
+0.226838 8.81474e-12 0.0556297 
+
+3 params
+Best parameters for model 22: 
+0.226864 5.28366e-12 0.0556218 
+
+3 params
+Best parameters for model 23: 
+0.226846 1.26318e-08 0.0556273 
+
+3 params
+Best parameters for model 24: 
+0.226908 2.59573e-10 0.0556089 
+
+
+
+Fitting the potential: 
+Results: 0.0880256 0.0877404 0.0876867 0.0876558 0.0634635 0.0632885 0.0632574 0.0632318 0.0556297 0.0556218 0.0556273 0.0556089 0.0880256 0.0877404 0.0876867 0.0876558 0.0634635 0.0632885 0.0632574 0.0632318 0.0556297 0.0556218 0.0556273 0.0556089
+
+Errors: 4.51346e-05 4.48794e-05 4.48317e-05 4.48075e-05 8.32958e-05 8.21058e-05 8.18799e-05 8.17628e-05 0.000138558 0.000134647 0.000133896 0.000133497 4.51346e-05 4.48795e-05 4.48317e-05 4.48075e-05 8.32958e-05 8.21058e-05 8.18799e-05 8.17628e-05 0.000138558 0.000134647 0.000133895 0.000133496
+
+Probabilities:         0         0         0         0         0         0         0         0 0.0522919  0.138105  0.348386  0.192275         0         0         0         0         0         0         0         0 0.0192371 0.0508061  0.128164  0.070734
+
+Chisq: 18337.4 16487.8 14730.7 13301.7 877.928 774.736 681.156  609.27 52.3845 43.6634 37.4471 33.1648 21393.7 18843.2   16572 14779.6 1053.51 903.858 778.464 685.429 65.4807 52.3961 43.6883 37.9026
+
+Fit statuses: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+

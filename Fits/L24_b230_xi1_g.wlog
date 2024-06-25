@@ -42,7 +42,7 @@ Best parameters for model 6:
 
 Results: 0.432328   0.4287 0.427865 0.426672 0.427037 0.427344
 
-Errors: 3.40629e-05 4.34126e-05 5.86209e-05 5.39497e-05 8.93824e-05 0.000155052
+Errors: 3.40629e-05 4.34126e-05 5.86209e-05 5.39497e-05 8.92921e-05 0.000155027
 
 Probabilities:        0        0        0        0 0.124508 0.875492
 
@@ -83,7 +83,7 @@ Best parameters for model 6:
 
 Results: 0.696218 0.688172 0.686253 0.683442 0.684225 0.685567
 
-Errors: 9.63457e-05 0.000130551 0.000203385 0.000170865 0.000350411  0.00082769
+Errors: 9.63457e-05 0.000130551 0.000203384 0.000170868 0.000350348 0.000827018
 
 Probabilities:         0         0  0.540124 0.0160104  0.156996  0.286869
 
@@ -165,7 +165,7 @@ Best parameters for model 6:
 
 Results: 1.06132 1.04129 1.03541 1.02823 1.02903 1.03303
 
-Errors: 0.000366048 0.000579273  0.00124366 0.000841685  0.00240387  0.00765014
+Errors: 0.000366048 0.000579273  0.00124366 0.000841657  0.00240387   0.0074991
 
 Probabilities:         0         0   0.21805  0.501186   0.19631 0.0844533
 
@@ -206,7 +206,7 @@ Best parameters for model 6:
 
 Results: 1.22454 1.19489   1.188 1.17578 1.18022 1.17547
 
-Errors: 0.00065035  0.0011255 0.00281745 0.00169195 0.00558055   0.021038
+Errors: 0.00065035 0.00112551 0.00281745 0.00169199 0.00556918  0.0214329
 
 Probabilities:         0 0.0163132   0.20106  0.455063   0.23756 0.0900037
 
@@ -247,7 +247,7 @@ Best parameters for model 6:
 
 Results: 1.38779 1.34636 1.33694 1.31999 1.32557 1.29217
 
-Errors: 0.00110359 0.00219404 0.00619885  0.0034156  0.0126732  0.0664975
+Errors: 0.00110359 0.00219404 0.00619885  0.0034156  0.0126727  0.0665306
 
 Probabilities:         0   0.11917  0.161343  0.452872  0.185156 0.0814599
 
@@ -284,11 +284,11 @@ Best parameters for model 5:
 
 3 params
 Best parameters for model 6: 
-0.707728 1.49644 3.99578e-09 
+0.707729 1.49644 1.04649e-10 
 
 Results: 1.55576  1.5007 1.49644 1.46686 1.49671 1.49644
 
-Errors: 0.00189139  0.0043634   0.014225 0.00697356  0.0298349  0.0142238
+Errors: 0.00189139  0.0043634   0.014225 0.00697356  0.0283141  0.0142239
 
 Probabilities:         0  0.406104  0.156965  0.228218   0.15097 0.0577441
 
@@ -329,7 +329,7 @@ Best parameters for model 6:
 
 Results: 1.72608 1.64617 1.61353 1.59422  1.5835 1.61353
 
-Errors:  0.0031587 0.00838839  0.0296791  0.0141133  0.0713731  0.0296701
+Errors: 0.00315873 0.00838839  0.0296798  0.0141153   0.071373  0.0296701
 
 Probabilities:         0  0.237567  0.164232   0.39161  0.146174 0.0604176
 
@@ -370,7 +370,7 @@ Best parameters for model 6:
 
 Results: 1.91155 1.81749 1.72413 1.75411 1.70318 1.72413
 
-Errors: 0.00537891  0.0163004  0.0629997  0.0284799  0.0161898    0.06287
+Errors: 0.00537888  0.0163004  0.0629997  0.0284799  0.0161898    0.06287
 
 Probabilities:         0  0.205154  0.216929  0.338112  0.160001 0.0798037
 
@@ -407,11 +407,11 @@ Best parameters for model 5:
 
 3 params
 Best parameters for model 6: 
-0.466401 1.96737 6.60632e-09 
+0.466401 1.96737 6.60648e-09 
 
 Results: 2.09452 1.98546 1.96737 1.91496  1.9508 1.96737
 
-Errors: 0.00881638  0.0309165    0.14902  0.0560001   0.455886   0.149024
+Errors: 0.00881638  0.0309165    0.14902      0.056   0.352804   0.149024
 
 Probabilities:         0  0.347553  0.128821  0.347567  0.128669 0.0473904
 
@@ -444,15 +444,15 @@ Best parameters for model 4:
 
 3 params
 Best parameters for model 5: 
-0.24022 1.98553 1 
+0.24022 1.98552 1 
 
 3 params
 Best parameters for model 6: 
-0.257827 1.91563 2.67172e-09 
+0.257827 1.91563 8.90275e-09 
 
-Results: 2.24943 2.10148 1.91563 1.99323 1.98553 1.91563
+Results: 2.24943 2.10148 1.91563 1.99323 1.98552 1.91563
 
-Errors: 0.0129709 0.0528791  0.237898  0.104671 0.0526082  0.236771
+Errors: 0.0129709 0.0528791  0.237898  0.104515 0.0526094  0.236767
 
 Probabilities: 0.0243948  0.307179  0.146643  0.341257   0.12658  0.053947
 
@@ -489,11 +489,11 @@ Best parameters for model 5:
 
 3 params
 Best parameters for model 6: 
-0.0950093 1.71202 0.708321 
+0.0950092 1.71202 0.708324 
 
 Results:  2.3184 2.14096 1.75939 2.04036  2.0242 1.71202
 
-Errors: 0.0155802 0.0702269  0.308494 0.0153035 0.0699483  0.216204
+Errors: 0.0155802 0.0702269  0.308494 0.0153033 0.0699483  0.216204
 
 Probabilities: 0.0485835  0.283644  0.176364  0.309491  0.117027 0.0648903
 
@@ -505,29 +505,29 @@ Best Chisquared: 0.673939
 
 Fits/L24_b230_xi1_g.wvr
 models for fitting the R-dependence: 
-Fitting Polynomial of degree1 with shape 1 1 1 1 1 1 1 1 1 0 0 0
+model 1 Fitting Polynomial of degree1 with shape 1 1 1 1 1 1 1 1 1 0 0 0
 
-Fitting Polynomial of degree1 with shape 1 1 1 1 1 1 1 1 1 1 0 0
+model 2 Fitting Polynomial of degree1 with shape 1 1 1 1 1 1 1 1 1 1 0 0
 
-Fitting Polynomial of degree1 with shape 1 1 1 1 1 1 1 1 1 1 1 0
+model 3 Fitting Polynomial of degree1 with shape 1 1 1 1 1 1 1 1 1 1 1 0
 
-Fitting Polynomial of degree1 with shape 1 1 1 1 1 1 1 1 1 1 1 1
+model 4 Fitting Polynomial of degree1 with shape 1 1 1 1 1 1 1 1 1 1 1 1
 
-Fitting Polynomial of degree1 with shape 0 1 1 1 1 1 1 1 1 0 0 0
+model 5 Fitting Polynomial of degree1 with shape 0 1 1 1 1 1 1 1 1 0 0 0
 
-Fitting Polynomial of degree1 with shape 0 1 1 1 1 1 1 1 1 1 0 0
+model 6 Fitting Polynomial of degree1 with shape 0 1 1 1 1 1 1 1 1 1 0 0
 
-Fitting Polynomial of degree1 with shape 0 1 1 1 1 1 1 1 1 1 1 0
+model 7 Fitting Polynomial of degree1 with shape 0 1 1 1 1 1 1 1 1 1 1 0
 
-Fitting Polynomial of degree1 with shape 0 1 1 1 1 1 1 1 1 1 1 1
+model 8 Fitting Polynomial of degree1 with shape 0 1 1 1 1 1 1 1 1 1 1 1
 
-Fitting Polynomial of degree1 with shape 0 0 1 1 1 1 1 1 1 0 0 0
+model 9 Fitting Polynomial of degree1 with shape 0 0 1 1 1 1 1 1 1 0 0 0
 
-Fitting Polynomial of degree1 with shape 0 0 1 1 1 1 1 1 1 1 0 0
+model 10 Fitting Polynomial of degree1 with shape 0 0 1 1 1 1 1 1 1 1 0 0
 
-Fitting Polynomial of degree1 with shape 0 0 1 1 1 1 1 1 1 1 1 0
+model 11 Fitting Polynomial of degree1 with shape 0 0 1 1 1 1 1 1 1 1 1 0
 
-Fitting Polynomial of degree1 with shape 0 0 1 1 1 1 1 1 1 1 1 1
+model 12 Fitting Polynomial of degree1 with shape 0 0 1 1 1 1 1 1 1 1 1 1
 
 Fitting Cornell with shape 1 1 1 1 1 1 1 1 1 0 0 0
 
@@ -556,110 +556,110 @@ Fitting Cornell with shape 0 0 1 1 1 1 1 1 1 1 1 1
 fitting 24 models
 2 params
 Best parameters for model 1: 
-0.204148 0.224044 
+0.204172 0.224022 
 
 2 params
 Best parameters for model 2: 
-0.204167 0.224027 
+0.204201 0.223996 
 
 2 params
 Best parameters for model 3: 
-0.204211 0.223988 
+0.204244 0.223957 
 
 2 params
 Best parameters for model 4: 
-0.20424 0.223961 
+0.204274 0.22393 
 
 2 params
 Best parameters for model 5: 
-0.331871 0.1788 
+0.331944 0.178771 
 
 2 params
 Best parameters for model 6: 
-0.331969 0.178762 
+0.332088 0.178714 
 
 2 params
 Best parameters for model 7: 
-0.332249 0.178652 
+0.332368 0.178605 
 
 2 params
 Best parameters for model 8: 
-0.332487 0.17856 
+0.332604 0.178513 
 
 2 params
 Best parameters for model 9: 
-0.411856 0.153729 
+0.411788 0.153752 
 
 2 params
 Best parameters for model 10: 
-0.411842 0.153733 
+0.411768 0.153758 
 
 2 params
 Best parameters for model 11: 
-0.41232 0.153577 
+0.412242 0.153603 
 
 2 params
 Best parameters for model 12: 
-0.41301 0.153351 
+0.412927 0.153379 
 
 3 params
 Best parameters for model 13: 
-0.204148 1.63465e-09 0.224044 
+0.204172 6.71423e-10 0.224022 
 
 3 params
 Best parameters for model 14: 
-0.204167 -6.80115e-09 0.224027 
+0.204201 -7.05514e-10 0.223996 
 
 3 params
 Best parameters for model 15: 
-0.204211 -3.34635e-09 0.223988 
+0.204244 2.42535e-09 0.223957 
 
 3 params
 Best parameters for model 16: 
-0.20424 -2.15628e-10 0.223961 
+0.204274 5.14481e-09 0.22393 
 
 3 params
 Best parameters for model 17: 
-0.331871 9.53699e-09 0.1788 
+0.331944 9.62739e-09 0.178771 
 
 3 params
 Best parameters for model 18: 
-0.331969 7.22696e-10 0.178762 
+0.332088 1.59229e-08 0.178714 
 
 3 params
 Best parameters for model 19: 
-0.332249 1.24076e-09 0.178652 
+0.332368 -1.12805e-08 0.178605 
 
 3 params
 Best parameters for model 20: 
-0.332487 -1.71469e-12 0.17856 
+0.332604 1.53704e-10 0.178513 
 
 3 params
 Best parameters for model 21: 
-0.411856 -1.7315e-08 0.153729 
+0.411788 6.69109e-09 0.153752 
 
 3 params
 Best parameters for model 22: 
-0.411842 -1.10597e-12 0.153733 
+0.411768 6.59904e-10 0.153758 
 
 3 params
 Best parameters for model 23: 
-0.41232 8.6559e-10 0.153577 
+0.412242 4.37547e-11 0.153603 
 
 3 params
 Best parameters for model 24: 
-0.41301 -5.57631e-09 0.153351 
+0.412927 -3.94483e-09 0.153379 
 
 
 
 Fitting the potential: 
-Results: 0.224044 0.224027 0.223988 0.223961   0.1788 0.178762 0.178652  0.17856 0.153729 0.153733 0.153577 0.153351 0.224044 0.224027 0.223988 0.223961   0.1788 0.178762 0.178652  0.17856 0.153729 0.153733 0.153577 0.153351
+Results: 0.224022 0.223996 0.223957  0.22393 0.178771 0.178714 0.178605 0.178513 0.153752 0.153758 0.153603 0.153379 0.224022 0.223996 0.223957  0.22393 0.178771 0.178714 0.178605 0.178513 0.153752 0.153758 0.153603 0.153379
 
-Errors: 0.000366852 0.000366793 0.000366684 0.000366624  0.00101508  0.00101421  0.00101255  0.00101161  0.00226837  0.00225992  0.00224373  0.00223451 0.000366852 0.000366793 0.000366684 0.000366624  0.00101508  0.00101421  0.00101256  0.00101161  0.00226837  0.00225992  0.00224373  0.00223452
+Errors: 0.000366685 0.000366598  0.00036649  0.00036643  0.00101394  0.00101266  0.00101101  0.00101008  0.00226113  0.00224876  0.00223281  0.00222373 0.000366685 0.000366598  0.00036649  0.00036643  0.00101394  0.00101266  0.00101101  0.00101008   0.0022611  0.00224876   0.0022328  0.00222371
 
-Probabilities:         0         0         0         0         0         0         0         0 0.0382013  0.103815  0.238747  0.350295         0         0         0         0         0         0         0         0 0.0140535 0.0381913 0.0878302  0.128866
+Probabilities:         0         0         0         0         0         0         0         0 0.0382542  0.103949  0.238845  0.350011         0         0         0         0         0         0         0         0 0.0140729 0.0382405 0.0878663  0.128762
 
-Chisq:  348.611  305.949  274.087  248.283  25.8589  22.2847  19.9467  18.2278 0.480959 0.400887  0.39139 0.496623  406.713  349.656  308.347   275.87  31.0307  25.9989  22.7962  20.5063 0.601199 0.481064 0.456621 0.567569
+Chisq:  349.588  307.244  275.236  249.316  25.9436  22.4145  20.0592  18.3268 0.483196 0.402782 0.393265  0.49857  407.853  351.136   309.64  277.018  31.1323  26.1503  22.9247  20.6177 0.603995 0.483339 0.458809 0.569794
 
 Fit statuses: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
