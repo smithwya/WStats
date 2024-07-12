@@ -208,7 +208,7 @@ public:
 
             vector<double> best_pars = vector<double>(k,1.1);
 
-            for(int j = 0; j <1000; j++){
+            for(int j = 0; j <1; j++){
                 minimizer->Clear();
                 set_params(best_pars);
                 set_steps(vector<double>(k, 0.5));

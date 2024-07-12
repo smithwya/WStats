@@ -2,19 +2,18 @@
 nJobs=1
 beta=225
 xiR=2
-N=24
-T=24
-Rmax=12
-Tmax=12
-runtime=00:20:00
+N=16
+Rmax=10
+Tmax=10
+runtime=00:05:00
 
 #makes 'Configs' and 'Data' folders in filepath location
 
 
 make clean
-for beta in 225 230 235 240 245 250 255 260 265 270 275
+for beta in 225 230 235 240 245 250 255 260 #265 270 275
 do
-for xiR in 1 2 3 4
+for xiR in 1 2 3 4 5
 do
 base=L"$N"_b"$beta"_xi"$xiR"_g
 datfile=Data/$base.dat

@@ -50,12 +50,12 @@ int main(int argc, char **argv)
 	}
 
 	// Generate the set of models to test
-	vector<int> n_exps = {1,2,3};
-	vector<int> pl_degree_set = {0,1};
+	vector<int> n_exps = {1, 2};
+	vector<int> pl_degree_set = {0, 1};
 	//vector<int> poly_degrees = {2};
 
-	vector<int> t_start_set = {0};
-	vector<int> t_end_set = {11};
+	vector<int> t_start_set = {0, 1};
+	vector<int> t_end_set = {T_max-1};
 
 	VectorXd ind_vars = VectorXd::Zero(T_max);
 	for (int i = 0; i < T_max; i++)
@@ -92,7 +92,7 @@ int main(int argc, char **argv)
 
 	for (int i = 0; i < nexp_models.size(); i++)
 	{
-		std::cout <<"model "<<i+1<<" "<< nexp_models[i] << endl;
+		std::cout <<"model "<<i+1<<": "<< nexp_models[i] << endl;
 		mod_ptrs.push_back(&nexp_models[i]);
 	}
 
@@ -147,7 +147,7 @@ int main(int argc, char **argv)
 		avg_err(R) = sqrt(avg_err(R));
 		best_chi(R) = ak_results[5](0);
 	}
-
+	cout<<"Saving to file"<<endl<<endl;
 	ofstream pot_file(save_file);
 	cout << save_file << endl;
 	MatrixXd fresult(R_max, 3);
@@ -169,7 +169,7 @@ int main(int argc, char **argv)
 	}
 
 	vector<int> start_r = {0,1,2};
-	vector<int> end_r = {8,9,10,11};
+	vector<int> end_r = {R_max-3,R_max-2,R_max-1};
 
 
 	for (int r_s : start_r)
@@ -181,25 +181,26 @@ int main(int argc, char **argv)
 			Polynomial p_mod = Polynomial(2, ind_vars_r, shape, "");
 			lin_models_r.push_back(p_mod);
 
-			//Cornell_model c_mod = Cornell_model(ind_vars, shape, "");
-			//corn_models_r.push_back(c_mod);
+			Cornell_model c_mod = Cornell_model(ind_vars, shape, "");
+			corn_models_r.push_back(c_mod);
 
 		}
 	}
 
 	cout<<"models for fitting the R-dependence: "<<endl;
+
 	for (int i = 0; i < lin_models_r.size(); i++)
 	{
 		mod_ptrs_r.push_back(&lin_models_r[i]);
 		cout<<"model "<<i+1<<" "<<lin_models_r[i]<<endl;
 	}
-	/*
+
 	for (int i = 0; i < corn_models_r.size(); i++)
 	{
 		mod_ptrs_r.push_back(&corn_models_r[i]);
-		cout<<"model "<<i+1<<" "<<corn_models_r[i]<<endl;
+		cout<<"model "<<corn_models_r.size()+i+1<<" "<<corn_models_r[i]<<endl;
 	}
-	*/
+
 	int n_models_r = mod_ptrs_r.size();
 
 	double avg_sigma = 0;
@@ -240,6 +241,6 @@ int main(int argc, char **argv)
 	tension_file<< avg_sigma<<" "<<avg_sigma_err<<endl;
 	tension_file.close();
 	
-
+	
 	return 0;
 }
