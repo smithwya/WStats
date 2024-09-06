@@ -139,13 +139,14 @@ public:
 
     void minimize()
     {
+        cout<<"truncated"<<endl;
         truncate_data(_model->data_shape);
         _cov_inv = _data_frame->get_cov_trunc(_model->data_shape).inverse();
-
+        cout<<"inverse calc"<<endl;
         ROOT::Math::Functor f(this, &WFit::minfunc_avg, _num_params);
         //ROOT::Math::Functor f(this, &WFit::minfunc_samples, _num_params);
         minimizer->SetFunction(f);
-
+        cout<<"function set"<<endl;
         for (int i = 0; i < _num_params; i++)
         {
             minimizer->SetVariable(i, to_string(i), _params[i], _steps[i]);
@@ -157,6 +158,7 @@ public:
             }
 
         }
+        cout<<"minimizing"<<endl;
         minimizer->Minimize();
     };
 
